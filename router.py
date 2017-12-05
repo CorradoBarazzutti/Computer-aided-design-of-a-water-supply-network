@@ -15,21 +15,10 @@ class Router ( object ):
     # -- CLASS ATTRIBUTES
     # ----------------------------------------------------------------------------
 
-    # Error status
-    SUCCESS = 0
-    FAILURE = 1
-
     # Class description
     CLASS_NAME = "Router"
     CLASS_AUTHOR = "Marcello Vaccarino"
-    METHODS = """
-        __init__ ( self )
 
-        ReadFromFileVtk (
-            self,
-            file_name )
-        """
-    
     # Attributes
     graph = nx.Graph()
     
@@ -77,28 +66,10 @@ class Router ( object ):
             for u, v in pairwise(cell):
                 if not u in self.graph[v] :
                     self.graph.add_edge(u, v, weight = self.distance3D(u, v))
-        
-    def display(self):
-        try: 
-            path = nx.shortest_path(graph, source=0, target=2, weight = "weight") 
-        except:
-            print("no path")                    
-        else:
-            print path
-            color = {}
-            for edge in graph.edges():
-                color[edge] = 'b'
-            for i in range(0, len(path)-1):
-                edge1 = (path[i], path[i+1])
-                if edge1 in color.keys():
-                    color[edge1] = 'r'
-            
-            print path
-            array = []
-            for edge in graph.edges():
-                array += color[edge]
-            #nx.draw_networkx_edges(graph , pos = coord2D, edge_color =  array)
-            nx.draw_networkx(graph , pos = coord2D, edge_color = array)
+    
+    # ----------------------------------------------------------------------------
+    # -- CLASS ATTRIBUTES
+    # ----------------------------------------------------------------------------
         
     #cartesian norme in 2D
     def distance2D(self, nodei, nodej):
@@ -118,33 +89,36 @@ class Router ( object ):
         zj = graph.nodes(data=True)[nodei][1]['pos'][2]
         return math.sqrt((xi-xj)*(xi-xj) + (yi-yj)*(yi-yj) + (zi-zj)*(zi-zj))
     
+    #returns 2D coordinates of the nodes of self.graph
     def coord2D(self):
-        coord2D = nx.get_node_attributes(self.graph, 'pos')
-        for key in coord2D:
-            coord2D[key] = [coord2D[key][0], coord2D[key][1]]
+        coord2D = {} 
+        for key, value in nx.get_node_attributes(self.graph, 'pos').iteritems():
+            coord2D[key] = [value[0], value[1]]
         return coord2D
-            
+    
+    #display the mesh using networkx function
     def display_mesh(self):
         nx.draw_networkx_edges(graph , pos = self.coord2D())
-        
+    
+    #display the mesh with a path marked on it
     def display_path(self, path):
         color = {edge: 'b' for edge in graph.edges()}
-
+        #returns an array of pairs, the elements of seq two by two
         def pairwise(seq):
             return [seq[i:i+2] for i in range(len(seq)-2)]
-
+        #colors the edges
         for u, v in pairwise(path):
-            print u, v
             if color.has_key((u,v)):
                 color[(u,v)] = 'r'
             if color.has_key((v,u)):
                 color[(v,u)] = 'r'
-
+        #makes an array of the dictionary, the order is importatant!
         array = []
         for edge in graph.edges():
             array += color[edge]
-        nx.draw_networkx_edges(graph , pos = coord2D, edge_color =  array)
+        nx.draw_networkx_edges(graph , pos = self.coord2D(), edge_color =  array)
     
+    #calculates the shortest path on self.graph. Path is a sequence of traversed nodes
     def shortest_path(self):
         try: 
             path = nx.shortest_path(graph, source=0, target=2, weight = "weight") 
@@ -152,7 +126,6 @@ class Router ( object ):
             print("no path")
         return path
     
-    def _main_ ():
-        router = Router("meshvtk.vtk")
-        path = router.shortest_path()
-        router.display_path(path)
+router = Router("meshvtk.vtk")
+path = router.shortest_path()
+router.display_path(path)
