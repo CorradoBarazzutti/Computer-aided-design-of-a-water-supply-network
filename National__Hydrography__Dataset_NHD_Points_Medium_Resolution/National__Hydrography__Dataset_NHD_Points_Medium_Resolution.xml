@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<origin/>
+<pubdate>20130125</pubdate>
+<geoform>vector digital data</geoform>
+<onlink>HSIP 2015</onlink>
+</citeinfo>
+</citation>
+<descript>
+<abstract>This dataset represents the National Hydrography Dataset in the contiguous United States and Hawaii. The National Hydrography Dataset combines elements of the DLG and RF3: spatial accuracy and comprehensiveness from the DLG and network relationships, names, and a unique identifier (reach code) for surface water features from RF3. The NHD supersedes DLG and RF3 by incorporating them, not by replacing them. Users of DLG and RF3 will find the National Hydrography Dataset both familiar and greatly expanded and refined. The NHD provides a national framework for assigning reach addresses to water-related entities such as industrial dischargers, drinking water supplies, fish habitat areas, wild and scenic rivers. Reach addresses establish the locations of these entities relative to one another within the NHD surface water drainage network in a manner similar to street addresses. Once linked to the NHD by their reach addresses, the upstream/downstream relationships of these water-related entities and any associated information about them can be analyzed using software tools ranging from spreadsheets to Geographic Information Systems (GIS). GIS can also be used to combine NHD-based network analysis with other data layers, such as soils, land use, and population, to help better understand and display their respective effects upon one another. Furthermore, because the NHD provides a nationally consistent framework for addresses and analysis, water-related information linked to reach addresses by one organization (national, state, local) can be shared with other organizations and easily integrated into many different types of applications to the benefit of all. The National Hydrography Dataset is designed to provide comprehensive coverage of hydrologic data for the US. While initially based on 1:100,000-scale data, the NHD is designed to incorporate and encourage the development of higher-resolution data required by many users. It will facilitate the improved integration of water-related data in support of the application requirements of a growing national user community and will enable shared maintenance and enhancement. The National Hydrography Dataset (NHD) is a feature-based database that interconnects and uniquely identifies the stream segments or reaches that comprise the nations surface water drainage system. Medium resolution NHD is based on the content of the U.S. Geological Survey 1:100,000-scale Digital Line Graph (DLG) hydrography data, integrated with reach-related information from the U.S. Environmental Protection Agency Reach File Version 3.0 (RF3). More specifically, it contains reach codes for networked features and isolated lakes, flow direction, names, stream level, and centerline representations for areal water bodies. Reaches are also defined to represent water bodies and the approximate shorelines of the Great Lakes, the Atlantic and Pacific Oceans and the Gulf of Mexico. The NHD also incorporates the National Spatial Data Infrastructure framework criteria established by the Federal Geographic Data Committee.</abstract>
+<purpose>This dataset represents the National Hydrography Dataset in the contiguous United States and Hawaii. The National Hydrography Dataset combines elements of the DLG and RF3: spatial accuracy and comprehensiveness from the DLG and network relationships, names, and a unique identifier (reach code) for surface water features from RF3. The NHD supersedes DLG and RF3 by incorporating them, not by replacing them. Users of DLG and RF3 will find the National Hydrography Dataset both familiar and greatly expanded and refined. The NHD provides a national framework for assigning reach addresses to water-related entities such as industrial dischargers, drinking water supplies, fish habitat areas, wild and scenic rivers. Reach addresses establish the locations of these entities relative to one another within the NHD surface water drainage network in a manner similar to street addresses. Once linked to the NHD by their reach addresses, the upstream/downstream relationships of these water-related entities and any associated information about them can be analyzed using software tools ranging from spreadsheets to Geographic Information Systems (GIS). GIS can also be used to combine NHD-based network analysis with other data layers, such as soils, land use, and population, to help better understand and display their respective effects upon one another. Furthermore, because the NHD provides a nationally consistent framework for addresses and analysis, water-related information linked to reach addresses by one organization (national, state, local) can be shared with other organizations and easily integrated into many different types of applications to the benefit of all. The National Hydrography Dataset is designed to provide comprehensive coverage of hydrologic data for the US. While initially based on 1:100,000-scale data, the NHD is designed to incorporate and encourage the development of higher-resolution data required by many users. It will facilitate the improved integration of water-related data in support of the application requirements of a growing national user community and will enable shared maintenance and enhancement.</purpose>
+</descript>
+<status>
+<progress>Complete</progress>
+<update>Irregular</update>
+</status>
+<keywords>
+<theme>
+<themekt>None</themekt>
+<themekey>Swamp</themekey>
+<themekey>Marsh</themekey>
+<themekey>Artificial Path</themekey>
+<themekey>Spring</themekey>
+<themekey>Seep</themekey>
+<themekey>Canal</themekey>
+<themekey>Ditch</themekey>
+<themekey>Hydrography</themekey>
+<themekey>US</themekey>
+<themekey>Stream</themekey>
+<themekey>River</themekey>
+<themekey>Reach Code</themekey>
+<themekey>Lake</themekey>
+<themekey>Pond</themekey>
+<themekey>FWHYDROGRAPHY</themekey>
+<themekey>Reservoir</themekey>
+<themekey>HIFLD Water Supply</themekey>
+</theme>
+</keywords>
+<accconst>None (Public Domain Information)</accconst>
+<useconst>Access Constraint: None (Public Domain Information)
+
+Use Constraint: None (Public Use)</useconst>
+<ptcontac>
+<cntinfo>
+<cntorgp>
+<cntorg>Earth Science Information Center, U.S. Geological Survey</cntorg>
+</cntorgp>
+<cntaddr>
+<addrtype>mailing</addrtype>
+<address>507 National Center</address>
+<city>Reston</city>
+<state>VA</state>
+<postal>20192</postal>
+<country>US</country>
+</cntaddr>
+<cntvoice>1 888 275 8747</cntvoice>
+<cntvoice>1 888 ASK USGS</cntvoice>
+<cntemail>ask@usgs.gov</cntemail>
+</cntinfo>
+</ptcontac>
+</idinfo>
+<spdoinfo>
+<ptvctinf>
+<sdtsterm>
+<ptvctcnt>145457</ptvctcnt>
+</sdtsterm>
+</ptvctinf>
+</spdoinfo>
+<eainfo>
+<detailed>
+<enttyp>
+<enttypl>NHD_PointsMediumReso</enttypl>
+</enttyp>
+<attr>
+<attrlabl>FDATE</attrlabl>
+</attr>
+<attr>
+<attrlabl>REACHCODE</attrlabl>
+</attr>
+<attr>
+<attrlabl>FCODE</attrlabl>
+</attr>
+<attr>
+<attrlabl>GNIS_ID</attrlabl>
+</attr>
+<attr>
+<attrlabl>SHAPE</attrlabl>
+<attrdef>Feature geometry.</attrdef>
+<attrdefs>Esri</attrdefs>
+<attrdomv>
+          <udom>Coordinates defining the features.</udom>
+        </attrdomv>
+</attr>
+<attr>
+<attrlabl>PERMANENT_</attrlabl>
+</attr>
+<attr>
+<attrlabl>FID</attrlabl>
+<attrdef>Internal feature number.</attrdef>
+<attrdefs>Esri</attrdefs>
+<attrdomv>
+          <udom>Sequential unique whole numbers that are automatically generated.</udom>
+        </attrdomv>
+</attr>
+<attr>
+<attrlabl>GNIS_NAME</attrlabl>
+</attr>
+<attr>
+<attrlabl>RESOLUTION</attrlabl>
+</attr>
+<attr>
+<attrlabl>FTYPE</attrlabl>
+</attr>
+</detailed>
+</eainfo>
+<metainfo>
+<metc>
+<cntinfo>
+<cntorgp>
+<cntorg>U.S. Geological Survey</cntorg>
+</cntorgp>
+<cntaddr>
+<addrtype>mailing</addrtype>
+<city>Reston</city>
+<state>VA</state>
+<postal>20192</postal>
+<country>US</country>
+</cntaddr>
+<cntvoice>1 888 ASK USGS</cntvoice>
+<cntvoice>1 888 275 8747</cntvoice>
+<cntemail>ask@usgs.gov</cntemail>
+</cntinfo>
+</metc>
+<metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+<mettc>local time</mettc>
+</metainfo>
+</metadata>
