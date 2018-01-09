@@ -25,20 +25,22 @@ class Router(object):
 
     # Attributes
     graph = nx.Graph()
+    sinksource_graph = nx.Graph()
 
     # ----------------------------------------------------------------------------
     # -- INITIALIZATION
     # ----------------------------------------------------------------------------
 
-    def __init__(self, file_name):
-        if not isinstance(file_name, str):
+    def __init__(self, topo_file, point_file=None):
+        if not isinstance(topo_file, str):
             raise ValueError("file_name must be of type String")
-        self.read_shp(file_name)
+        self.read_shp(topo_file, point_file)
+        self.compute_source_matrix()
 
     # ----------------------------------------------------------------------------
     # -- CLASS ATTRIBUTES
     # ----------------------------------------------------------------------------
-    def read_shp(self, file_name):
+    def read_shp(self, file_name, point_file=None):
         """Generates a networkx.DiGraph from shapefiles. Point geometries are
         translated into nodes, lines into edges. Coordinate tuples are used as
         keys. Attributes are preserved, line geometries are simplified into
@@ -106,11 +108,10 @@ class Router(object):
                     n2 = shape.points[i + 1]
                     self.graph.add_node(n2, attributes2)
                     attribute = {'dist': self.distance(n1, n2)}
-                    print '{0}: {1}, {2}'.format(i, n1, n2)
                     self.graph.add_edge(n1, n2, attribute)
 
             if shape.shapeType == 5:    # polygraph
-                # cuncker: see commpresed row storage
+                # chuncker: see commpresed row storage
                 def chuncker(array, p_array):
                     p_array.append(len(array))
                     return [array[p_array[i]:p_array[i+1]]
@@ -121,8 +122,6 @@ class Router(object):
                     return [seq[i:i+2] for i in range(len(seq)-1)]
 
                 for cell in chuncker(shape.points, shape.parts):
-                    print cell
-                    print pairwise(cell)
                     for n1, n2 in pairwise(cell):
                         attributes1 = dict(zip(fields, shapeRecs.record))
                         attributes1["pos"] = n1
@@ -134,6 +133,24 @@ class Router(object):
                         attribute = {'dist': self.distance(n1, n2)}
                         # add edge
                         self.graph.add_edge(n1, n2, attribute)
+
+        if point_file != None:
+            sf = shapefile.Reader(point_file)
+            new_fields = [x[0] for x in sf.fields]
+            nodes2attributes = {node: data \
+                                for node, data in self.graph.nodes(data=1)}
+            for shapeRecs in sf.iterShapeRecords():
+                shape = shapeRecs.shape
+                if shape.shapeType != 1:    # point
+                    raise ValueError("point_file must be of type 1: points")
+                new_attributes = dict(zip(new_fields, shapeRecs.record))
+                nodes = [tuple(point) for point in shape.points]
+                for node in nodes:
+                    # print node in nodes2attributes, new_attributes
+                    nodes2attributes[node].update(new_attributes)
+            for node, data in self.graph.nodes(data=1):
+                data.update(nodes2attributes[node])
+            # nx.set_node_attributes(self.graph, nodes2attributes)
 
     def add_node_unique(self, new_node, new_attributes):
         """
@@ -244,7 +261,18 @@ class Router(object):
 
     # display the mesh using networkx function
     def display_mesh(self):
-        nx.draw_networkx_edges(self.graph, pos=self.coord2D())
+        nodelist = []
+        node_color = []
+        for node in self.graph.nodes(data=1):
+            node_type = node[1]['FID']
+            if not node_type == '':
+                nodelist.append(node[0])
+                node_color.append('r' if node_type == 'sink' else 'b')
+        try:
+            nx.draw_networkx(self.graph, pos=self.coord2D(), nodelist=nodelist,
+                             with_labels=0, node_color=node_color)
+        except:
+            pass
 
     # display the mesh with a path marked on it
     def display_path(self, path):
@@ -277,7 +305,7 @@ class Router(object):
             path = nx.shortest_path(self.graph, source=node1, target=node2,
                                     weight="weight")
         except:
-            print("no path")
+            pass
         return path
 
     def path_lenght(self, path):
@@ -285,12 +313,14 @@ class Router(object):
         given a path on the graph returns the lenght of the path in the
         unit the coordinats are expressed
         """
+        if path is None:
+            return float("inf")
         lenght = 0.0
         # given the path (list of node) returns the edges contained
         path_edges = [path[i:i+2] for i in range(len(path)-2)]
         # itereate to edges and calculate the weight
         for u, v in path_edges:
-            lenght += self.distance3D(u, v)
+            lenght += self.distance(u, v)
         return lenght
 
     def TSP(self, cities):
@@ -321,48 +351,37 @@ class Router(object):
             return paths, time
         '''
 
+    def is_sourcesink(self, node):
+        '''given a node as in the networkx.Graph.nodes(data=1)
+        returns 1 if the node is a sink or a source, 0 elsewhere'''
+        if not node[1]['FID'] == '':
+            return 1
+        return 0
+
     def compute_source_matrix(self):
-        # from scipy.sparse import csgraph
-        # self.adjacency_matrix = csgraph.csgraph_from_dense([[1 if jnode in environment.getNeighbours(inode) else 0 for jnode in environment.graph] for inode in environment.graph])
-        self.dist_matrix, self.predecessors = csgraph.floyd_warshall(self.adjacency_matrix, directed = False, return_predecessors = True, unweighted = True)
-        
-        self.cheese_dist_matrix = []
-        
-        if not environment.graph[environment.start_node]['cheese']:
-            L = [0]
-            for i, inode in enumerate(environment.graph):
-                if inode == environment.start_node:
-                    break
-            j=0
-            for jnode in environment.graph:
-                if environment.graph[jnode]['cheese']:
-                    L.append(self.dist_matrix[i][j])
-                j+=1
-            self.cheese_dist_matrix.append(L)
-            vocabulary = {0: i}
-        
-        k=0
-        for i, inode in enumerate(environment.graph):
-            if environment.graph[inode]['cheese'] :
-                j=0
-                L = []
-                for jnode in environment.graph:
-                    if environment.graph[jnode]['cheese'] or jnode == environment.start_node:
-                        L.append(self.dist_matrix[i][j])
-                    j+=1 
-                self.cheese_dist_matrix.append(L)  
-                vocabulary.update({k+1: i})
-                k+=1
-                    
+        for node in self.graph.nodes(data=1):
+            if self.is_sourcesink(node):
+                self.sinksource_graph.add_node(node[0], node[1])
+
+        for n1 in self.sinksource_graph.nodes():
+            for n2 in self.sinksource_graph.nodes():
+                if n1 is not n2:
+                    path = self.shortest_path(n1, n2)
+                    if path is not None:
+                        self.sinksource_graph.add_edge(n1, n2,
+                                            {'dist': self.path_lenght(path),
+                                             'path': path})
+
 # National__Hydrography__Dataset_NHD_Points_Medium_Resolution/National__Hydrography__Dataset_NHD_Points_Medium_Resolution
 # National__Hydrography__Dataset_NHD_Lines_Medium_Resolution/National__Hydrography__Dataset_NHD_Lines_Medium_Resolution
 # Railroads/Railroads
 # Routesnaples/routesnaples
-# shapefiles/Domain
-# shapeline/shapeline
-router = Router("shapefiles/Domain")
+# "shapefiles/Domain", "shapefiles/pointspoly"
+# "shapeline/shapeline", "shapeline/points"
+router = Router("shapefiles/Domain", "shapefiles/meshpoints_clean")
+nx.draw_networkx(router.sinksource_graph, pos=router.coord2D(), with_labels=0)
 # router.display_path(path)
 # nx.draw_networkx_nodes(router.graph, pos=router.coord2D())
-router.display_mesh()
+# router.display_mesh()
 # print nx.clustering(router.graph)
 # print nx.floyd_warshall_numpy(router.graph, weight='dist')

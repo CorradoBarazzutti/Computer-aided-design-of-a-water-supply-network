@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_METADATA>
+  <HISTORY saga-version="2.3.2">
+    <MODULE library="shapes_points" id="7" name="Remove Duplicate Points">
+      <OPTION type="choice" id="METHOD" name="Point to Keep" index="0">first point</OPTION>
+      <OPTION type="choice" id="NUMERIC" name="Numeric Attribute Values" index="0">take value from the point to be kept</OPTION>
+      <INPUT type="shapes" id="POINTS" name="Points">
+        <FILE>C:/Users/Pere/Desktop/Reti_neurali/Project/meshpoints/meshpoints.shp</FILE>
+      </INPUT>
+      <OUTPUT type="shapes" id="RESULT" name="Result">meshpoints</OUTPUT>
+    </MODULE>
+  </HISTORY>
+  <SOURCE>
+    <FILE></FILE>
+    <DATABASE>
+      <FIELDS>
+        <FIELD TYPE="LONGINT">FID</FIELD>
+        <FIELD TYPE="LONGINT">Att</FIELD>
+        <FIELD TYPE="INTEGER">Duplicates</FIELD>
+      </FIELDS>
+    </DATABASE>
+    <PROJECTION>
+      <OGC_WKT>GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]]</OGC_WKT>
+      <PROJ4>+proj=longlat +a=6378137.000000 +b=6356752.314245 +no_defs</PROJ4>
+      <EPSG>-1</EPSG>
+    </PROJECTION>
+  </SOURCE>
+  <DESCRIPTION></DESCRIPTION>
+</SAGA_METADATA>
