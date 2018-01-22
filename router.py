@@ -31,12 +31,12 @@ class Router(object):
     # -- INITIALIZATION
     # ----------------------------------------------------------------------------
 
-    def __init__(self, topo_file, point_file=None):
+    def __init__(self, topo_file=None, building_file=None):
         if not isinstance(topo_file, str):
             raise ValueError("file_name must be of type String")
         # self.read_shp(topo_file, point_file)
         # self.compute_source_matrix()
-        self.read_shp_bilding(topo_file)
+        self.read_shp_bilding(building_file)
 
     # ----------------------------------------------------------------------------
     # -- CLASS ATTRIBUTES
@@ -414,23 +414,24 @@ class Router(object):
                                             {'dist': self.path_lenght(path),
                                              'path': path})
 
-    def design_minimal_aqueduct(self):
-        self.acqueduct = nx.minimum_spanning_tree(router.sinksource_graph, weight='dist')
-        # nx.draw_networkx(self.acqueduct, pos=router.coord2D(), with_labels=0)
+    def design_minimal_aqueduct(self, G):
+        minimal = nx.minimum_spanning_tree(G, weight='dist')
+        return minimal
+    
+    def display_recouvring_graph(self, G):
         path = []
-        for edge in self.acqueduct.edges(data=True):
-            print edge[2]
+        for edge in G.edges(data=True):
             path += edge[2]['path']
-        return path
+        self.display_path(path)
 
     '''
-    condition to create the gariel relative neighbour graph
+    condition to create the gabriel relative neighbour graph
     '''
     def neighbors(p,q):
-    for r in points:
-        if max(dist2(p,r),dist2(q,r)) < dist2(p,q):
-            return False
-    return True
+        for r in points:
+            if max(dist2(p,r),dist2(q,r)) < dist2(p,q):
+                return False
+        return True
 
     def graphToEdgeMatrix(self, G):
         node_dict = {node: index for index, node in enumerate(G)}
@@ -454,7 +455,7 @@ class Router(object):
         # imports from a machine learning package skit-learn
         from sklearn.cluster import MeanShift, estimate_bandwidth
 
-        # creates a 2D array with the 2D coordinats for each node
+        # creates a array with the 2D coordinats for each node
         X = [[node[0], node[1]] for node in G.nodes()]
         # extimates the dimensions of single clusters
         bandwidth = estimate_bandwidth(X, quantile=0.1,
@@ -462,18 +463,29 @@ class Router(object):
         # find clustes
         ms = MeanShift(bandwidth=bandwidth)
         ms.fit(X)
-
         
+        # labels is an array indicating, for each node, the cluster number
         labels = {node: ms.labels_[i] for i, node in enumerate(G.nodes())}
-        nx.set_node_attributes(G, 'label', labels)
+        
+        adduction = nx.Graph()
         cluster_centers = [(node[0], node[1]) for node in ms.cluster_centers_]
+        for node in cluster_centers:
+            adduction.add_node(node)
+        
+        abduction = [nx.Graph ]
+        for node in labels:
+            
+        # add label info to the graph 
+        nx.set_node_attributes(G, 'label', labels)
 
+        # add cluster centers to the graph
         for node in cluster_centers:
             attribute = {'label': 'water tower', 'pos': node}
             G.add_node(node, attribute)
             attribute = {'type' : 'sink'}
             self.sinksource_graph.add_node(node, attribute)
-            
+        
+        # connect each node with his the cluster center
         node_list = []
         for index, node in enumerate(G):
             node_list.append(node)
@@ -487,7 +499,8 @@ class Router(object):
                 if n1 != n2:
                     self.sinksource_graph.add_edge(n1, n2, {'type': 'sink', 'path': [n1, n2]})
 
-        abduction = self.design_minimal_aqueduct()
+        adduction = nx.minimum_spanning_tree(G, weight='dist')
+        
         def pairwise(seq):
             return [seq[i:i+2] for i in range(len(seq)-2)]
         for n1, n2 in pairwise (abduction):
@@ -501,7 +514,7 @@ class Router(object):
 # Routesnaples/routesnaples
 # "shapefiles/Domain", "shapefiles/pointspoly"
 # "shapeline/shapeline", "shapeline/points"
-router = Router("paesi/paesi")
+router = Router(building_file="paesi/paesi")
 
 # nx.draw_networkx(router.sinksource_graph, pos=router.coord2D(), with_labels=0)
 # router.design_minimal_aqueduct()
