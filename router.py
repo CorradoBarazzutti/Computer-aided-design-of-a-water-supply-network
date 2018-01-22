@@ -32,8 +32,6 @@ class Router(object):
     # ----------------------------------------------------------------------------
 
     def __init__(self, topo_file=None, building_file=None):
-        if not isinstance(topo_file, str):
-            raise ValueError("file_name must be of type String")
         # self.read_shp(topo_file, point_file)
         # self.compute_source_matrix()
         self.read_shp_bilding(building_file)
@@ -187,6 +185,21 @@ class Router(object):
                 data.update(nodes2attributes[node])
             # nx.set_node_attributes(self.graph, nodes2attributes)
 
+    def write2shp(self):
+        try:
+            import shapefile
+        except ImportError:
+            raise ImportError("read_shp requires pyshp")
+
+        w = shapefile.Writer(shapeType=3)
+        w.field("name", "C")
+        
+        for edge in self.acqueduct.edges():
+            line = [edge[0], edge[1]]
+            w.line(parts=[line])
+            w.record('line')
+        w.save('acqueduct')
+
     def add_node_unique(self, new_node, new_attributes):
         """
         grants that the node added is unique with respect to the pos
@@ -287,9 +300,9 @@ class Router(object):
         return math.sqrt((xi-xj)*(xi-xj) + (yi-yj)*(yi-yj) + (zi-zj)*(zi-zj))
 
     # returns 2D coordinates of the nodes of self.graph
-    def coord2D(self):
+    def coord2D(self, G):
         coord2D = {}
-        for key, value in nx.get_node_attributes(self.graph,
+        for key, value in nx.get_node_attributes(G,
                                                  'pos').iteritems():
             coord2D[key] = [value[0], value[1]]
         return coord2D
@@ -417,21 +430,31 @@ class Router(object):
     def design_minimal_aqueduct(self, G):
         minimal = nx.minimum_spanning_tree(G, weight='dist')
         return minimal
-    
+
     def display_recouvring_graph(self, G):
         path = []
         for edge in G.edges(data=True):
             path += edge[2]['path']
         self.display_path(path)
 
-    '''
-    condition to create the gabriel relative neighbour graph
-    '''
-    def neighbors(p,q):
-        for r in points:
-            if max(dist2(p,r),dist2(q,r)) < dist2(p,q):
-                return False
-        return True
+    def complete_graph(self, G):
+        for n1 in G.nodes():
+            for n2 in G.nodes():
+                if n1 != n2:
+                    G.add_edge(n1, n2, {'path': [n1, n2], 'dist': self.distance(n1,n2)})
+
+    def gabriel_graph(self, G):
+        # condition to create the gabriel relative neighbour graph
+        def neighbors(p, q, G):
+            for r in G.nodes:
+                if max(distance2D(p,r), distance2D(q,r)) < distance2D(p,q):
+                    return False
+            return True
+        # connect graph
+        for n1 in G.nodes():
+            for n2 in G.nodes():
+                if neighbors(n1, n2, G):
+                    G.add_edge(n1, n2)
 
     def graphToEdgeMatrix(self, G):
         node_dict = {node: index for index, node in enumerate(G)}
@@ -463,28 +486,39 @@ class Router(object):
         # find clustes
         ms = MeanShift(bandwidth=bandwidth)
         ms.fit(X)
-        
+
         # labels is an array indicating, for each node, the cluster number
         labels = {node: ms.labels_[i] for i, node in enumerate(G.nodes())}
-        
-        adduction = nx.Graph()
-        cluster_centers = [(node[0], node[1]) for node in ms.cluster_centers_]
-        for node in cluster_centers:
-            adduction.add_node(node)
-        
-        abduction = [nx.Graph ]
-        for node in labels:
-            
-        # add label info to the graph 
-        nx.set_node_attributes(G, 'label', labels)
+        print ms.labels_
 
+        # --- ADDUCTION ---
+        '''
         # add cluster centers to the graph
         for node in cluster_centers:
             attribute = {'label': 'water tower', 'pos': node}
             G.add_node(node, attribute)
             attribute = {'type' : 'sink'}
             self.sinksource_graph.add_node(node, attribute)
-        
+        '''
+        adduction = nx.Graph()
+        cluster_centers = [(node[0], node[1]) for node in ms.cluster_centers_]
+        for node in cluster_centers:
+            adduction.add_node(node)
+        self.complete_graph(adduction)
+        adduction = nx.minimum_spanning_tree(adduction, weight='dist')
+        # coord = {elem[0]: [elem[0][0], elem[0][1]] for elem in adduction.nodes(data=True)}
+        # nx.draw_networkx(adduction, pos=coord, label=False)
+        self.acqueduct.add_edges_from(adduction.edges())
+
+        # --- DISTRIBUTION ---
+        # add label info to the graph
+        nx.set_node_attributes(G, 'label', labels)
+        # initialize distribution graphs
+        distribution = [nx.Graph() for cluster in cluster_centers]
+        for node in labels:
+            cluster = labels[node]
+            distribution[cluster].add_node(node)
+        '''
         # connect each node with his the cluster center
         node_list = []
         for index, node in enumerate(G):
@@ -493,21 +527,15 @@ class Router(object):
             label = labels[node]
             if label is not 'water tower':
                 G.add_edge(node, cluster_centers[label])
+        '''
+        for dist_graph in distribution:
+            self.complete_graph(dist_graph)
+            dist_graph = nx.minimum_spanning_tree(dist_graph, weight='dist')
+            self.acqueduct.add_edges_from(dist_graph.edges())
 
-        for n1 in self.sinksource_graph.nodes():
-            for n2 in self.sinksource_graph.nodes():
-                if n1 != n2:
-                    self.sinksource_graph.add_edge(n1, n2, {'type': 'sink', 'path': [n1, n2]})
-
-        adduction = nx.minimum_spanning_tree(G, weight='dist')
+        # coord = {elem[0]: [elem[0][0], elem[0][1]] for elem in self.acqueduct.nodes(data=True)}
+        # nx.draw_networkx_edges(self.acqueduct, pos=coord)
         
-        def pairwise(seq):
-            return [seq[i:i+2] for i in range(len(seq)-2)]
-        for n1, n2 in pairwise (abduction):
-            G.add_edge(n1, n2)
-        nx.draw_networkx_edges(G, pos=self.coord2D(), with_labels=0)
-
-
 # National__Hydrography__Dataset_NHD_Points_Medium_Resolution/National__Hydrography__Dataset_NHD_Points_Medium_Resolution
 # National__Hydrography__Dataset_NHD_Lines_Medium_Resolution/National__Hydrography__Dataset_NHD_Lines_Medium_Resolution
 # Railroads/Railroads
@@ -515,6 +543,7 @@ class Router(object):
 # "shapefiles/Domain", "shapefiles/pointspoly"
 # "shapeline/shapeline", "shapeline/points"
 router = Router(building_file="paesi/paesi")
+router.clusters(router.graph)
 
 # nx.draw_networkx(router.sinksource_graph, pos=router.coord2D(), with_labels=0)
 # router.design_minimal_aqueduct()
