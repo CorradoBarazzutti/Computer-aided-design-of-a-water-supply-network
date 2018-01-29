@@ -1,10 +1,10 @@
-cd /Users/giovannicognetti/Desktop/Project inno/project-P5C006
+cd /Users/giovannicognetti/Desktop/Project\ inno/project-P5C006
 git branch
 <controlli di essere sul locmod, non sul master>
-Git add -A
-Git commit -m "asdfa"
-Git checkout master
-Git fetch
-Git pull
-Git merge <locmod>
-Git checkout -b locmod
+git add -A
+git commit -m "asdfa"
+git checkout master
+git fetch
+git pull
+git merge <locmod>
+git checkout -b locmod
