@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  29 JAN 2018 19:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  29 JAN 2018 20:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -230,8 +230,11 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-))
-No file tesi.aux.
+)) (./tesi.aux
+(./frontespizio.aux) (./dedica.aux) (./abstract.aux) (./Acknowledgements.aux)
+(./capitolo1.aux) (./capitolo2.aux) (./capitolo3.aux) (./capitolo4.aux)
+(./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux) (./appendiceA.aux)
+(./appendiceB.aux))
 \openout1 = `tesi.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -250,6 +253,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Info: Redefining \it@ocap on input line 27.
 LaTeX Info: Redefining \it@ccap on input line 27.
+
 
 File italian.ldf warning: 
 italian.ldf    With OT1 encoding guillemets are poorly faked
@@ -282,26 +286,16 @@ Non-PDF special ignored!]) [2
 ]
 \openout2 = `abstract.aux'.
 
- (./abstract.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 6.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 6.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) [1
+ (./abstract.tex) [1
 
 
-] [2
+]
+[2
 
 ]
 \openout2 = `Acknowledgements.aux'.
 
-
-(./Acknowledgements.tex) [3
+ (./Acknowledgements.tex) [3
 
 
 
@@ -312,7 +306,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  (./capitolo1.tex
 Capitolo 1.
+LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 24.
 
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 Underfull \vbox (badness 1661) has occurred while \output is active []
 
  [5
@@ -415,15 +417,12 @@ Appendice B.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 3996 strings out of 492995
- 54954 string characters out of 6132704
- 125131 words of memory out of 5000000
- 7438 multiletter control sequences out of 15000+600000
+ 4037 strings out of 492995
+ 55516 string characters out of 6132704
+ 126676 words of memory out of 5000000
+ 7451 multiletter control sequences out of 15000+600000
  14206 words of font info for 53 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  36i,11n,43p,743b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -435,7 +434,7 @@ usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
 cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on tesi.pdf (25 pages, 125858 bytes).
+Output written on tesi.pdf (25 pages, 126338 bytes).
 PDF statistics:
  117 PDF objects out of 1000 (max. 8388607)
  81 compressed objects within 1 object stream
