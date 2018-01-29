@@ -19,3 +19,8 @@ pdflatex tesi.tex
 pdflatex tesi.tex
 
 Buon lavoro!
+
+-------------------------------------------------------------
+Scrivete sotto a quello che c'è. 
+Per introdurre un paragrafo "\section{titolo del paragrafo}"
+Per lasciare lo spazio di una riga "\vspace{0.5cm}"
