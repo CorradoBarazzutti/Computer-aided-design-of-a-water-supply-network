@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  29 JAN 2018 23:36
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  29 JAN 2018 20:06
+>>>>>>> locmod4
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -286,6 +290,7 @@ Non-PDF special ignored!]) [2
 ]
 \openout2 = `abstract.aux'.
 
+<<<<<<< HEAD
  (./abstract.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
 
@@ -297,8 +302,13 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
+=======
+ (./abstract.tex) [1
 
-] [2
+>>>>>>> locmod4
+
+]
+[2
 
 ])
 [3] [4
@@ -306,8 +316,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 \openout2 = `Acknowledgements.aux'.
 
+<<<<<<< HEAD
  (./Acknowledgements.tex) [5
 
+=======
+ (./Acknowledgements.tex) [3
+>>>>>>> locmod4
 
 
 ] [6
@@ -317,7 +331,15 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  (./capitolo1.tex
 Capitolo 1.
+LaTeX Font Info:    Try loading font information for U+msa on input line 24.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 24.
 
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 Underfull \vbox (badness 1661) has occurred while \output is active []
 
  [7
@@ -699,15 +721,19 @@ Appendice B.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  4056 strings out of 492995
  55847 string characters out of 6132704
  141676 words of memory out of 5000000
  7467 multiletter control sequences out of 15000+600000
+=======
+ 4037 strings out of 492995
+ 55516 string characters out of 6132704
+ 126676 words of memory out of 5000000
+ 7451 multiletter control sequences out of 15000+600000
+>>>>>>> locmod4
  14206 words of font info for 53 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  36i,11n,43p,743b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -717,11 +743,17 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
 cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
+<<<<<<< HEAD
 /texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
 texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/te
 xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
 Output written on tesi.pdf (29 pages, 150547 bytes).
+=======
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on tesi.pdf (25 pages, 126338 bytes).
+>>>>>>> locmod4
 PDF statistics:
  137 PDF objects out of 1000 (max. 8388607)
  95 compressed objects within 1 object stream
