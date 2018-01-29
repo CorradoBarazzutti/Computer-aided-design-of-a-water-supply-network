@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  29 JAN 2018 19:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  29 JAN 2018 23:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -230,8 +230,11 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2015/03/17 v1.2c Input encoding file
-))
-No file tesi.aux.
+)) (./tesi.aux
+(./frontespizio.aux) (./dedica.aux) (./abstract.aux) (./Acknowledgements.aux)
+(./capitolo1.aux) (./capitolo2.aux) (./capitolo3.aux) (./capitolo4.aux)
+(./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux) (./appendiceA.aux)
+(./appendiceB.aux))
 \openout1 = `tesi.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -250,6 +253,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Info: Redefining \it@ocap on input line 27.
 LaTeX Info: Redefining \it@ccap on input line 27.
+
 
 File italian.ldf warning: 
 italian.ldf    With OT1 encoding guillemets are poorly faked
@@ -283,29 +287,30 @@ Non-PDF special ignored!]) [2
 \openout2 = `abstract.aux'.
 
  (./abstract.tex
-LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+LaTeX Font Info:    Try loading font information for U+msa on input line 1.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) [1
-
+) [1
 
 ] [2
+
+])
+[3] [4
 
 ]
 \openout2 = `Acknowledgements.aux'.
 
-
-(./Acknowledgements.tex) [3
-
+ (./Acknowledgements.tex) [5
 
 
-] [4
+
+] [6
 
 ]
 \openout2 = `capitolo1.aux'.
@@ -315,63 +320,342 @@ Capitolo 1.
 
 Underfull \vbox (badness 1661) has occurred while \output is active []
 
- [5
+ [7
 
 
 
 ])
-[6]
+[8]
 \openout2 = `capitolo2.aux'.
 
  (./capitolo2.tex
 Capitolo 2.
 
-LaTeX Warning: Citation `marco02bud' on page VII undefined on input line 18.
+LaTeX Warning: Citation `marco02bud' on page IX undefined on input line 18.
 
-) [7
+) [9
 
 
 
 ]
 \openout2 = `capitolo3.aux'.
 
- (./capitolo3.tex [8
-
+ (./capitolo3.tex [10
 
 
 ]
 Capitolo 3.
-) [9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 21.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
+
+
+./capitolo3.tex:21: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 \noindent Reading ChloÃ© Arsonâ€
+                                     ™s presentation on bio-inspired geomech...
+
+? R
+OK, entering \nonstopmode...
+
+./capitolo3.tex:21: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 \noindent Reading ChloÃ© Arsonâ€™
+                                      s presentation on bio-inspired geomech...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:28: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 a key role in root growth. Prof. Arsonâ€
+                                             ™s experiment consisted in grow...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:28: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 a key role in root growth. Prof. Arsonâ€™
+                                              s experiment consisted in grow...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:36: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 of root growth models. Prof. Pierretâ€
+                                           ™s article stresses the complex r...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:36: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 of root growth models. Prof. Pierretâ€™
+                                            s article stresses the complex r...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:41: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 plantâ€
+            ™s impact on its environment (soil). Interest for root systems a...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:41: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 plantâ€™
+             s impact on its environment (soil). Interest for root systems a...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:52: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 Lionel Dupuyâ€
+                   ™s article describes the evolution of root growth models....
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:52: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.52 Lionel Dupuyâ€™
+                    s article describes the evolution of root growth models....
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:72: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 ...ost interesting articles is Atsushi Teroâ€
+                                                  ™s "Rules for Biologically...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:72: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.72 ...st interesting articles is Atsushi Teroâ€™
+                                                  s "Rules for Biologically ...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:82: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.82 ... mountains(illumination reduces physarumâ€
+                                                  ™s growth). The
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:82: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.82 ...mountains(illumination reduces physarumâ€™
+                                                  s growth). The
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:85: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 Physarumâ€
+               ™s behavior. The principle of the model is that tube thicknes...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:85: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 Physarumâ€™
+                s behavior. The principle of the model is that tube thicknes...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:87: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87 to its decay. As shown by Prof. Arsonsâ€
+                                             ™ paper "Bio-inspired fluid ext...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./capitolo3.tex:87: Package inputenc Error: Keyboard character used is undefine
+d
+(inputenc)                in inputencoding `latin1'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87 to its decay. As shown by Prof. Arsonsâ€™
+                                               paper "Bio-inspired fluid ext...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+[11
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12])
+[13]
 \openout2 = `capitolo4.aux'.
 
- (./capitolo4.tex [10
+ (./capitolo4.tex [14
 
 
 
 ]
 Capitolo 4.
-) [11]
+) [15]
 \openout2 = `capitolo5.aux'.
 
- (./capitolo5.tex [12
+ (./capitolo5.tex [16
 
 
 
 ]
 Capitolo 5.
-) [13]
+) [17]
 \openout2 = `capitolo6.aux'.
 
- (./capitolo6.tex [14
+ (./capitolo6.tex [18
 
 
 
 ]
 Capitolo 6.
-) [15]
+) [19]
 \openout2 = `capitolo7.aux'.
 
- (./capitolo7.tex [16
+ (./capitolo7.tex [20
 
 
 
@@ -380,14 +664,14 @@ Capitolo 7.
 )
 Underfull \vbox (badness 3364) has occurred while \output is active []
 
- [17]
-[18]
+ [21]
+[22]
 No file tesi.bbl.
 \openout2 = `appendiceA.aux'.
 
 (./appendiceA.tex
 Appendice A.
-) [19
+) [23
 
 
 
@@ -402,13 +686,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[20
+[24
 
 
 
 ]
 Appendice B.
-) [21] (./tesi.aux (./frontespizio.aux) (./dedica.aux) (./abstract.aux)
+) [25] (./tesi.aux (./frontespizio.aux) (./dedica.aux) (./abstract.aux)
 (./Acknowledgements.aux) (./capitolo1.aux) (./capitolo2.aux) (./capitolo3.aux)
 (./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux)
 (./appendiceA.aux) (./appendiceB.aux))
@@ -420,10 +704,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 3996 strings out of 492995
- 54954 string characters out of 6132704
- 125131 words of memory out of 5000000
- 7438 multiletter control sequences out of 15000+600000
+ 4056 strings out of 492995
+ 55847 string characters out of 6132704
+ 141676 words of memory out of 5000000
+ 7467 multiletter control sequences out of 15000+600000
  14206 words of font info for 53 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  36i,11n,43p,743b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -433,12 +717,14 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/lo
 cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on tesi.pdf (25 pages, 125858 bytes).
+/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
+Output written on tesi.pdf (29 pages, 150547 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 137 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
