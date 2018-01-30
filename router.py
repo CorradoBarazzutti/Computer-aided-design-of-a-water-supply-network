@@ -33,9 +33,8 @@ class Router(object):
 
     def __init__(self, topo_file=None, building_file=None):
         # self.read_shp(topo_file, point_file)
-        # self.compute_source_matrix()
-        self.read_shp_bilding(building_file)
-
+        # self.read_shp_bilding(building_file)
+        self.read_vtk(topo_file)
     # ----------------------------------------------------------------------------
     # -- CLASS ATTRIBUTES
     # ----------------------------------------------------------------------------
@@ -193,12 +192,33 @@ class Router(object):
 
         w = shapefile.Writer(shapeType=3)
         w.field("name", "C")
-        
+
         for edge in self.acqueduct.edges():
             line = [edge[0], edge[1]]
             w.line(parts=[line])
             w.record('line')
         w.save('acqueduct')
+
+    def write2vtk(self, G):
+
+        # import sys
+        # sys.path = ['..'] + sys.path
+        import pyvtk
+
+        points = [list(node) for node, data in G.nodes(data=True)]
+        line = []
+        for edge in G.edges():
+            for i, node in enumerate(G.nodes()):
+                if node == edge[0]:
+                    n1 = i
+            for i, node in enumerate(G.nodes()):
+                if node == edge[1]:
+                    n2 = i
+            line.append([n1,n2])
+
+        print line
+        vtk = pyvtk.VtkData(pyvtk.UnstructuredGrid(points, line=line))
+        vtk.tofile('example1', 'ascii')
 
     def add_node_unique(self, new_node, new_attributes):
         """
@@ -212,7 +232,7 @@ class Router(object):
         return new_node
 
     def read_vtk(self, file_name):
-
+        import numpy as np
         try:
             from mesh import Mesh
         except ImportError:
@@ -263,11 +283,24 @@ class Router(object):
             return [seq[i:i+2] for i in range(len(seq)-2)] + \
                 [[seq[0], seq[len(seq)-1]]]
 
+        datas = np.asarray([data['pos']
+                            for _, data in self.graph.nodes(data=True)])
+
+        def distance3D(u, v, datas):
+            xi = datas[u][0]
+            yi = datas[u][1]
+            zi = datas[u][2]
+            xj = datas[v][0]
+            yj = datas[v][1]
+            zj = datas[v][2]
+            return math.sqrt((xi-xj)*(xi-xj) +
+                             (yi-yj)*(yi-yj) + (zi-zj)*(zi-zj))
+
         # add edges to the graph
         for cell in chuncker(reader.elem2node, reader.p_elem2node):
             for u, v in pairwise(cell):
                 if u not in self.graph[v]:
-                    self.graph.add_edge(u, v, weight=self.distance3D(u, v))
+                    self.graph.add_edge(u, v, weight=distance3D(u, v, datas))
 
     def distance(self, nodei, nodej):
         xi = nodei[0]
@@ -533,18 +566,83 @@ class Router(object):
             dist_graph = nx.minimum_spanning_tree(dist_graph, weight='dist')
             self.acqueduct.add_edges_from(dist_graph.edges())
 
-        # coord = {elem[0]: [elem[0][0], elem[0][1]] for elem in self.acqueduct.nodes(data=True)}
-        # nx.draw_networkx_edges(self.acqueduct, pos=coord)
-        
+    def route_vesuvio(self, n1, n2):
+        try:
+            import shapefile
+        except ImportError:
+            raise ImportError("read_shp requires pyshp")
+        # route
+        path = self.shortest_path(n1, n2)
+
+        # turn path into acqueduct graph
+        datas = [data['pos'] for _, data in self.graph.nodes(data=True)]
+        path_coord = [tuple(datas[node]) for node in path]
+        path_edges = [path_coord[i:i + 2] for i in range(len(path_coord) - 2)]
+        self.acqueduct.add_edges_from(path_edges)
+
+        # write shp
+        def write2shape():
+            w = shapefile.Writer(shapeType=3)
+            w.field("name", "C")
+            line = path_edges
+            w.line(parts=line)
+            w.record('path')
+            w.save('path')
+
+def render_vtk(file_name):
+
+    import vtk
+
+    # Read the source file.
+    reader = vtk.vtkUnstructuredGridReader()
+    reader.SetFileName(file_name)
+    reader.Update()  # Needed because of GetScalarRange
+    output = reader.GetOutput()
+    scalar_range = output.GetScalarRange()
+
+    # Create the mapper that corresponds the objects of the vtk.vtk file
+    # into graphics elements
+    mapper = vtk.vtkDataSetMapper()
+    mapper.SetInputData(output)
+    mapper.SetScalarRange(scalar_range)
+
+    # Create the Actor
+    actor = vtk.vtkActor()
+    actor.SetMapper(mapper)
+
+    # Create the Renderer
+    renderer = vtk.vtkRenderer()
+    renderer.AddActor(actor)
+    renderer.SetBackground(1, 1, 1)  # Set background to white
+
+    # Create the RendererWindow
+    renderer_window = vtk.vtkRenderWindow()
+    renderer_window.AddRenderer(renderer)
+
+    # Create the RendererWindowInteractor and display the vtk_file
+    interactor = vtk.vtkRenderWindowInteractor()
+    interactor.SetRenderWindow(renderer_window)
+    interactor.Initialize()
+    interactor.Start()
+
+def vesuvio_example():
+    router = Router(topo_file="vtk/Vesuvio")
+    router.route_vesuvio(37183, 34637)
+    # write to vtk
+    router.write2vtk(router.acqueduct)
+    # render_vtk("vtk/Vesuvio")
+
+def paesi_example():
+    router = Router(building_file="paesi/paesi")
+    router.clusters(router.graph)
+
+vesuvio_example()
 # National__Hydrography__Dataset_NHD_Points_Medium_Resolution/National__Hydrography__Dataset_NHD_Points_Medium_Resolution
 # National__Hydrography__Dataset_NHD_Lines_Medium_Resolution/National__Hydrography__Dataset_NHD_Lines_Medium_Resolution
 # Railroads/Railroads
 # Routesnaples/routesnaples
 # "shapefiles/Domain", "shapefiles/pointspoly"
 # "shapeline/shapeline", "shapeline/points"
-router = Router(building_file="paesi/paesi")
-router.clusters(router.graph)
-
 # nx.draw_networkx(router.sinksource_graph, pos=router.coord2D(), with_labels=0)
 # router.design_minimal_aqueduct()
 # router.display_path(path)
