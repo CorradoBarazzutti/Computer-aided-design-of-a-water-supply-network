@@ -4,4 +4,50 @@
 
 
 
-\noindent Si mostra il progetto dell'architettura del sistema con i vari moduli.
+\noindent Geographical Data
+The overall idea is to take maps and automatically trace an aqueduct on it, in order to
+do that, we start from the map's shapefile. Shapefile is a popular geospatial vector data
+format for geographic information systems software. It spatially describes geometries:
+points, polylines and polygons. These, for example, could represent water wells, roads or
+buildings.
+As those primitive geometrical data types come without any attributes to specify what
+they represent, a table of records to store attributes is provided. Websites like osm2shp
+or Geofabrik provide an immense database of shapefiles available for download. Moreover
+desktop software like Qgis provides shapefile editing tools. This way we can both download
+real-world maps and create our own.
+Then through Qgis' meshing plug-in Gmsh we can mesh the surfaces of the map and export
+the result in vtk format as seen in Fig. 3.1 However, shapefiles seldom have information
+on the elevation (that is the Z coordinate) of the objects they represent. It is therefore
+necessary to use another format: the Digital Elevation Model (DEM). Digital Elevation
+Models provide this missing piece of information that can subsequently be added to the
+shapefile's attribute table.
+DEMs can be converted into meshes thanks to software such as SAGA. Meshes saved as
+vtk files can easily be used in Python.
+Indeed, vtk files are a simple and efficient way to describe mesh-like data structures. The
+vtk file boils down to those two elements: points and cells. Points have 3D coordinates
+while cells are surfaces, expressed by the points delimiting them. Point and cell data
+(scalar or vector) can also be assigned. We have therefore a file representing a graph, a
+classical mathematical model on which many operations can be performed: routing and
+clustering among others.
+We now come to our software. Python has been chosen as easy to use, widespread programming
+language, good for rapid prototyping and rich in package and libraries. The
+problem is divided in two main tasks: modelling the data structure that represents the
+graph and the algorithmic part, the aqueduct design.
+
+Data Structure
+
+To implement the data-structure we chose to use NetworkX. NetworkX is a Python package
+for the creation, manipulation, and study of complex networks. The package provides
+classes for graph objects, generators to create standard graphs, IO routines for reading in
+existing datasets, algorithms to analyze the resulting networks and some drawing tools.
+The software takes as input two shape files: the first describes the topology, the seconds
+the source and sinks. The topology is either a mesh, representing the geography of the
+region or a polyline with just the roads net of the region. The roads are particularly
+important because aqueducts are built along roads for logistical reasons. The second file
+is a polygon file containing the buildings that should be served by the aqueduct and the
+water sources.
+From these data, a first graph is obtained. The graph has as nodes the points described
+in topology file plus the buildings. The coordinates of bindings-representing nodes are the
+average of the coordinates of also have the metadata associated. The edges are the edges
+described in the topology file plus the edges connecting the building to the nearest node
+of the network in order to obtain a connected graph.

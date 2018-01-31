@@ -4,4 +4,27 @@
 
 
 
-\noindent In questa sezione si spiega come \`e stato affrontato il problema concettualmente, la soluzione logica che ne \`e seguita senza la documentazione.
+\noindent Running classical algorithms such a brute-force TSP or a minimum spanning tree to link
+the nodes in the sink-source graph would not be feasible for computational reasons. To
+break down the computational complexity of this operation we divide the aqueduct system
+in two layers: adduction and distribution nets. The adduction layer brings water from the
+source to the inhabited areas whereas the distribution segment is in charge of the "last
+kilometer" distribution. This two layer solution is commonly used in aqueduct design and
+network design in general: internet is an example. The advantages of this solutions are
+not only computational. Once the two layers are identified we can use different strategies
+to connect the nodes.
+To find the inhabited areas we run the mean shift clustering algorithm on the sink-source
+graph. The implementation we use is the one in scikit-learn. Scikit-learn is a well-known
+machine learning library for Python and it features various classification, regression and
+clustering algorithms. After this operation sink nodes are dived into clusters.
+This operation is broken down in two tasks. First, find all the paths connecting sinks
+and sources. Let us consider the set of sinks and sources, this is a sub-set of nodes of the
+mesh graph. On this set of nodes we create the complete graph. Edges of this new graph
+are paths on the original mesh, so are subgraph themselves, and are find with an optimal
+approach, such as Floyd-Warshal algorithm. On this subgraph, we solve the TSP with a
+Hopfield neural network. This gives shortest net connecting all sinks and sources.
+The results can than be printed using NetworkX draw tools or the Visualization Toolkit.
+The Visualization Toolkit (VTK) is an open-source software system for 3D computer
+graphics, image processing, and visualization. VTK interfaces with python and packages
+such PyVTK provides tools for manipulating VTK, for example reading and writing
+operations.
