@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  30 JAN 2018 02:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  6 FEB 2018 11:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -721,25 +721,46 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Chapter 4.
-) [13]
+
+./capitolo4.tex:31: LaTeX Error: \include cannot be nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 \include{work_flow}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+Underfull \vbox (badness 1436) has occurred while \output is active []
+
+ [13]
+[14]
 \openout2 = `capitolo5.aux'.
 
- (./capitolo5.tex [14
-
-
-
-]
+ (./capitolo5.tex
 Chapter 5.
-) [15]
+
+Underfull \vbox (badness 4132) has occurred while \output is active []
+
+ [15
+
+
+
+])
+[16]
 \openout2 = `capitolo6.aux'.
 
- (./capitolo6.tex [16
+ (./capitolo6.tex
+Chapter 6.
+) [17
 
 
 
 ]
-Chapter 6.
-) [17]
 \openout2 = `capitolo7.aux'.
 
  (./capitolo7.tex [18
@@ -798,7 +819,7 @@ Here is how much of TeX's memory you used:
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on tesi.pdf (27 pages, 104045 bytes).
+Output written on tesi.pdf (27 pages, 108949 bytes).
 PDF statistics:
  115 PDF objects out of 1000 (max. 8388607)
  79 compressed objects within 1 object stream
