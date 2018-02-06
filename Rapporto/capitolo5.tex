@@ -3,8 +3,8 @@
 \thispagestyle{empty}
 
 
-
-\noindent Geographical Data
+\section {Geographical Data}
+\label {Geographical_technical}
 The overall idea is to take maps and automatically trace an aqueduct on it, in order to
 do that, we start from the map's shapefile. Shapefile is a popular geospatial vector data
 format for geographic information systems software. It spatially describes geometries:
@@ -34,8 +34,8 @@ language, good for rapid prototyping and rich in package and libraries. The
 problem is divided in two main tasks: modelling the data structure that represents the
 graph and the algorithmic part, the aqueduct design.
 
-Data Structure
-
+\section{Data Structure}
+\label{data_structure_technical}
 To implement the data-structure we chose to use NetworkX. NetworkX is a Python package
 for the creation, manipulation, and study of complex networks. The package provides
 classes for graph objects, generators to create standard graphs, IO routines for reading in
@@ -51,3 +51,8 @@ in topology file plus the buildings. The coordinates of bindings-representing no
 average of the coordinates of also have the metadata associated. The edges are the edges
 described in the topology file plus the edges connecting the building to the nearest node
 of the network in order to obtain a connected graph.
+
+\section {Clustering} 
+\label{Clustering_thecnical}
+
+\label{Routing_thecnical}
