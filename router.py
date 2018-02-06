@@ -627,7 +627,7 @@ def render_vtk(file_name):
 
 def vesuvio_example():
     router = Router(topo_file="vtk/Vesuvio")
-    router.route_vesuvio(37183, 34637)
+    router.route_vesuvio(32729, 31991)
     # write to vtk
     router.write2vtk(router.acqueduct)
     # render_vtk("vtk/Vesuvio")

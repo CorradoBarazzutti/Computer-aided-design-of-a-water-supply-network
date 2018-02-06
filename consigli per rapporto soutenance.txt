@@ -1,9 +1,9 @@
-aggiungere step - caso di verifica 
+﻿aggiungere step - caso di verifica 
 
 
 démarche
 spiegare il procedimento (flow chart)
-
+ciao sono pere
 
 
 data

@@ -1,0 +1,10 @@
+cd /Users/giovannicognetti/Desktop/Project\ inno/project-P5C006
+git branch
+<controlli di essere sul locmod, non sul master>
+git add -A
+git commit -m "powell1"
+git checkout master
+git fetch
+git pull
+git merge <locmod>
+git checkout -b locmod
