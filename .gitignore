@@ -154,6 +154,7 @@ pyvenv.cfg
 [Ss]cripts
 [Tt]cl
 pip-selfcheck.json
+projet_inno/
 
 
 # End of https://www.gitignore.io/api/venv,macos,python,virtualenv
