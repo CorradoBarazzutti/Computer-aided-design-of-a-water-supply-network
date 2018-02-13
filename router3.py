@@ -31,9 +31,24 @@ class Router(object):
     # ----------------------------------------------------------------------------
 
     def __init__(self, topo_file=None, building_file=None):
-        # self.read_shp(topo_file, point_file)
-        # self.read_shp_bilding(building_file)
-        self.read_vtk(topo_file)
+
+        if topo_file != None and building_file != None:
+            try:
+                # [TODO] this function does not read building but single points
+                self.read_shp(topo_file, building_file)
+            except Exception as e:
+                raise e
+        elif building_file != None:
+            try:
+                self.read_shp_bilding(building_file)
+            except Exception as e:
+                raise e
+        elif topo_file != None:
+            try:
+                self.read_vtk(topo_file)
+            except Exception as e:
+                raise e
+
     # ----------------------------------------------------------------------------
     # -- CLASS ATTRIBUTES
     # ----------------------------------------------------------------------------
@@ -63,7 +78,7 @@ class Router(object):
                 center_coord = self.avg(cell)
                 attributes = dict(zip(fields, shapeRecs.record))
                 attributes['pos'] = center_coord
-                self.graph.add_node(center_coord, attributes)
+                self.graph.add_node(center_coord)
 
     # chuncker: see commpresed row storage
     def row_chuncker(self, array, p_array):
@@ -183,20 +198,31 @@ class Router(object):
                 data.update(nodes2attributes[node])
             # nx.set_node_attributes(self.graph, nodes2attributes)
 
-    def write2shp(self):
+    def write2shp(self, G, filename):
         try:
             import shapefile
         except ImportError:
             raise ImportError("read_shp requires pyshp")
 
         w = shapefile.Writer(shapeType=3)
-        w.field("name", "C")
+        #w.field("DC_ID", "LENGHT", "NODE1", "NODE2", "DIAMETRE", "ROUGHNESS", "MINORLOSS", "STATUS", "C")
+        
+        w.fields = [("DeletionFlag", "C", 1, 0), ["DC_ID", "N", 9, 0],
+            ["LENGHT", "N", 18, 5], ["NODE1", "N", 9, 1], ["NODE2", "N", 9, 0],
+            ["DIAMETRE", "N", 18, 5], ["ROUGHNESS", "N", 18, 5], ["MINORLOSS", "N", 18, 5],
+            ["STATUS", "C", 1, 0]]
 
-        for edge in self.acqueduct.edges():
+        i = 0
+        lenghts = nx.get_edge_attributes(G, 'dist')
+        print(lenghts)
+        for edge in lenghts:
             line = [edge[0], edge[1]]
             w.line(parts=[line])
-            w.record('line')
-        w.save('acqueduct')
+            print (edge[0], edge[1])
+            w.record(i, lenghts[(edge[0], edge[1])],
+                     1, 2, 100, 0.1, 0, "1")
+            i+=1
+        w.save(filename)
 
     def write2vtk(self, G):
 
@@ -472,20 +498,35 @@ class Router(object):
         for n1 in G.nodes():
             for n2 in G.nodes():
                 if n1 != n2:
-                    G.add_edge(n1, n2, {'path': [n1, n2], 'dist': self.distance(n1,n2)})
+                    # attributes = {'path': [n1, n2], 'dist': self.distance(n1,n2)}
+                    G.add_edge(n1, n2)
+                    G.edges[n1, n2]['dist'] = self.distance(n1,n2)
+                    G.edges[n1, n2]['path'] = [n1, n2]
 
-    def gabriel_graph(self, G):
+    def mesh_graph(self, G, weight):
+        """complexity (len(G.nodes))^3"""
+        distances = nx.get_edge_attributes(G, weight)
         # condition to create the gabriel relative neighbour graph
-        def neighbors(p, q, G):
+        def neighbors(p, q):
             for r in G.nodes:
-                if max(distance2D(p,r), distance2D(q,r)) < distance2D(p,q):
-                    return False
+                if r != q and r != p:
+                    def dist(n1, n2):
+                        if (n1, n2) in distances:
+                            return distances[(n1,n2)]
+                        else:
+                            return distances[(n2,n1)]
+                    if max(dist(p,r), dist(q,r)) < dist(p,q):
+                        return False
             return True
+
         # connect graph
+        gabriel_graph = nx.Graph()
         for n1 in G.nodes():
             for n2 in G.nodes():
-                if neighbors(n1, n2, G):
-                    G.add_edge(n1, n2)
+                if n1 != n2:
+                    if neighbors(n1, n2):
+                        gabriel_graph.add_edge(n1, n2)
+        return gabriel_graph
 
     def graphToEdgeMatrix(self, G):
         node_dict = {node: index for index, node in enumerate(G)}
@@ -535,14 +576,16 @@ class Router(object):
         for node in cluster_centers:
             adduction.add_node(node)
         self.complete_graph(adduction)
-        adduction = nx.minimum_spanning_tree(adduction, weight='dist')
+        adduction = self.mesh_graph(adduction, weight='dist')
+        nx.draw(adduction)
         # coord = {elem[0]: [elem[0][0], elem[0][1]] for elem in adduction.nodes(data=True)}
         # nx.draw_networkx(adduction, pos=coord, label=False)
+        self.write2shp(adduction, "adduction_network")
         self.acqueduct.add_edges_from(adduction.edges())
 
         # --- DISTRIBUTION ---
         # add label info to the graph
-        nx.set_node_attributes(G, 'label', labels)
+        nx.set_node_attributes(G, labels, 'label')
         # initialize distribution graphs
         distribution = [nx.Graph() for cluster in cluster_centers]
         for node in labels:
@@ -622,6 +665,34 @@ def render_vtk(file_name):
     interactor.Initialize()
     interactor.Start()
 
+def tsp_example():
+    return 0
+
+def clustering_example():
+    return 0
+
+def template_clustering(path_sample, eps, minpts, amount_clusters=None, visualize=True, ccore=False):
+    sample = read_sample(path_sample);
+    
+    optics_instance = optics(sample, eps, minpts, amount_clusters, ccore);
+    (ticks, _) = timedcall(optics_instance.process);
+    
+    print("Sample: ", path_sample, "\t\tExecution time: ", ticks, "\n");
+    
+    if (visualize is True):
+        clusters = optics_instance.get_clusters();
+        noise = optics_instance.get_noise();
+    
+        visualizer = cluster_visualizer();
+        visualizer.append_clusters(clusters, sample);
+        visualizer.append_cluster(noise, sample, marker = 'x');
+        visualizer.show();
+    
+        ordering = optics_instance.get_ordering();
+        analyser = ordering_analyser(ordering);
+        
+        ordering_visualizer.show_ordering_diagram(analyser, amount_clusters);   
+
 def vesuvio_example():
     router = Router(topo_file="vtk/Vesuvio")
     router.route_vesuvio(32729, 31991)
@@ -630,10 +701,23 @@ def vesuvio_example():
     # render_vtk("vtk/Vesuvio")
 
 def paesi_example():
-    router = Router(building_file="paesi/paesi")
+    router = Router(building_file="geographycal_data/paesi_elev/paesi_elev")
     router.clusters(router.graph)
+    router.write2shp(router.acqueduct, "acqueduct1")
 
-vesuvio_example()
+def cluster_simple_example():
+    import random;
+
+    from pyclustering.cluster import cluster_visualizer;
+    from pyclustering.cluster.optics import optics, ordering_analyser, ordering_visualizer;
+
+    from pyclustering.utils import read_sample, timedcall;
+
+    from pyclustering.samples.definitions import SIMPLE_SAMPLES, FCPS_SAMPLES;
+
+    template_clustering(SIMPLE_SAMPLES.SAMPLE_SIMPLE1, 0.5, 3);
+
+paesi_example()
 # National__Hydrography__Dataset_NHD_Points_Medium_Resolution/National__Hydrography__Dataset_NHD_Points_Medium_Resolution
 # National__Hydrography__Dataset_NHD_Lines_Medium_Resolution/National__Hydrography__Dataset_NHD_Lines_Medium_Resolution
 # Railroads/Railroads
