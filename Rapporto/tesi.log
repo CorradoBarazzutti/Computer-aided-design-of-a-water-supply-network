@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  6 FEB 2018 11:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  6 FEB 2018 17:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -544,18 +544,18 @@ Now handling font encoding U ...
 (./appendiceB.aux))
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \openout2 = `frontespizio.aux'.
@@ -722,54 +722,37 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Chapter 4.
 
-./capitolo4.tex:31: LaTeX Error: \include cannot be nested.
+LaTeX Warning: Reference `marcellinoflow' on page XIII undefined on input line 
+20.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 \include{work_flow}
-                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
-Underfull \vbox (badness 1436) has occurred while \output is active []
-
- [13]
-[14]
+[13] [14]) [15]
 \openout2 = `capitolo5.aux'.
 
- (./capitolo5.tex
+ (./capitolo5.tex [16
+
+
+
+]
 Chapter 5.
-
-Underfull \vbox (badness 4132) has occurred while \output is active []
-
- [15
-
-
-
-])
-[16]
+[17]) [18]
 \openout2 = `capitolo6.aux'.
 
  (./capitolo6.tex
 Chapter 6.
-) [17
+) [19
 
 
 
 ]
 \openout2 = `capitolo7.aux'.
 
- (./capitolo7.tex [18
+ (./capitolo7.tex [20
 
 
 
 ]
 Chapter 7.
-) [19] [20
+) [21] [22
 
 
 ]
@@ -778,7 +761,7 @@ No file tesi.bbl.
 
 (./appendiceA.tex
 Appendix A.
-) [21
+) [23
 
 
 ]
@@ -791,13 +774,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[22
+[24
 
 
 
 ]
 Appendix B.
-) [23] (./tesi.aux (./frontespizio.aux) (./dedica.aux) (./abstract.aux)
+) [25] (./tesi.aux (./frontespizio.aux) (./dedica.aux) (./abstract.aux)
 (./Acknowledgements.aux) (./capitolo1.aux) (./capitolo2.aux) (./capitolo3.aux)
 (./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux)
 (./appendiceA.aux) (./appendiceB.aux))
@@ -806,10 +789,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3916 strings out of 492995
- 53062 string characters out of 6132704
- 131597 words of memory out of 5000000
- 7331 multiletter control sequences out of 15000+600000
+ 3921 strings out of 492995
+ 53169 string characters out of 6132704
+ 131653 words of memory out of 5000000
+ 7336 multiletter control sequences out of 15000+600000
  11671 words of font info for 43 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  36i,11n,43p,814b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -819,10 +802,10 @@ Here is how much of TeX's memory you used:
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
 sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on tesi.pdf (27 pages, 108949 bytes).
+Output written on tesi.pdf (29 pages, 112482 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
+ 121 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
