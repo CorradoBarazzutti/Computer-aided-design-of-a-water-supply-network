@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  13 FEB 2018 19:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  13 FEB 2018 22:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -840,17 +840,26 @@ my insertion and my current dilemma will both disappear.
 
 ]
 Capitolo 4.
-
-LaTeX Warning: Reference `work_flow' on page 17 undefined on input line 12.
-
 [17]
 
-LaTeX Warning: Reference `marcellinoflow' on page 18 undefined on input line 17
-.
+./capitolo4.tex:28: LaTeX Error: \include cannot be nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.28 \include{work_flow}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Reference `work_flow' on page 18 undefined on input line 31.
 
 [18]
 
-./capitolo4.tex:43: Package inputenc Error: Keyboard character used is undefine
+./capitolo4.tex:53: Package inputenc Error: Keyboard character used is undefine
 d
 (inputenc)                in inputencoding `latin1'.
 
@@ -858,14 +867,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.43 ... water systems connecting the sinks. Letâ€
+l.53 ... water systems connecting the sinks. Letâ€
                                                   ™s first consider the dist...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./capitolo4.tex:43: Package inputenc Error: Keyboard character used is undefine
+./capitolo4.tex:53: Package inputenc Error: Keyboard character used is undefine
 d
 (inputenc)                in inputencoding `latin1'.
 
@@ -873,7 +882,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.43 ...water systems connecting the sinks. Letâ€™
+l.53 ...water systems connecting the sinks. Letâ€™
                                                   s first consider the distr...
 
 You need to provide a definition with \DeclareInputText 
@@ -888,7 +897,34 @@ or \DeclareInputMath before using this key.
 
 ]
 Capitolo 5.
-[21]) [22]
+[21]
+
+./capitolo5.tex:66: LaTeX Error: \include cannot be nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.66 \include {shortest_path}
+                             
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./capitolo5.tex:69: LaTeX Error: \include cannot be nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 \include {TSP}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+) [22]
 \openout2 = `capitolo6.aux'.
 
  (./capitolo6.tex
@@ -974,7 +1010,133 @@ or  <return>  to continue without it.
 
 ]
 Appendice E.
-) [35]
+./appendiceE.tex:8: Missing $ inserted.
+<inserted text> 
+                $
+l.8 ... and rendered. Calling the command vesuvio_
+                                                  example() in the python sh...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./appendiceE.tex:9: Missing $ inserted.
+<inserted text> 
+                $
+l.9 
+    
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (34.43114pt too wide) in paragraph at lines 8--9
+\OT1/cmr/m/n/10.95 com-mand vesuvio$[]\OML/cmm/m/it/10.95 xample\OT1/cmr/m/n/10
+.95 ()\OML/cmm/m/it/10.95 inthepythonshellwillexecutethefollowinginstructions$ 
+
+ []
+
+./appendiceE.tex:10: Undefined control sequence.
+l.10 \code
+          {	router = Router(topo_file="vtk/Vesuvio")
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./appendiceE.tex:10: Missing $ inserted.
+<inserted text> 
+                $
+l.10 \code{	router = Router(topo_
+                                 file="vtk/Vesuvio")
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./appendiceE.tex:14: Extra }, or forgotten $.
+l.14 	}
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./appendiceE.tex:15: Missing $ inserted.
+<inserted text> 
+                $
+l.15 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (313.35368pt too wide) in paragraph at lines 10--15
+[]\OT1/cmr/m/n/10.95 router = Router(topo$[]\OML/cmm/m/it/10.95 ile \OT1/cmr/m/
+n/10.95 = "\OML/cmm/m/it/10.95 vtk=Vesuvio\OT1/cmr/m/n/10.95 ")\OML/cmm/m/it/10
+.95 router:route[]esuvio\OT1/cmr/m/n/10.95 (32729\OML/cmm/m/it/10.95 ; \OT1/cmr
+/m/n/10.95 31991)\OML/cmm/m/it/10.95 router:write\OT1/cmr/m/n/10.95 2\OML/cmm/m
+/it/10.95 vtk\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 router:acqueduct\OT1/cmr/m
+/n/10.95 )\OML/cmm/m/it/10.95 render[]tk\OT1/cmr/m/n/10.95 ("\OML/cmm/m/it/10.9
+5 vtk=Vesuvio\OT1/cmr/m/n/10.95 ")$ 
+ []
+
+
+./appendiceE.tex:16: LaTeX Error: \include cannot be nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 ...is shown in figure \include{shortest_path}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./appendiceE.tex:23: Missing $ inserted.
+<inserted text> 
+                $
+l.23 Executing the command paesi_
+                                 example() will reproduce the case studied i...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+LaTeX Warning: Reference `Routing' on page 35 undefined on input line 23.
+
+
+./appendiceE.tex:23: LaTeX Error: \include cannot be nested.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 ...ildings position \include{paesi_buildings}
+                                                   are loaded. Then clusters...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+/Users/giovannicognetti/Desktop/Project_inno/project-P5C006/Rapporto/tesi.tex:7
+9: Missing $ inserted.
+<inserted text> 
+                $
+l.79     \include{appendiceE}
+                             
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (914.96237pt too wide) in paragraph at lines 23--79
+\OT1/cmr/m/n/10.95 Executing the com-mand paesi$[]\OML/cmm/m/it/10.95 xample\OT
+1/cmr/m/n/10.95 ()\OML/cmm/m/it/10.95 willreproducethecasestudiedin[]:Thefollow
+inginstructionsareexecuted:Ashapefilerepresentingthebuildingspositionareloaded:
+Thenclustersandpathsarecomputedasabove:Theresultisexportedasshapefile; named\OT
+1/cmr/m/n/10.95 "\OML/cmm/m/it/10.95 aqueduct\OT1/cmr/m/n/10.95 "\OML/cmm/m/it/
+10.95 :$ 
+ []
+
+[35]
 \openout2 = `appendiceF.aux'.
 
  (./appendiceF.tex [36
@@ -994,27 +1156,34 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
- ) 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(\end occurred inside a group at level 1)
+
+### simple group (level 1) entered at line 10 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 5426 strings out of 492995
- 75656 string characters out of 6132704
+ 5430 strings out of 492995
+ 75687 string characters out of 6132704
  164815 words of memory out of 5000000
- 8803 multiletter control sequences out of 15000+600000
- 11671 words of font info for 43 fonts, out of 8000000 for 9000
+ 8805 multiletter control sequences out of 15000+600000
+ 12292 words of font info for 45 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  36i,11n,43p,878b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on tesi.pdf (41 pages, 164649 bytes).
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pf
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on tesi.pdf (41 pages, 169298 bytes).
 PDF statistics:
  182 PDF objects out of 1000 (max. 8388607)
  126 compressed objects within 2 object streams

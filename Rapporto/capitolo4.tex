@@ -2,9 +2,7 @@
 \label{capitolo4}
 \thispagestyle{empty}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 \section{Problem staterment and modelisation}
 The overall idea of our software solution is to connect water sources and consumers to a network of 
 pipes in the most efficent way possible. Indeed the definition of the best net is a key problem. 
@@ -27,33 +25,14 @@ The overall idea of our software solution is to connect water sources and consum
 \hfill For our first approach, we decided to consider only the pipeline length so that we simplify aqueduct design to a classical routing problem. On this base, we will then be able to add complexity.
 \hfill We can now more formally define our problem. Being a topography a graph representing the meshed surface of a region, the problem of designing an aqueduct as the one of finding the recovering-graph on the topography graph connecting water consumers and sources. We will use the euclidian metric on a space with tree dimensions.
 
-<<<<<<< HEAD
-
-\section {Data reading}
-=======
 \include{work_flow}
 
 \section{Data reading}
->>>>>>> 8dd11b4d40687fdbdea76ee797dfca1bc124b104
 In \ref {work_flow} is shown to the flow chart of our software. 
 The input is composed of three geographical files: mesh represent the topology of the studied region, source-sinks contains the locations for each water source and consumer (called sink from now on). The last file describes the roads network in the area as the pipes should preferably run along roads for is cheaper to place them. For more information about the geographical data format, please refer to \ref{Geographical_technical}
 Reading those input two graphs can be initialised: the topography and the aqueduct describing graphs. The first is a graph where nodes represent positions and edges the possible transitions between them. Transitions on roads will be preferable. The aqueduct graph is initialised with source and sinks as nodes and no edges. An insight of the data structure we used to represent graph is given in section \ref {data_structure_technical}
 
-<<<<<<< HEAD
-\section{Data reading}
-In \ref{marcellinoflow} is shown to the flow chart of our sofware. 
-The imput is composed of three geografical files: mesh represent the topology of the studied region, 
-source-sinks contains the locations for each water source and consumer (called sink from now on). 
-The last file describes the roads network in the area as the pipes should preferebly run along roads 
-for is cheper to place them. For more informetion about the geographical data format, please refer to
- \ref{Geographical_technical} Reading those input two graphs can be initialized: the topograpy and the 
- aqueduct describings graphs. The first is a graph where nodes represent positions and edges the 
- possible transitions between them. Transitions on roads will be preferrable. The aqueduct graph is 
- initialized with source and sinks as nodes and no edges. An insight of the data structure we used to 
- represent graph is given in section \ref{data_structure_technical}
-=======
-\section{Clustering}
->>>>>>> 8dd11b4d40687fdbdea76ee797dfca1bc124b104
+
 
 \section{Clustering}
 Running classical algorithms such a brute-force TSP or a minimum spanning tree to link
