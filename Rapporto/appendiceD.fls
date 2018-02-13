@@ -4,14 +4,3 @@ INPUT /usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt
 INPUT /Users/giovannicognetti/Desktop/Project_inno/project-P5C006/Rapporto/appendiceD.tex
 OUTPUT appendiceD.log
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmsltt10.tfm
-INPUT appendiceD.aux
-INPUT appendiceD.aux
-OUTPUT appendiceD.aux
-OUTPUT appendiceD.pdf
-INPUT /usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT appendiceD.aux
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
