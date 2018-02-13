@@ -1,0 +1,9 @@
+@article{SH8,
+author = {Tero, Atsushi and Takagi, Seiji and Saigusa, Tetsu and Ito, Kentaro and Bebber, Daniel and Fricker, Mark and Yumiki, Kenji and Kobayashi, Ryo and Nakagaki, Toshiyuki},
+year = {2010},
+month = {01},
+pages = {439-42},
+title = {Rules for Biologically Inspired Adaptive Network Design},
+volume = {327},
+booktitle = {Science (New York, N.Y.)}
+}

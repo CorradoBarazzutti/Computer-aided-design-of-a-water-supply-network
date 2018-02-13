@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  6 FEB 2018 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  13 FEB 2018 18:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/giovannicognetti/Desktop/Project inno/project-P5C006/Rapporto/tesi.te
-x"
-(/Users/giovannicognetti/Desktop/Project inno/project-P5C006/Rapporto/tesi.tex
+**/Users/giovannicognetti/Desktop/Project_inno/project-P5C006/Rapporto/tesi.tex
+
+(/Users/giovannicognetti/Desktop/Project_inno/project-P5C006/Rapporto/tesi.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/report.cls
@@ -205,6 +205,53 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 Package caption Info: rotating package is loaded.
 Package caption Info: subfigure package is loaded.
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count107
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count108
+\lst@gtempboxa=\box31
+\lst@token=\toks24
+\lst@length=\count109
+\lst@currlwidth=\dimen130
+\lst@column=\count110
+\lst@pos=\count111
+\lst@lostspace=\dimen131
+\lst@width=\dimen132
+\lst@newlines=\count112
+\lst@lineno=\count113
+\lst@maxwidth=\dimen133
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count114
+\lst@skipnumbers=\count115
+\lst@framebox=\box32
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2017/05/19 3.10 The Babel package
 
@@ -213,8 +260,8 @@ Language: english 2017/01/24 v3.3q English support from the babel system
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2017/05/19 3.10 Babel common definitions
-\babel@savecnt=\count107
-\U@D=\dimen130
+\babel@savecnt=\count116
+\U@D=\dimen134
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -222,8 +269,8 @@ File: babel.def 2017/05/19 3.10 Babel common definitions
 ))
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks24
-\inpenc@posthook=\toks25
+\inpenc@prehook=\toks25
+\inpenc@posthook=\toks26
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
@@ -541,33 +588,128 @@ Now handling font encoding U ...
 (./frontespizio.aux) (./dedica.aux) (./abstract.aux) (./Acknowledgements.aux)
 (./capitolo1.aux) (./capitolo2.aux) (./capitolo3.aux) (./capitolo4.aux)
 (./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux) (./appendiceA.aux)
-(./appendiceB.aux))
+(./appendiceB.aux) (./appendiceC.aux) (./appendiceD.aux))
 \openout1 = `tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
+
+(/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count117
+\scratchdimen=\dimen135
+\scratchbox=\box33
+\nofMPsegments=\count118
+\nofMParguments=\count119
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen136
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
+\everyMPtoPDFconversion=\toks28
+) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count123
 \openout2 = `frontespizio.aux'.
 
- (./frontespizio.tex
-File: ./pictures/logopm.eps Graphic file (type eps)
- <./pictures/logopm.eps> [1
+
+(./frontespizio.tex <./data/LogoCS.png, id=1, 866.23625pt x 446.66875pt>
+File: ./data/LogoCS.png Graphic file (type png)
+
+<use ./data/LogoCS.png>
+Package pdftex.def Info: ./data/LogoCS.png used on input line 12.
+(pdftex.def)             Requested size: 99.58464pt x 51.34879pt.
+
+./frontespizio.tex:13: Undefined control sequence.
+l.13       \psfig
+                 {file=./data/LogoCS.png,width=3.5cm}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 40.
+
+./frontespizio.tex:40: Extra }, or forgotten \endgroup.
+<recently read> }
+                 
+l.40 ...oardo \\ \textsc{Vaccarino} Marcello\\   }
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+[1
 Non-PDF special ignored!
 
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-Non-PDF special ignored!]) [2
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./data/
+LogoCS.png>]) [2
 
 
 
@@ -582,11 +724,11 @@ Non-PDF special ignored!]) [2
 ]
 \openout2 = `abstract.aux'.
 
- (./abstract.tex) [1
+
+(./abstract.tex) [1
 
 
-]
-[2
+] [2
 
 ]
 \openout2 = `Acknowledgements.aux'.
@@ -603,21 +745,21 @@ Non-PDF special ignored!]) [2
  (./capitolo1.tex
 Chapter 1.
 
-Overfull \hbox (2.0804pt too wide) in paragraph at lines 7--8
+Overfull \hbox (2.0804pt too wide) in paragraph at lines 7--12
 \OT1/cmr/m/n/10.95 L'introduzione deve es-sere atom-ica, quindi non deve con-te
 nere n^^Re sot-tosezioni
  []
 
 
-./capitolo1.tex:10: Package inputenc Error: Unicode char � (U+FFFD)
+./capitolo1.tex:18: Package inputenc Error: Unicode char � (U+FFFD)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.10 ... come \`e stato fatto, delle attivit\`a�
-                                                   sperimentali, dei risulta...
+l.18 attivit\`a�
+                   sperimentali, dei risultati ottenuti con una valutazione ...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -633,7 +775,7 @@ or  <return>  to continue without it.
  (./capitolo2.tex
 Chapter 2.
 
-LaTeX Warning: Citation `marco02bud' on page VII undefined on input line 7.
+LaTeX Warning: Citation `marco02bud' on page 7 undefined on input line 7.
 
 ) [7
 
@@ -663,6 +805,27 @@ or  <return>  to continue without it.
 
 ]
 Chapter 3.
+./capitolo3.tex:7: Missing number, treated as zero.
+<to be read again> 
+                   B
+l.7 \parindent B
+                iologically inspired models can provide interesting insights...
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./capitolo3.tex:7: Illegal unit of measure (pt inserted).
+<to be read again> 
+                   B
+l.7 \parindent Bi
+                 ologically inspired models can provide interesting insights...
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
 
 ./capitolo3.tex:45: Package inputenc Error: Unicode char ´ (U+B4)
 (inputenc)                not set up for use with LaTeX.
@@ -705,54 +868,179 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: Command \textquoteright invalid in math mode on input line 72.
 
-
-Underfull \vbox (badness 4132) has occurred while \output is active []
-
- [9]
+[9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10])
-[11]
+ [10]
+[11] [12] [13]
+
+./capitolo3.tex:134: Package amsmath Error: \begin{aligned} allowed only in mat
+h mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.134         E
+                = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./capitolo3.tex:134: Missing $ inserted.
+<inserted text> 
+                $
+l.134         E
+                = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./capitolo3.tex:135: Undefined control sequence.
+l.135 ...        +\frac{D}{2} \sum_{X}\sum_{Y\neqX
+                                                  }\sum_{j}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./capitolo3.tex:137: Missing $ inserted.
+<inserted text> 
+                $
+l.137         \end{aligned}
+                           
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./capitolo3.tex:145: Missing $ inserted.
+<inserted text> 
+                $
+l.145 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./capitolo3.tex:145: Display math should end with $$.
+<to be read again> 
+                   \par 
+l.145 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+./capitolo3.tex:146: LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.146         \end{equation*}
+                             
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./capitolo3.tex:146: Missing $ inserted.
+<inserted text> 
+                $
+l.146         \end{equation*}
+                             
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./capitolo3.tex:146: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.146         \end{equation*}
+                             
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+
+./capitolo3.tex:151: Package amsmath Error: \begin{aligned} allowed only in mat
+h mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.151 ...   Under the hypothesis \begin{aligned} w
+                                                  _{Xj,Yk}= w_{Yk,Xj} \end{a...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./capitolo3.tex:151: Missing $ inserted.
+<inserted text> 
+                $
+l.151 ...   Under the hypothesis \begin{aligned} w
+                                                  _{Xj,Yk}= w_{Yk,Xj} \end{a...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./capitolo3.tex:151: Missing $ inserted.
+<inserted text> 
+                $
+l.151 ...igned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned}
+                                                   the method can be proved ...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+) [14] [15]
 \openout2 = `capitolo4.aux'.
 
- (./capitolo4.tex [12
+ (./capitolo4.tex [16
 
 
 
 ]
 Chapter 4.
 
-LaTeX Warning: Reference `marcellinoflow' on page XIII undefined on input line 
-20.
+LaTeX Warning: Reference `work_flow' on page 17 undefined on input line 12.
 
-[13] [14]) [15]
+[17]
+
+LaTeX Warning: Reference `marcellinoflow' on page 18 undefined on input line 17
+.
+
+[18]) [19]
 \openout2 = `capitolo5.aux'.
 
- (./capitolo5.tex [16
+ (./capitolo5.tex [20
 
 
 
 ]
 Chapter 5.
-[17]) [18]
+[21]) [22]
 \openout2 = `capitolo6.aux'.
 
  (./capitolo6.tex
 Chapter 6.
-) [19
+) [23
 
 
 
 ]
 \openout2 = `capitolo7.aux'.
 
- (./capitolo7.tex [20
+ (./capitolo7.tex [24
 
 
 
 ]
 Chapter 7.
-) [21] [22
+) [25] [26
 
 
 ]
@@ -761,7 +1049,7 @@ No file tesi.bbl.
 
 (./appendiceA.tex
 Appendix A.
-) [23
+) [27
 
 
 ]
@@ -774,38 +1062,64 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[24
+[28
 
 
 
 ]
 Appendix B.
-) [25] (./tesi.aux (./frontespizio.aux) (./dedica.aux) (./abstract.aux)
-(./Acknowledgements.aux) (./capitolo1.aux) (./capitolo2.aux) (./capitolo3.aux)
-(./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux)
-(./appendiceA.aux) (./appendiceB.aux))
+) [29]
+\openout2 = `appendiceC.aux'.
 
-LaTeX Warning: There were undefined references.
+ (./appendiceC.tex [30
 
- ) 
+
+
+]
+Appendix C.
+) [31]
+\openout2 = `appendiceD.aux'.
+
+ (./appendiceD.tex [32
+
+
+
+]
+Appendix D.
+
+./appendiceD.tex:53: LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.53     \begin{document}
+                         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package Listings Error: File `router3(.py)' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: py)
+
+Enter file name: 
+./appendiceD.tex:54: Emergency stop.
+<read *> 
+         
+l.54 ...tinputlisting[language=Python]{router3.py}
+                                                  ^^M
+*** (cannot \read from terminal in nonstop modes)
+
+ 
 Here is how much of TeX's memory you used:
- 3921 strings out of 492995
- 53169 string characters out of 6132704
- 131653 words of memory out of 5000000
- 7336 multiletter control sequences out of 15000+600000
+ 6281 strings out of 492995
+ 88534 string characters out of 6132704
+ 170107 words of memory out of 5000000
+ 9645 multiletter control sequences out of 15000+600000
  11671 words of font info for 43 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 36i,11n,43p,814b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on tesi.pdf (29 pages, 112482 bytes).
-PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 39i,11n,43p,812b,380s stack positions out of 5000i,500n,10000p,200000b,80000s
+./appendiceD.tex:54:  ==> Fatal error occurred, no output PDF file produced!

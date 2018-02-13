@@ -1,0 +1,7 @@
+@article{SH4,
+author = {Willmott, Steven and Faltings, Boi},
+year = {2018},
+month = {01},
+pages = {},
+title = {Workshop Note: Artificial Intelligence Network Routing Problems}
+}
