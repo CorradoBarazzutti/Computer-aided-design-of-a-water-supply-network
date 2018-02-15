@@ -218,7 +218,6 @@ class Router(object):
         for edge in lenghts:
             line = [edge[0], edge[1]]
             w.line(parts=[line])
-            print (edge[0], edge[1])
             w.record(i, lenghts[(edge[0], edge[1])],
                      1, 2, 100, 0.1, 0, "1")
             i+=1
@@ -577,7 +576,7 @@ class Router(object):
             adduction.add_node(node)
         self.complete_graph(adduction)
         adduction = self.mesh_graph(adduction, weight='dist')
-        nx.draw(adduction)
+        print(len(adduction.edges()))
         # coord = {elem[0]: [elem[0][0], elem[0][1]] for elem in adduction.nodes(data=True)}
         # nx.draw_networkx(adduction, pos=coord, label=False)
         self.write2shp(adduction, "adduction_network")
