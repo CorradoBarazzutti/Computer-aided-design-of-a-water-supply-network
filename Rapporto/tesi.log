@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  20 FEB 2018 10:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  20 FEB 2018 10:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -686,7 +686,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1 ﻿
-       \chapter{Approach}
+       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -697,20 +697,20 @@ or  <return>  to continue without it.
 
 ]
 Chapter 3.
-./capitolo3.tex:7: Missing number, treated as zero.
+./capitolo3.tex:11: Missing number, treated as zero.
 <to be read again> 
                    B
-l.7 \parindent B
-                iologically inspired models can provide interesting insights...
+l.11 \parindent B
+                 iologically inspired models can provide interesting insight...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./capitolo3.tex:7: Illegal unit of measure (pt inserted).
+./capitolo3.tex:11: Illegal unit of measure (pt inserted).
 <to be read again> 
                    B
-l.7 \parindent Bi
-                 ologically inspired models can provide interesting insights...
+l.11 \parindent Bi
+                  ologically inspired models can provide interesting insight...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -718,47 +718,17 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-
-./capitolo3.tex:46: Package inputenc Error: Unicode char ´ (U+B4)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 phenomenon has been fostered by the ´
-                                           ´need for predictive technologie...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./capitolo3.tex:46: Package inputenc Error: Unicode char ´ (U+B4)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.46 phenomenon has been fostered by the ´´
-                                             need for predictive technologie...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 73.
+LaTeX Font Info:    Try loading font information for U+msa on input line 76.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 73.
+LaTeX Font Info:    Try loading font information for U+msb on input line 76.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 73.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 76.
 
 [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -766,29 +736,29 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [10]
 [11] [12] [13]
 
-./capitolo3.tex:135: Package amsmath Error: \begin{aligned} allowed only in mat
+./capitolo3.tex:178: Package amsmath Error: \begin{aligned} allowed only in mat
 h mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.135         E
+l.178         E
                 = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./capitolo3.tex:135: Missing $ inserted.
+./capitolo3.tex:178: Missing $ inserted.
 <inserted text> 
                 $
-l.135         E
+l.178         E
                 = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./capitolo3.tex:136: Undefined control sequence.
-l.136 ...        +\frac{D}{2} \sum_{X}\sum_{Y\neqX
+./capitolo3.tex:179: Undefined control sequence.
+l.179 ...        +\frac{D}{2} \sum_{X}\sum_{Y\neqX
                                                   }\sum_{j}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -796,134 +766,85 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./capitolo3.tex:138: Missing $ inserted.
+./capitolo3.tex:181: Missing $ inserted.
 <inserted text> 
                 $
-l.138         \end{aligned}
-                           
+l.181     \end{aligned}
+                       
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-./capitolo3.tex:146: Missing $ inserted.
-<inserted text> 
-                $
-l.146 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-./capitolo3.tex:146: Display math should end with $$.
-<to be read again> 
-                   \par 
-l.146 
-      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-./capitolo3.tex:147: LaTeX Error: Bad math environment delimiter.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.147         \end{equation*}
-                             
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-./capitolo3.tex:147: Missing $ inserted.
-<inserted text> 
-                $
-l.147         \end{equation*}
-                             
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./capitolo3.tex:147: Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.147         \end{equation*}
-                             
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-./capitolo3.tex:152: Package amsmath Error: \begin{aligned} allowed only in mat
+./capitolo3.tex:203: Package amsmath Error: \begin{aligned} allowed only in mat
 h mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.152 ...   Under the hypothesis \begin{aligned} w
-                                                  _{Xj,Yk}= w_{Yk,Xj} \end{a...
+l.203 Under the hypothesis \begin{aligned} w
+                                            _{Xj,Yk}= w_{Yk,Xj} \end{aligned...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./capitolo3.tex:152: Missing $ inserted.
+./capitolo3.tex:203: Missing $ inserted.
 <inserted text> 
                 $
-l.152 ...   Under the hypothesis \begin{aligned} w
-                                                  _{Xj,Yk}= w_{Yk,Xj} \end{a...
+l.203 Under the hypothesis \begin{aligned} w
+                                            _{Xj,Yk}= w_{Yk,Xj} \end{aligned...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./capitolo3.tex:152: Missing $ inserted.
+./capitolo3.tex:203: Missing $ inserted.
 <inserted text> 
                 $
-l.152 ...igned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned}
-                                                   the method can be proved ...
+l.203 ...igned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned}
+                                                   the method can be proved
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-) [14] [15]
+) [14]
 \openout2 = `capitolo4.aux'.
 
- (./capitolo4.tex [16
-
-
-
-]
+ (./capitolo4.tex
 Chapter 4.
-[17]
 
-./capitolo4.tex:28: LaTeX Error: \include cannot be nested.
+./capitolo4.tex:18: LaTeX Error: \include cannot be nested.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.28 \include{work_flow}
+l.18 \include{work_flow}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `work_flow' on page 18 undefined on input line 31.
+LaTeX Warning: Reference `work_flow' on page 15 undefined on input line 21.
 
-[18]) [19]
+[15
+
+
+
+] [16]) [17]
 \openout2 = `capitolo5.aux'.
 
- (./capitolo5.tex [20
+ (./capitolo5.tex [18
 
 
 
 ]
 Chapter 5.
-[21]
+[19]
 
 ./capitolo5.tex:62: LaTeX Error: \include cannot be nested.
 
@@ -950,25 +871,25 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) [22]
+) [20]
 \openout2 = `capitolo6.aux'.
 
  (./capitolo6.tex
 Chapter 6.
-) [23
+) [21
 
 
 
 ]
 \openout2 = `capitolo7.aux'.
 
- (./capitolo7.tex [24
+ (./capitolo7.tex [22
 
 
 
 ]
 Chapter 7.
-) [25] [26
+) [23] [24
 
 
 ]
@@ -977,7 +898,7 @@ No file tesi.bbl.
 
 (./appendiceA.tex
 Appendix A.
-) [27
+) [25
 
 
 ]
@@ -990,25 +911,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[28
+[26
 
 
 
 ]
 Appendix B.
-) [29]
+) [27]
 \openout2 = `appendiceC.aux'.
 
- (./appendiceC.tex [30
+ (./appendiceC.tex [28
 
 
 
 ]
 Appendix C.
-) [31]
+) [29]
 \openout2 = `appendiceD.aux'.
 
- (./appendiceD.tex [32
+ (./appendiceD.tex [30
 
 
 
@@ -1027,10 +948,10 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) [33]
+) [31]
 \openout2 = `appendiceE.aux'.
 
- (./appendiceE.tex [34
+ (./appendiceE.tex [32
 
 
 
@@ -1195,22 +1116,22 @@ and I'll try to forget that I needed that character.
 Overfull \hbox (906.11122pt too wide) in paragraph at lines 30--79
 \OT1/cmr/m/n/10.95 Executing the com-mand paesi$[]\OML/cmm/m/it/10.95 xample\OT
 1/cmr/m/n/10.95 ()\OML/cmm/m/it/10.95 willreproducethecasestudiedin\OT1/cmr/m/n
-/10.95 4\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 6[]\OML/cmm/m/it/10.95 :Thefoll
+/10.95 4\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 4[]\OML/cmm/m/it/10.95 :Thefoll
 owinginstructionsareexecuted:Ashapefilerepresentingthebuildingspositionareloade
 d:Thenclustersandpathsarecomputedasabove:Theresultisexportedasshapefile; named[
 ]queduct[]$ 
  []
 
-[35]
+[33]
 \openout2 = `appendiceF.aux'.
 
- (./appendiceF.tex [36
+ (./appendiceF.tex [34
 
 
 
 ]
 Appendix F.
-) [37] (./tesi.aux (./frontespizio.aux) (./dedica.aux) (./abstract.aux)
+) [35] (./tesi.aux (./frontespizio.aux) (./dedica.aux) (./abstract.aux)
 (./Acknowledgements.aux) (./capitolo1.aux) (./capitolo2.aux) (./capitolo3.aux)
 (./capitolo4.aux) (./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux)
 (./appendiceA.aux) (./appendiceB.aux) (./appendiceC.aux) (./appendiceD.aux)
@@ -1221,16 +1142,19 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 14 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 5319 strings out of 492995
- 73136 string characters out of 6132704
+ 5321 strings out of 492995
+ 73155 string characters out of 6132704
  155878 words of memory out of 5000000
- 8691 multiletter control sequences out of 15000+600000
+ 8693 multiletter control sequences out of 15000+600000
  11671 words of font info for 43 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  36i,11n,43p,878b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1245,10 +1169,10 @@ r10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
 pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 >
-Output written on tesi.pdf (41 pages, 161928 bytes).
+Output written on tesi.pdf (39 pages, 160499 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 172 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

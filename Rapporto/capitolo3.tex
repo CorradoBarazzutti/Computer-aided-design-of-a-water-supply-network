@@ -1,11 +1,14 @@
-﻿\chapter{Approach}
+﻿
+\chapter{Approach}
 \label{capitolo3}
 \thispagestyle{empty}
 
 
 \section{Root architecture}
-\parindent Biologically inspired models can provide interesting insights. Organisms that have gone
 
+
+
+\parindent Biologically inspired models can provide interesting insights. Organisms that have gone
 through several rounds of evolutionary selection seem to be able to deliver efficient and
 nearly-optimal solutions. The use of such models seems to have produced satisfactory
 results for transport networks.
@@ -43,7 +46,7 @@ how modelling can provide clearer insights on the interactions between roots and
 Lionel Dupuy’s article describes the evolution of root growth models. The first models
 appeared in the early 1970s and focused mainly on root length. However since the 1990s
 new complex models have emerged thanks to the use of more powerful computers.
-phenomenon has been fostered by the ´´need for predictive technologies" at different scales.
+phenomenon has been fostered by the \"need for predictive technologies\" at different scales.
 Dupuy suggests a new theoretical framework which takes into account individual root
 developmental parameters. He introduces "equations in discretized domains that deform
 as a result of growth". Simulations conducted by Dupuy have revealed some patterns in
@@ -81,41 +84,81 @@ The use of Root Architecture Models was abandoned in order to investigate the us
 
 \section{Artificial neural networks}
 \bigbreak
-The growth of network usage and their increasing complexity, in particular for communication technologies application, drives towards the improvement of routing technique. One track of this research is the development of "smart" techniques for network design and management.
+The growth of network usage and their increasing complexity, in particular for communication 
+technologies application, drives towards the improvement of routing technique. One track of this 
+research is the development of \"smart\" techniques for network design and management.
 \bigbreak
-For our project we chose to follow this direction, combine sub-optimal AI algorithms to develop a possibly innovative solution. Lead by example, we will give an overview of the most edge braking applications in this field. This will allow us to introduce the main concepts and get down to the techniques we focused on.
+For our project we chose to follow this direction, combine sub-optimal AI algorithms to develop a 
+possibly innovative solution. Lead by example, we will give an overview of the most edge braking 
+applications in this field. This will allow us to introduce the main concepts and get down to the 
+techniques we focused on.
 \bigbreak
-AI is applied to many complex routing problems: one example is very large-scale integration (VLSI).  The process of designing integrated circuits is hard due to the large number of often conflicting factors that affect the routing quality such as minimum area, wire length. Rostam Joobbani, a knowledge-based routing expert from Carnegie-Mellon University (1986), proved that an AI approach to the subject could dramatically improve performances. 
+AI is applied to many complex routing problems: one example is very large-scale integration (VLSI). 
+ The process of designing integrated circuits is hard due to the large number of often conflicting 
+ factors that affect the routing quality such as minimum area, wire length. Rostam Joobbani, a 
+ knowledge-based routing expert from Carnegie-Mellon University (1986), proved that an AI approach 
+ to the subject could dramatically improve performances. 
 \bigbreak
-A more recent example is the use of AI in Wireless Sensor Networks. WSNs are spatially distributed autonomous sensors to monitor physical or environmental conditions, such as temperature, sound, pressure, etc. and to cooperatively pass their data through the network to other locations. Management of those networks is particularly challenging because of the dynamic environmental conditions. 
-J. Barbancho and al. (2007) wrote a review about the use of artificial intelligence techniques for WSNs for path discovery and other purposes. The study shows the potential of Artificial Neural Networks. 
+A more recent example is the use of AI in Wireless Sensor Networks. WSNs are spatially distributed 
+autonomous sensors to monitor physical or environmental conditions, such as temperature, sound, 
+pressure, etc. and to cooperatively pass their data through the network to other locations. Management
+ of those networks is particularly challenging because of the dynamic environmental conditions. 
+J. Barbancho and al. (2007) wrote a review about the use of artificial intelligence techniques for 
+WSNs for path discovery and other purposes. The study shows the potential of Artificial Neural Networks. 
 \bigbreak
-Artificial Neural Networks learn to do tasks by considering examples, generally without task-specific programming. An ANN is based on a collection of connected units called artificial neurons. Each connection (synapse) between neurons can transmit a signal to another neuron. The receiving (postsynaptic) neuron can process the signal(s) and then signal downstream neurons connected to it.
+Artificial Neural Networks learn to do tasks by considering examples, generally without task-specific 
+programming. An ANN is based on a collection of connected units called artificial neurons. Each 
+connection (synapse) between neurons can transmit a signal to another neuron. The receiving 
+(postsynaptic) neuron can process the signal(s) and then signal downstream neurons connected to it.
 \bigbreak
-N. Ahad, J.  Quadir, N. Ahsan (2016) published a review focused on techniques and applications of artificial neural networks for wireless networks. The advantage of using ANN is that can make the network adaptive and able to predict user demand.
+N. Ahad, J.  Quadir, N. Ahsan (2016) published a review focused on techniques and applications of 
+artificial neural networks for wireless networks. The advantage of using ANN is that can make the 
+network adaptive and able to predict user demand.
 \bigbreak
-Concerning shortest path problems Michael Turcanik (2012) used a Hopfield neural network as a content-addressable memory for routing table look-up.
-A routing table is a database that keeps track of paths in a network. Whenever a node needs to send data to another node on a network, it must first know where to send it. If the node cannot directly connect to the destination node, it has to send it via other nodes along a proper route to the destination node. Most nodes do not try to figure out which route(s) might work; instead, a node will send the message to a gateway in the local area network, which then decides how to route the "package" of data to the correct destination. Each gateway will need to keep track of which way to deliver various packages of data, and for this it uses a Routing Table. 
-Turcanik replaced the table with an ANN. His study shows the performance of routing table look-up in terms of speed and adaptability.
+Concerning shortest path problems Michael Turcanik (2012) used a Hopfield neural network as a 
+content-addressable memory for routing table look-up.
+A routing table is a database that keeps track of paths in a network. Whenever a node needs to send 
+data to another node on a network, it must first know where to send it. If the node cannot directly 
+connect to the destination node, it has to send it via other nodes along a proper route to the 
+destination node. Most nodes do not try to figure out which route(s) might work; instead, a node will 
+send the message to a gateway in the local area network, which then decides how to route the "package"
+ of data to the correct destination. Each gateway will need to keep track of which way to deliver 
+ various packages of data, and for this it uses a Routing Table. 
+Turcanik replaced the table with an ANN. His study shows the performance of routing table look-up in 
+terms of speed and adaptability.
 \bigbreak
 This excursus gives an idea of the incredibly various applications of ANN in routing problems.
-We would like now to focus on the use of Hopfield Neural Network, which is the most classical solution for routing problems with ANN's.
+We would like now to focus on the use of Hopfield Neural Network, which is the most classical solution 
+for routing problems with ANN's.
 \bigbreak
-Hopfield (1984) proposed the use of his algorithm to give heuristic solutions to the travel salesman problem.
-TSP is a well known NP-hard minimization problem. As defined by Karl Menger the TSP is "the task to find, for finitely many points whose pairwise distances are known, the shortest route connecting the points". So having n cities, our travel salesman has to associate to each city X a position k in the tour so that: 
+Hopfield (1984) proposed the use of his algorithm to give heuristic solutions to the travel salesman 
+problem.
+TSP is a well known NP-hard minimization problem. As defined by Karl Menger the TSP is "the task to 
+find, for finitely many points whose pairwise distances are known, the shortest route connecting the 
+points". So having n cities, our travel salesman has to associate to each city X a position k in the 
+tour so that: 
 \begin{equation*}
 \sum_{X}\sum_{Y\neq X}\sum_{j}{d_{XY}y_{Xj}(y_{Y,j+1}+y_{Y,j-1})\ }
 \end{equation*}
 is minimal, where dXY is the distance between city X and Y.
 \bigbreak
-E. Wacholder and al. (1989) developed a more efficient implementation of the Hopfield NN for the travel sales-man problem. The algorithm was successfully tested on many problems with up to 30 cities and five salesmen, while a non-optimized brute-force approach would take billions of billions of years to return. In all test cases, the algorithm always converged to valid solutions.
+E. Wacholder and al. (1989) developed a more efficient implementation of the Hopfield NN for the travel
+sales-man problem. The algorithm was successfully tested on many problems with up to 30 cities and five
+salesmen, while a non-optimized brute-force approach would take billions of billions of years to 
+return. In all test cases, the algorithm always converged to valid solutions.
 \bigbreak
-Mustafa K. Mehmet Ali and Faouzi Kamoun (1993) considered modeling shortest path problem with Hopfield Neural Network for the first time. The researchers asserted that HNN can find shortest path effectively and sometimes it would be better to use such a network instead of classic algorithms such as Dijkstra.
+Mustafa K. Mehmet Ali and Faouzi Kamoun (1993) considered modeling shortest path problem with Hopfield 
+Neural Network for the first time. The researchers asserted that HNN can find shortest path effectively
+ and sometimes it would be better to use such a network instead of classic algorithms such as Dijkstra.
 \bigbreak
-We will now explain what Hopfield Neural Networks are, with particular attention to the TSP application, although the definition we will give is general.
-It is a recurrent ANN, as opposed to feed forward NN, which means neurons interconnections forms a directed cycle, so neurons are both input and output. 
-Hopfield nets are sets n2 nodes where X [1, n] and k  [1, n] and the state is characterized by the binary activation values y = (yXj) of the nodes.
-A TSP problem with n cities can be modeled as an Hopfield net of dimension n2, where yXj is 1 if the city X is in the k-position of the tour.
+We will now explain what Hopfield Neural Networks are, with particular attention to the TSP application,
+ although the definition we will give is general.
+It is a recurrent ANN, as opposed to feed forward NN, which means neurons interconnections forms a 
+directed cycle, so neurons are both input and output. 
+Hopfield nets are sets n2 nodes where X [1, n] and k  [1, n] and the state is characterized by the 
+binary activation values y = (yXj) of the nodes.
+A TSP problem with n cities can be modeled as an Hopfield net of dimension n2, where yXj is 1 if the 
+city X is in the k-position of the tour.
 \bigbreak
 The input sk(t+1) of the neuron k is:
 
@@ -135,24 +178,38 @@ The energy function is as follow so that the optimal solution will minimize it:
         E = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\frac{B}{2}\sum_{j}\sum_{X}\sum_{X\neq Y}{y_{Xj} y_{Yj}+} \frac{C}{2}(\sum_{X}{\sum_{j}{y_{Xj}-n})}^2 \\
             +\frac{D}{2} \sum_{X}\sum_{Y\neqX}\sum_{j}
            {d_{XY}y_{Xj}(y_{Y,j+1}+y_{Y,j-1})\ }\qquad 
-        \end{aligned}
-        \end{center}
-        \bigbreak
-        The first two terms are null if and only if the there is a maximum of one active neuron for each row and column respectively. The third term is null if and only if there are n active neurons. The last term takes in account the distance of the path, that should be minimized as well.
-        \bigbreak
-        The Hebbian rule to update the weights is deduced from the energy function:
-        \begin{equation*}
-        w_{Xj,Yk}=\ -A\delta_{XY}\left(1-\delta_{jK}\right)-B\delta_{jk}\left(1-\delta_{XY}\right)-C-Dd_{XY}(\delta_{k,j+1}+\delta_{k,j-1})
-        
-        \end{equation*}
-        \bigbreak
-        where  kj = 1 if j = k and zero otherwise. 
-        As in the energy function the first term inhibits connection within each row, the second within columns, the third is the global inhibition and the last term takes into account the distance between the cities.
-        \bigbreak
-        Under the hypothesis \begin{aligned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned} the method can be proved to have stable points. At each iteration the net updates his parameters according to the Hebbian rule and the evolution of the state can be proved to be  monotonically nonincreasing with respect of the energy function.
-        Performing then a gradient descent, after a certain number of repetition the state converge to a stable point that is a minima of the energy function.
-        \bigbreak
+    \end{aligned}
+\end{center}
+\bigbreak
+The first two terms are null if and only if the there is a maximum of one active neuron for each
+row and column respectively. The third term is null if and only if there are n active neurons.
+The last term takes in account the distance of the path, that should be minimized as well.
+\bigbreak
+The Hebbian rule to update the weights is deduced from the energy function:
+\begin{equation*}
+    w_{Xj,Yk}=\ -A\delta_{XY}\left(1-\delta_{jK}\right)-B\delta_{jk}\left(1-\delta_{XY}\right)-C-Dd_{XY}(\delta_{k,j+1}+\delta_{k,j-1})
+\end{equation*}
 
-Artificial Neural Networks are not the best suited tool to solve routing problems. First of all, creating an ANN is a difficult task. Therefore, another method is worth considering. In addition, it is not possible to know whether the ANN will deliver a solution that will converge and whether this solution is optimal. Thus ANNs as a poorly efficient way to solve the problem.
 
-Nonetheless, machine learning can still be useful. Indeed, the interpretation of geographical information files can be done through clustering algorithms.
+
+\bigbreak
+where  kj = 1 if j = k and zero otherwise. 
+As in the energy function the first term inhibits connection within each row, the second within 
+columns, the third is the global inhibition and the last term takes into account the distance 
+between the cities.
+
+
+\bigbreak
+Under the hypothesis \begin{aligned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned} the method can be proved
+to have stable points. At each iteration the net updates his parameters according to the 
+Hebbian rule and the evolution of the state can be proved to be  monotonically nonincreasing
+with respect of the energy function.
+Performing then a gradient descent, after a certain number of repetition the state converge to a 
+stable point that is a minima of the energy function.
+\bigbreak
+Artificial Neural Networks are not the best suited tool to solve routing problems. First of all,
+creating an ANN is a difficult task. Therefore, another method is worth considering. In addition, 
+it is not possible to know whether the ANN will deliver a solution that will converge and whether 
+this solution is optimal. Thus ANNs as a poorly efficient way to solve the problem. Nonetheless, 
+machine learning can still be useful. Indeed, the interpretation of geographical information files 
+can be done through clustering algorithms.
