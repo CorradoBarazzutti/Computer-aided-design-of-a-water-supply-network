@@ -196,8 +196,6 @@ INPUT appendiceD.tex
 OUTPUT appendiceE.aux
 INPUT appendiceE.tex
 INPUT appendiceE.tex
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
 OUTPUT appendiceF.aux
 INPUT appendiceF.tex
 INPUT appendiceF.tex
