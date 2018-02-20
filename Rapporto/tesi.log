@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  20 FEB 2018 16:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  20 FEB 2018 17:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -234,14 +234,40 @@ Package caption Info: listings package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: subfigure package is loaded.
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count115
+\Gm@cntv=\count116
+\c@Gm@tempcnt=\count117
+\Gm@bindingoffset=\dimen134
+\Gm@wd@mp=\dimen135
+\Gm@odd@mp=\dimen136
+\Gm@even@mp=\dimen137
+\Gm@layoutwidth=\dimen138
+\Gm@layoutheight=\dimen139
+\Gm@layouthoffset=\dimen140
+\Gm@layoutvoffset=\dimen141
+\Gm@dimlist=\toks25
+)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
 x
-\pgfutil@everybye=\toks25
-\pgfutil@tempdima=\dimen134
-\pgfutil@tempdimb=\dimen135
+\pgfutil@everybye=\toks26
+\pgfutil@tempdima=\dimen142
+\pgfutil@tempdimb=\dimen143
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
 sts.tex))
@@ -259,30 +285,30 @@ Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks26
-\pgfkeys@temptoks=\toks27
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
 ode.tex
-\pgfkeys@tmptoks=\toks28
+\pgfkeys@tmptoks=\toks29
 ))
-\pgf@x=\dimen136
-\pgf@y=\dimen137
-\pgf@xa=\dimen138
-\pgf@ya=\dimen139
-\pgf@xb=\dimen140
-\pgf@yb=\dimen141
-\pgf@xc=\dimen142
-\pgf@yc=\dimen143
+\pgf@x=\dimen144
+\pgf@y=\dimen145
+\pgf@xa=\dimen146
+\pgf@ya=\dimen147
+\pgf@xb=\dimen148
+\pgf@yb=\dimen149
+\pgf@xc=\dimen150
+\pgf@yc=\dimen151
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count115
-\c@pgf@countb=\count116
-\c@pgf@countc=\count117
-\c@pgf@countd=\count118
-\t@pgf@toka=\toks29
-\t@pgf@tokb=\toks30
-\t@pgf@tokc=\toks31
+\c@pgf@counta=\count118
+\c@pgf@countb=\count119
+\c@pgf@countc=\count120
+\c@pgf@countd=\count121
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -296,13 +322,13 @@ File: pgfsys-dvips.def 2014/07/09  (rcs-revision 1.25)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
 ostscript.def
 File: pgfsys-common-postscript.def 2008/10/01  (rcs-revision 1.22)
-\pgf@objectcount=\count119
+\pgf@objectcount=\count122
 )))
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
 code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count120
-\pgfsyssoftpath@bigbuffer@items=\count121
+\pgfsyssoftpath@smallbuffer@items=\count123
+\pgfsyssoftpath@bigbuffer@items=\count124
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
 code.tex
@@ -324,7 +350,7 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count122
+\Gread@gobject=\count125
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -341,12 +367,12 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen144
-\pgfmath@count=\count123
+\pgfmath@dimen=\dimen152
+\pgfmath@count=\count126
 \pgfmath@box=\box34
-\pgfmath@toks=\toks32
-\pgfmath@stack@operand=\toks33
-\pgfmath@stack@operation=\toks34
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
 tex
@@ -367,37 +393,37 @@ code.tex)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
 erarithmetics.code.tex)))
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count124
+\c@pgfmathroundto@lastzeros=\count127
 ))
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
 de.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen145
-\pgf@picmaxx=\dimen146
-\pgf@picminy=\dimen147
-\pgf@picmaxy=\dimen148
-\pgf@pathminx=\dimen149
-\pgf@pathmaxx=\dimen150
-\pgf@pathminy=\dimen151
-\pgf@pathmaxy=\dimen152
-\pgf@xx=\dimen153
-\pgf@xy=\dimen154
-\pgf@yx=\dimen155
-\pgf@yy=\dimen156
-\pgf@zx=\dimen157
-\pgf@zy=\dimen158
+\pgf@picminx=\dimen153
+\pgf@picmaxx=\dimen154
+\pgf@picminy=\dimen155
+\pgf@picmaxy=\dimen156
+\pgf@pathminx=\dimen157
+\pgf@pathmaxx=\dimen158
+\pgf@pathminy=\dimen159
+\pgf@pathmaxy=\dimen160
+\pgf@xx=\dimen161
+\pgf@xy=\dimen162
+\pgf@yx=\dimen163
+\pgf@yy=\dimen164
+\pgf@zx=\dimen165
+\pgf@zy=\dimen166
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
 ruct.code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen159
-\pgf@path@lasty=\dimen160
+\pgf@path@lastx=\dimen167
+\pgf@path@lasty=\dimen168
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
 .code.tex
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen161
-\pgf@shorten@start@additional=\dimen162
+\pgf@shorten@end@additional=\dimen169
+\pgf@shorten@start@additional=\dimen170
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
@@ -405,19 +431,19 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box35
 \pgf@hbox=\box36
 \pgf@layerbox@main=\box37
-\pgf@picture@serial@count=\count125
+\pgf@picture@serial@count=\count128
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
 ate.code.tex
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen163
+\pgflinewidth=\dimen171
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
 ations.code.tex
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen164
-\pgf@pt@y=\dimen165
-\pgf@pt@temp=\dimen166
+\pgf@pt@x=\dimen172
+\pgf@pt@y=\dimen173
+\pgf@pt@temp=\dimen174
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
 e.tex
@@ -434,13 +460,13 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
 de.tex
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen167
+\pgfarrowsep=\dimen175
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
 e.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen168
-\pgf@sys@shading@range@num=\count126
+\pgf@max=\dimen176
+\pgf@sys@shading@range@num=\count129
 )
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
 e.tex
@@ -475,8 +501,8 @@ File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen169
-\pgf@nodesepend=\dimen170
+\pgf@nodesepstart=\dimen177
+\pgf@nodesepend=\dimen178
 )
 (/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
 -1-18.sty
@@ -491,10 +517,10 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen171
-\pgffor@skip=\dimen172
-\pgffor@stack=\toks35
-\pgffor@toks=\toks36
+\pgffor@iter=\dimen179
+\pgffor@skip=\dimen180
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
 ))
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -503,32 +529,32 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count127
-\pgfplotmarksize=\dimen173
+\pgf@plot@mark@count=\count130
+\pgfplotmarksize=\dimen181
 )
-\tikz@lastx=\dimen174
-\tikz@lasty=\dimen175
-\tikz@lastxsaved=\dimen176
-\tikz@lastysaved=\dimen177
-\tikzleveldistance=\dimen178
-\tikzsiblingdistance=\dimen179
+\tikz@lastx=\dimen182
+\tikz@lasty=\dimen183
+\tikz@lastxsaved=\dimen184
+\tikz@lastysaved=\dimen185
+\tikzleveldistance=\dimen186
+\tikzsiblingdistance=\dimen187
 \tikz@figbox=\box40
 \tikz@figbox@bg=\box41
 \tikz@tempbox=\box42
 \tikz@tempbox@bg=\box43
-\tikztreelevel=\count128
-\tikznumberofchildren=\count129
-\tikznumberofcurrentchild=\count130
-\tikz@fig@count=\count131
+\tikztreelevel=\count131
+\tikznumberofchildren=\count132
+\tikznumberofcurrentchild=\count133
+\tikz@fig@count=\count134
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count132
-\pgfmatrixcurrentcolumn=\count133
-\pgf@matrix@numberofcolumns=\count134
+\pgfmatrixcurrentrow=\count135
+\pgfmatrixcurrentcolumn=\count136
+\pgf@matrix@numberofcolumns=\count137
 )
-\tikz@expandcount=\count135
+\tikz@expandcount=\count138
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -542,8 +568,8 @@ Language: english 2017/01/24 v3.3q English support from the babel system
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2017/05/19 3.10 Babel common definitions
-\babel@savecnt=\count136
-\U@D=\dimen180
+\babel@savecnt=\count139
+\U@D=\dimen188
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -551,8 +577,8 @@ File: babel.def 2017/05/19 3.10 Babel common definitions
 ))
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks37
-\inpenc@posthook=\toks38
+\inpenc@prehook=\toks38
+\inpenc@posthook=\toks39
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
@@ -883,23 +909,59 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
-\c@lstlisting=\count137
+\c@lstlisting=\count140
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- ABD: EveryShipout initializing macros
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* bindingoffset: 14.22636pt
+* modes: twoside 
+* h-part:(L,W,R)=(71.13188pt, 441.01775pt, 71.13188pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=441.01775pt
+* \textheight=674.33032pt
+* \oddsidemargin=13.08826pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-23.91173pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=103.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ABD: EveryShipout initializing macros
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count138
-\scratchdimen=\dimen181
+\scratchcounter=\count141
+\scratchdimen=\dimen189
 \scratchbox=\box44
-\nofMPsegments=\count139
-\nofMParguments=\count140
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count141
-\MPscratchDim=\dimen182
-\MPnumerator=\count142
-\makeMPintoPDFobject=\count143
-\everyMPtoPDFconversion=\toks40
+\nofMPsegments=\count142
+\nofMParguments=\count143
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count144
+\MPscratchDim=\dimen190
+\MPnumerator=\count145
+\makeMPintoPDFobject=\count146
+\everyMPtoPDFconversion=\toks41
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -907,9 +969,6 @@ Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -953,21 +1012,12 @@ e
 File: LogoCS.png Graphic file (type png)
 
 <use LogoCS.png>
-Package pdftex.def Info: LogoCS.png used on input line 12.
+Package pdftex.def Info: LogoCS.png used on input line 13.
 (pdftex.def)             Requested size: 99.58464pt x 51.34879pt.
-
-./frontespizio.tex:13: Undefined control sequence.
-l.13     \psfig
-               {file=LogoCS.png,width=3.5cm}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 41.
+(Font)              using `OT1/cmr/bx/n' instead on input line 42.
 
 [1
 Non-PDF special ignored!
@@ -1004,32 +1054,26 @@ map/pdftex.map} <./LogoCS.png>]) [2
 
 ] (./capitolo1.tex
 Chapter 1.
-./capitolo1.tex:9: Missing number, treated as zero.
+./capitolo1.tex:11: Missing number, treated as zero.
 <to be read again> 
                    W
-l.9 W
-     ater supply remains one of the major issues in developing countries. Th...
+l.11 W
+      ater supply remains one of the major issues in developing countries. T...
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./capitolo1.tex:9: Illegal unit of measure (pt inserted).
+./capitolo1.tex:11: Illegal unit of measure (pt inserted).
 <to be read again> 
                    W
-l.9 W
-     ater supply remains one of the major issues in developing countries. Th...
+l.11 W
+      ater supply remains one of the major issues in developing countries. T...
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
 To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
-
-
-Overfull \hbox (9.37029pt too wide) in paragraph at lines 9--13
-\OT1/cmr/m/n/10.95 Water sup-ply re-mains one of the ma-jor is-sues in de-vel-o
-p-ing coun-tries. Through
- []
 
 [5
 
@@ -1080,17 +1124,16 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-[9] [10] [11] [12]
+[9] [10] [11]
 LaTeX Font Info:    Try loading font information for U+msa on input line 146.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 146.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [13]
+)
 
 ./capitolo3.tex:184: Package amsmath Error: \begin{aligned} allowed only in mat
 h mode.
@@ -1113,6 +1156,7 @@ l.184         E
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
+[12]
 ./capitolo3.tex:185: Undefined control sequence.
 l.185 ...        +\frac{D}{2} \sum_{X}\sum_{Y\neqX
                                                   }\sum_{j}
@@ -1166,11 +1210,11 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-) (./capitolo4.tex [14] [15] [16
+) (./capitolo4.tex [13] [14
 
 ]
 Chapter 4.
-[17]
+[15]
 \openout2 = `work_flow.aux'.
 
  (./work_flow.tex
@@ -1257,7 +1301,7 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
 code.tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen183
+\arrowsize=\dimen191
 ))
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarypositioning.code.tex
@@ -1272,11 +1316,11 @@ Overfull \hbox (5.56621pt too wide) in paragraph at lines 55--55
  []
 
 
-Overfull \hbox (112.70871pt too wide) in paragraph at lines 72--73
+Overfull \hbox (31.69096pt too wide) in paragraph at lines 72--73
 [][] 
  []
 
-) [18
+) [16
 
 
 Non-PDF special ignored!
@@ -1657,15 +1701,11 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
 
-LaTeX Warning: Reference `work_flow' on page 19 undefined on input line 23.
+LaTeX Warning: Reference `work_flow' on page 17 undefined on input line 23.
 
+[17
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19
-
-])
-(./capitolo5.tex [20]
+]) (./capitolo5.tex [18]
 Chapter 5.
 ./capitolo5.tex:8: Missing number, treated as zero.
 <to be read again> 
@@ -1688,14 +1728,14 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-[21
+[19
 
-] [22]
+] [20]
 \openout2 = `shortest_path.aux'.
 
 
 No file shortest_path.tex.
-[23
+[21
 
 
 ]
@@ -1703,23 +1743,23 @@ No file shortest_path.tex.
 
 
 No file TSP.tex.
-) (./capitolo6.tex [24
+) (./capitolo6.tex [22
 
 
 
 ]
 Chapter 6.
-) (./capitolo7.tex [25] [26
+) (./capitolo7.tex [23] [24
 
 ]
 Chapter 7.
-) [27] [28
+) [25] [26
 
 ]
 No file tesi.bbl.
 (./appendiceA.tex
 Appendix A.
-) (./appendiceB.tex [29
+) (./appendiceB.tex [27
 
 ]
 
@@ -1728,28 +1768,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[30
+[28
 
 ]
 Appendix B.
-) (./appendiceC.tex
-
-./appendiceC.tex:1: LaTeX Error: Can be used only in preamble.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 \usepackage
-               {listings}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[31] [32
+) (./appendiceC.tex [29] [30
 
 ]
 Appendix C.
+
+Overfull \hbox (28.82909pt too wide) in paragraph at lines 7--12
+\OT1/cmr/m/n/10.95 Il lis-tato (o solo parti ril-e-vanti di questo, se risulta 
+par-ti-co-lar-mente es-teso) con l'autodocumentazione
+ []
+
 (/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -1761,42 +1793,39 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1.
 
-Overfull \hbox (81.80139pt too wide) in paragraph at lines 17--18
+Overfull \hbox (0.78365pt too wide) in paragraph at lines 17--18
 [][][][] 
  []
 
 
-Overfull \hbox (81.80139pt too wide) in paragraph at lines 19--21
-[][][][] 
- []
-
-[33]
-Overfull \hbox (81.80139pt too wide) in paragraph at lines 29--30
+Overfull \hbox (0.78365pt too wide) in paragraph at lines 19--21
 [][][][] 
  []
 
 
-Overfull \hbox (81.80139pt too wide) in paragraph at lines 31--33
+Overfull \hbox (0.78365pt too wide) in paragraph at lines 29--30
 [][][][] 
  []
 
 
-Overfull \hbox (81.80139pt too wide) in paragraph at lines 52--53
+Overfull \hbox (0.78365pt too wide) in paragraph at lines 31--33
+[][][][] 
+ []
+
+[31]
+Overfull \hbox (0.78365pt too wide) in paragraph at lines 52--53
 [][][][] 
  []
 
 
-Overfull \hbox (81.80139pt too wide) in paragraph at lines 54--55
+Overfull \hbox (0.78365pt too wide) in paragraph at lines 54--55
 [][][][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
+ [32]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 116.
 
 
@@ -1808,13 +1837,13 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36]
+ [33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37]
+ [34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
+ [35]
 
 ./router3.py:277: Package inputenc Error: Unicode char √\expandafter (U+4F1)
 (inputenc)                not set up for use with LaTeX.
@@ -1844,10 +1873,6 @@ l.277         Principe bas√©
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [39]
 
 ./router3.py:279: Package inputenc Error: Unicode char ≈\expandafter (U+4F3)
 (inputenc)                not set up for use with LaTeX.
@@ -2642,6 +2667,18 @@ or \DeclareInputMath before using this key.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [36]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [38]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [40]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2655,21 +2692,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [44]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [45]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [46]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [47]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [49]
 
 ./router3.py:734: Package inputenc Error: Unicode char √\expandafter (U+4F1)
 (inputenc)                not set up for use with LaTeX.
@@ -2784,39 +2806,32 @@ l.734 ...ad/Documents/EC/Course deuxi√®mme ann√©e/
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
-)) (./appendiceD.tex [50]
+)) (./appendiceD.tex [45] [46
+
+]
 Appendix D.
-) (./appendiceE.tex [51
-
-] [52
+) (./appendiceE.tex [47] [48
 
 ]
 Appendix E.
-./appendiceE.tex:11: Missing $ inserted.
+./appendiceE.tex:22: Missing $ inserted.
 <inserted text> 
                 $
-l.11 ...and rendered. Calling the command vesuvio_
+l.22 ...and rendered. Calling the command vesuvio_
                                                   example()
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./appendiceE.tex:13: Missing $ inserted.
+./appendiceE.tex:24: Missing $ inserted.
 <inserted text> 
                 $
-l.13 
+l.24 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-
-Overfull \hbox (34.43114pt too wide) in paragraph at lines 11--13
-\OT1/cmr/m/n/10.95 com-mand vesuvio$[]\OML/cmm/m/it/10.95 xample\OT1/cmr/m/n/10
-.95 ()\OML/cmm/m/it/10.95 inthepythonshellwillexecutethefollowinginstructions$ 
-
- []
-
-./appendiceE.tex:14: Undefined control sequence.
-l.14 \code
+./appendiceE.tex:25: Undefined control sequence.
+l.25 \code
           {	router = Router(topo_file="vtk/Vesuvio")
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2824,16 +2839,16 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./appendiceE.tex:14: Missing $ inserted.
+./appendiceE.tex:25: Missing $ inserted.
 <inserted text> 
                 $
-l.14 \code{	router = Router(topo_
+l.25 \code{	router = Router(topo_
                                  file="vtk/Vesuvio")
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./appendiceE.tex:18: Extra }, or forgotten $.
-l.18 	}
+./appendiceE.tex:29: Extra }, or forgotten $.
+l.29 	}
        
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2841,16 +2856,16 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./appendiceE.tex:19: Missing $ inserted.
+./appendiceE.tex:30: Missing $ inserted.
 <inserted text> 
                 $
-l.19 
+l.30 
      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (313.35368pt too wide) in paragraph at lines 14--19
+Overfull \hbox (232.33594pt too wide) in paragraph at lines 25--30
 []\OT1/cmr/m/n/10.95 router = Router(topo$[]\OML/cmm/m/it/10.95 ile \OT1/cmr/m/
 n/10.95 = "\OML/cmm/m/it/10.95 vtk=Vesuvio\OT1/cmr/m/n/10.95 ")\OML/cmm/m/it/10
 .95 router:route[]esuvio\OT1/cmr/m/n/10.95 (32729\OML/cmm/m/it/10.95 ; \OT1/cmr
@@ -2860,36 +2875,36 @@ n/10.95 = "\OML/cmm/m/it/10.95 vtk=Vesuvio\OT1/cmr/m/n/10.95 ")\OML/cmm/m/it/10
 5 vtk=Vesuvio\OT1/cmr/m/n/10.95 ")$ 
  []
 
-[53]
+[49]
 \openout2 = `shortest_path.aux'.
 
 
 No file shortest_path.tex.
-./appendiceE.tex:30: Missing $ inserted.
+./appendiceE.tex:41: Missing $ inserted.
 <inserted text> 
                 $
-l.30 Executing the command paesi_
+l.41 Executing the command paesi_
                                  example() will reproduce the case studied i...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./appendiceE.tex:31: Missing $ inserted.
+./appendiceE.tex:42: Missing $ inserted.
 <inserted text> 
                 $
-l.31 ...ildings position \include{paesi_buildings}
+l.42 ...ildings position \include{paesi_buildings}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (402.26563pt too wide) in paragraph at lines 30--31
+Overfull \hbox (321.24788pt too wide) in paragraph at lines 41--42
 \OT1/cmr/m/n/10.95 Executing the com-mand paesi$[]\OML/cmm/m/it/10.95 xample\OT
 1/cmr/m/n/10.95 ()\OML/cmm/m/it/10.95 willreproducethecasestudiedin\OT1/cmr/m/n
 /10.95 4\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 4[]\OML/cmm/m/it/10.95 :Thefoll
 owinginstructionsareexecuted:Ashapefilerepresentingthebuildingsposition$ 
  []
 
-[54
+[50
 
 
 ]
@@ -2897,14 +2912,14 @@ owinginstructionsareexecuted:Ashapefilerepresentingthebuildingsposition$
 
 
 No file paesi_buildings.tex.
-) (./appendiceF.tex [55
+) (./appendiceF.tex [51
 
 
-] [56
+] [52
 
 ]
 Appendix F.
-) [57] (./tesi.aux (./work_flow.aux) (./shortest_path.aux) (./TSP.aux)
+) [53] (./tesi.aux (./work_flow.aux) (./shortest_path.aux) (./TSP.aux)
 (./shortest_path.aux) (./paesi_buildings.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2915,16 +2930,16 @@ LaTeX Warning: There were undefined references.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 14 ({)
+### simple group (level 1) entered at line 25 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19491 strings out of 492995
- 383333 string characters out of 6132704
- 861103 words of memory out of 5000000
- 22575 multiletter control sequences out of 15000+600000
+ 19966 strings out of 492995
+ 390365 string characters out of 6132704
+ 1016548 words of memory out of 5000000
+ 23039 multiletter control sequences out of 15000+600000
  13861 words of font info for 52 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 55i,13n,69p,814b,1934s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,69p,564b,1961s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
@@ -2939,10 +2954,10 @@ sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
 local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/lo
 cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on tesi.pdf (61 pages, 347686 bytes).
+Output written on tesi.pdf (57 pages, 341105 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 179 compressed objects within 2 object streams
+ 246 PDF objects out of 1000 (max. 8388607)
+ 170 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -15,16 +15,16 @@
     
     \hyphenation{a-gen-tiz-za-zio-ne}
     
-    \setlength{\paperwidth}{16cm}
-    \setlength{\paperheight}{24cm}
-    \setlength{\oddsidemargin} {2. cm}
-    \setlength{\evensidemargin} {2. cm}
-    \addtolength{\oddsidemargin} {-0.4 cm}
-    \addtolength{\evensidemargin} {-0.4 cm}
-    \linespread{1.1}
+    %\setlength{\paperwidth}{16cm}
+    %\setlength{\paperheight}{24cm}
+    %\setlength{\oddsidemargin} {2. cm}
+    %\setlength{\evensidemargin} {2. cm}
+    %\addtolength{\oddsidemargin} {-0.4 cm}
+    %\addtolength{\evensidemargin} {-0.4 cm}
+    
+    \usepackage[left=2.5cm,top=3cm,right=2.5cm,bottom=3cm,bindingoffset=0.5cm]{geometry}
 
     \usepackage{tikz}
-    %\usepackage{color}
     \usepackage[english]{babel}
     \usepackage[utf8]{inputenc}
 
@@ -33,6 +33,16 @@
     \pagestyle{empty}
     
     \begin{document}
+
+    \linespread{1.1}
+
+    %\setlrmarginsandblock{2.5cm}{2.5cm}{*} % Left and right margin
+    %\setulmarginsandblock{3cm}{3cm}{*}  % Upper and lower margin
+    %\checkandfixthelayout
+
+
+
+
     \input{frontespizio}
     \thispagestyle{empty} \normalfont \cleardoublepage
     \input{dedica}
