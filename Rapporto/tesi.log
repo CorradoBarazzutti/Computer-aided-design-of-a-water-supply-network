@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  20 FEB 2018 10:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  20 FEB 2018 11:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -718,47 +718,44 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 76.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 76.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 76.
-
 [9]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
-[11] [12] [13]
+[11] [12]
+LaTeX Font Info:    Try loading font information for U+msa on input line 141.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 141.
 
-./capitolo3.tex:178: Package amsmath Error: \begin{aligned} allowed only in mat
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [13]
+
+./capitolo3.tex:179: Package amsmath Error: \begin{aligned} allowed only in mat
 h mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.178         E
+l.179         E
                 = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./capitolo3.tex:178: Missing $ inserted.
+./capitolo3.tex:179: Missing $ inserted.
 <inserted text> 
                 $
-l.178         E
+l.179         E
                 = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./capitolo3.tex:179: Undefined control sequence.
-l.179 ...        +\frac{D}{2} \sum_{X}\sum_{Y\neqX
+./capitolo3.tex:180: Undefined control sequence.
+l.180 ...        +\frac{D}{2} \sum_{X}\sum_{Y\neqX
                                                   }\sum_{j}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -766,10 +763,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./capitolo3.tex:181: Missing $ inserted.
+./capitolo3.tex:182: Missing $ inserted.
 <inserted text> 
                 $
-l.181     \end{aligned}
+l.182     \end{aligned}
                        
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -778,31 +775,31 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-./capitolo3.tex:203: Package amsmath Error: \begin{aligned} allowed only in mat
+./capitolo3.tex:204: Package amsmath Error: \begin{aligned} allowed only in mat
 h mode.
 
 See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.203 Under the hypothesis \begin{aligned} w
+l.204 Under the hypothesis \begin{aligned} w
                                             _{Xj,Yk}= w_{Yk,Xj} \end{aligned...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-./capitolo3.tex:203: Missing $ inserted.
+./capitolo3.tex:204: Missing $ inserted.
 <inserted text> 
                 $
-l.203 Under the hypothesis \begin{aligned} w
+l.204 Under the hypothesis \begin{aligned} w
                                             _{Xj,Yk}= w_{Yk,Xj} \end{aligned...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./capitolo3.tex:203: Missing $ inserted.
+./capitolo3.tex:204: Missing $ inserted.
 <inserted text> 
                 $
-l.203 ...igned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned}
+l.204 ...igned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned}
                                                    the method can be proved
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1142,9 +1139,6 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  )
 (\end occurred inside a group at level 1)
 
@@ -1169,7 +1163,7 @@ r10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
 pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 >
-Output written on tesi.pdf (39 pages, 160499 bytes).
+Output written on tesi.pdf (39 pages, 160191 bytes).
 PDF statistics:
  172 PDF objects out of 1000 (max. 8388607)
  119 compressed objects within 2 object streams
