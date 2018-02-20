@@ -20,15 +20,9 @@ space with tree dimensions.
 \include{work_flow}
 
 \section{Data reading}
-In \ref{work_flow} is shown to the flow chart of our software. 
+In \ref{work_flow} is shown to procedure followed by our software. 
 The input is composed of three geographical files: mesh represent the topology of the studied region, source-sinks contains the locations for each water source and consumer (called sink from now on). The last file describes the roads network in the area as the pipes should preferably run along roads for is cheaper to place them. For more information about the geographical data format, please refer to \ref{Geographical_technical}
 Reading those input two graphs can be initialised: the topography and the aqueduct describing graphs. The first is a graph where nodes represent positions and edges the possible transitions between them. Transitions on roads will be preferable. The aqueduct graph is initialised with source and sinks as nodes and no edges. An insight of the data structure we used to represent graph is given in section \ref {data_structure_technical}
-
-
-
-
-
-
 
 \section{Clustering}
 Running classical algorithms such a brute-force TSP or a minimum spanning tree to link
