@@ -1,0 +1,31 @@
+input metauml;
+
+beginfig(1);
+    	Class.router("Router")()
+                 ("__init__()", "shortest_path()", "TSP()", "complete_graph()", "mesh_graph()", "clusters()");
+
+    	Class.reader("Reader")()
+                   ("read_shptopology()", "read_shpbuilding()", "read_vtk()");
+    	Class.writer("Writer")()
+                   ("write2shp()", "write2vtk()");
+	Class.display("Display")()
+                   ("mesh()", "path()");
+	Class.client("Client")()
+                   ("vesuvio_example()", "paesi_example()");
+
+    client.w = factory.e + (200,0);
+    centered_allign_top(concreteA, concreteB)(30, below(factory.s, 50));
+    centered_allign_top(abstractA, abstractB)(40, below(client.s, 40));
+    centered_allign_top(productAa, productAb)(5,  below(abstractA.s, 30));
+    centered_allign_top(productBa, productBb)(5,  below(abstractB.s, 30));
+
+    drawObjects(router, reader, writer, display, client);
+
+    	clink(associationUni)(client, router);
+	clink(associationUni)(reader, router);
+	clink(associationUni)(writer, router);
+	clink(associationUni)(display, router);
+
+endfig;
+
+end
