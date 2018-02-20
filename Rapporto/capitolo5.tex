@@ -5,23 +5,23 @@
 
 \section {Geographical Data}
 \label {Geographical_technical}
-The overall idea is to take maps and automatically trace an aqueduct on it, in order to
+\parindent The overall idea is to take maps and automatically trace an aqueduct on it, in order to
 do that, we start from the map's shapefile. Shapefile is a popular geospatial vector data
 format for geographic information systems software. It spatially describes geometries:
 points, polylines and polygons. These, for example, could represent water wells, roads or
 buildings.
-\noindent As those primitive geometrical data types come without any attributes to specify what
+As those primitive geometrical data types come without any attributes to specify what
 they represent, a table of records to store attributes is provided. Websites like osm2shp
 or Geofabrik provide an immense database of shapefiles available for download. Moreover
 desktop software like Qgis provides shapefile editing tools. This way we can both download
 real-world maps and create our own.
-\noindent Then through Qgis' meshing plug-in Gmsh we can mesh the surfaces of the map and export
+Then through Qgis' meshing plug-in Gmsh we can mesh the surfaces of the map and export
 the result in vtk format as seen in Fig. 3.1 However, shapefiles seldom have information
 on the elevation (that is the Z coordinate) of the objects they represent. It is therefore
 necessary to use another format: the Digital Elevation Model (DEM). Digital Elevation
 Models provide this missing piece of information that can subsequently be added to the
 shapefile's attribute table.
-\noindent DEMs can be converted into meshes thanks to software such as SAGA. Meshes saved as
+DEMs can be converted into meshes thanks to software such as SAGA. Meshes saved as
 vtk files can easily be used in Python.
 Vtk files are a simple and efficient way to describe mesh-like data structures. The
 vtk file boils down to those two elements: points and cells. Points have 3D coordinates
@@ -29,7 +29,7 @@ while cells are surfaces, expressed by the points delimiting them. Point and cel
 (scalar or vector) can also be assigned. We have therefore a file representing a graph, a
 classical mathematical model on which many operations can be performed: routing and
 clustering among others.
-\noindent We now come to our software. Python has been chosen as easy to use, widespread programming
+We now come to our software. Python has been chosen as easy to use, widespread programming
 language, good for rapid prototyping and rich in package and libraries. The
 problem is divided in two main tasks: modelling the data structure that represents the
 graph and the algorithmic part, the aqueduct design.

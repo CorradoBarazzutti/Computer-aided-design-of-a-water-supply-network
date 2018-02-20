@@ -100,10 +100,10 @@ applications in this field. This will allow us to introduce the main concepts an
 techniques we focused on.
 \bigbreak
 AI is applied to many complex routing problems: one example is very large-scale integration (VLSI). 
- The process of designing integrated circuits is hard due to the large number of often conflicting 
- factors that affect the routing quality such as minimum area, wire length. Rostam Joobbani, a 
- knowledge-based routing expert from Carnegie-Mellon University (1986), proved that an AI approach 
- to the subject could dramatically improve performances. 
+The process of designing integrated circuits is hard due to the large number of often conflicting 
+factors that affect the routing quality such as minimum area, wire length. Rostam Joobbani, a 
+knowledge-based routing expert from Carnegie-Mellon University (1986), proved that an AI approach 
+to the subject could dramatically improve performances. 
 \bigbreak
 A more recent example is the use of AI in Wireless Sensor Networks. WSNs are spatially distributed 
 autonomous sensors to monitor physical or environmental conditions, such as temperature, sound, 
@@ -127,9 +127,9 @@ A routing table is a database that keeps track of paths in a network. Whenever a
 data to another node on a network, it must first know where to send it. If the node cannot directly 
 connect to the destination node, it has to send it via other nodes along a proper route to the 
 destination node. Most nodes do not try to figure out which route(s) might work; instead, a node will 
-send the message to a gateway in the local area network, which then decides how to route the "package"
- of data to the correct destination. Each gateway will need to keep track of which way to deliver 
- various packages of data, and for this it uses a Routing Table. 
+send the message to a gateway in the local area network, which then decides how to route the \"package\"
+of data to the correct destination. Each gateway will need to keep track of which way to deliver 
+various packages of data, and for this it uses a Routing Table. 
 Turcanik replaced the table with an ANN. His study shows the performance of routing table look-up in 
 terms of speed and adaptability.
 \bigbreak
@@ -144,7 +144,7 @@ find, for finitely many points whose pairwise distances are known, the shortest 
 points". So having n cities, our travel salesman has to associate to each city X a position k in the 
 tour so that: 
 \begin{equation*}
-\sum_{X}\sum_{Y\neq X}\sum_{j}{d_{XY}y_{Xj}(y_{Y,j+1}+y_{Y,j-1})\ }
+    \sum_{X}\sum_{Y\neq X}\sum_{j}{d_{XY}y_{Xj}(y_{Y,j+1}+y_{Y,j-1})\ }
 \end{equation*}
 is minimal, where dXY is the distance between city X and Y.
 \bigbreak
@@ -155,10 +155,10 @@ return. In all test cases, the algorithm always converged to valid solutions.
 \bigbreak
 Mustafa K. Mehmet Ali and Faouzi Kamoun (1993) considered modeling shortest path problem with Hopfield 
 Neural Network for the first time. The researchers asserted that HNN can find shortest path effectively
- and sometimes it would be better to use such a network instead of classic algorithms such as Dijkstra.
+and sometimes it would be better to use such a network instead of classic algorithms such as Dijkstra.
 \bigbreak
 We will now explain what Hopfield Neural Networks are, with particular attention to the TSP application,
- although the definition we will give is general.
+although the definition we will give is general.
 It is a recurrent ANN, as opposed to feed forward NN, which means neurons interconnections forms a 
 directed cycle, so neurons are both input and output. 
 Hopfield nets are sets n2 nodes where X [1, n] and k  [1, n] and the state is characterized by the 
