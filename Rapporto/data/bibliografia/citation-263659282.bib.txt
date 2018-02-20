@@ -1,0 +1,9 @@
+@article{SH5,
+author = {Mustafa, Muhammad},
+year = {2011},
+month = {01},
+pages = {341-349},
+title = {Artificial Neural Networks Modeling in Water Resources Engineering: Infrastructure and Applications},
+volume = {62},
+booktitle = {World Academy of Science, Engineering and Technology}
+}

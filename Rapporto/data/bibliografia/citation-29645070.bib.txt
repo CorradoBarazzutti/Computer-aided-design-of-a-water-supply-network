@@ -1,0 +1,9 @@
+@article{SH6,
+author = {Pierret, Alain and Doussan, Claude and Capowiez, Yvan and Bastardie, Francois and Pagès, Loïc},
+year = {2007},
+month = {05},
+pages = {},
+title = {Root Functional Architecture: A Framework for Modeling the Interplay between Roots and Soil},
+volume = {6},
+booktitle = {Vadose Zone Journal}
+}

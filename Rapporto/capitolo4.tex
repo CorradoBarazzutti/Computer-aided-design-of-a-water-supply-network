@@ -2,37 +2,71 @@
 \label{capitolo4}
 \thispagestyle{empty}
 
-\section{Problem statement and modelisation}
-The overall idea of our software solution is to connect water sources and consumers to a network of pipes in the most efficient way possible. Indeed the definition of the best net is a key problem. Factors that makes an aqueduct the optimal one are not easily modelled. We can suppose that variables such length, height, water speed and pressure, viscosity etc should be taken into account.
-\hfill For our first approach, we decided to consider only the pipeline length so that we simplify aqueduct design to a classical routing problem. On this base, we will then be able to add complexity.
-\hfill We can now more formally define our problem. Being a topography a graph representing the meshed surface of a region, the problem of designing an aqueduct as the one of finding the recovering-graph on the topography graph connecting water consumers and sources. We will use the euclidian metric on a space with tree dimensions.
+
+\section{Problem staterment and modelisation}
+The overall idea of our software solution is to connect water sources and consumers to a network of 
+pipes in the most efficent way possible. Indeed the definition of the best net is a key problem. 
+Factors that makes an aqueduct the optimal one are not easily modeled. We can suppose that variables 
+such length, height, water speed and pressure, viscosity ecc should be taken into account.
+
+\bigbreak
+For our first approach, we decided to consider only the pipeline length so that we simplify 
+acqueduct design to a classical routing problem. On this base, we will then be able to add complexity.
+We can now more formaly define our poblem. Being a topography a graph representing the meshed 
+surface of a region, the problem of designing an acqueduct as the one of finding the recovering-graph 
+on the topograpy graph connecting water consumers and sources. We will use the euclidian metric on a 
+space with tree dimensions.
 
 \include{work_flow}
 
 \section{Data reading}
-In \ref {work_flow} is shown to the flow chart of our software. 
+In \ref{work_flow} is shown to the flow chart of our software. 
 The input is composed of three geographical files: mesh represent the topology of the studied region, source-sinks contains the locations for each water source and consumer (called sink from now on). The last file describes the roads network in the area as the pipes should preferably run along roads for is cheaper to place them. For more information about the geographical data format, please refer to \ref{Geographical_technical}
 Reading those input two graphs can be initialised: the topography and the aqueduct describing graphs. The first is a graph where nodes represent positions and edges the possible transitions between them. Transitions on roads will be preferable. The aqueduct graph is initialised with source and sinks as nodes and no edges. An insight of the data structure we used to represent graph is given in section \ref {data_structure_technical}
 
-\section{Clustering}
 
+
+
+
+
+
+\section{Clustering}
 Running classical algorithms such a brute-force TSP or a minimum spanning tree to link
 the nodes in the sink-source graph would not be feasible for computational reasons. 
-Thanks to the particular nature of our problem a simplification is possible: we divide the aqueduct system
-in two layers: adduction and distribution nets. The adduction layer brings water from the
-source to the inhabited areas whereas the distribution segment is in charge of the "last
-kilometre" distribution. This two layer solution is commonly used in aqueduct design and
-network design in general: internet is an example.
-To achieve this need to recognise group of buildings such as villages or neighbourhoods. Those sets are called sink clusters.
-This approach caries multiple advantages. From the computational point of view reduce the dimension of the sets on which we run the routing algorithms.  On the other side, once the two layers are identified we can use different strategies to connect the nodes, as we will se in the next paragraph.
-Efficient implementations of clusterings algorithms are provided in scikit-learn. Scikit-learn is a well-known
-machine learning library for Python and it features various classification, regression and
-clustering algorithms. After this operation sinks are labeled as part of they respective cluster. A more detailed explanation can be found at \ref {Clustering_thecnical}.
+Thanks to the particular nature of our problem a simplification is possible: we divide the aqueduct
+system in two layers: adduction and distribution nets. The adduction layer brings water from the
+source to the inhabited areas whereas the distribution segment is in charge of the \"last kilometre\" 
+distribution. This two layer solution is commonly used in aqueduct design and network design in 
+general: internet is an example. To achieve this need to recognise group of buildings such as villages 
+or neighbourhoods. Those sets are called sink clusters.
+This approach caries multiple advantages. From the computational point of view reduce the dimension 
+of the sets on which we run the routing algorithms.  On the other side, once the two layers are 
+identified we can use different strategies to connect the nodes, as we will se in the next paragraph.
+Efficient implementations of clusterings algorithms are provided in scikit-learn. Scikit-learn is a 
+well-known machine learning library for Python and it features various classification, regression and
+clustering algorithms. After this operation sinks are labeled as part of they respective cluster. 
+A more detailed explanation can be found at \ref{Clustering_thecnical}.
 
 \section{Routing}
 \label{Routing}
-We now can design the water systems connecting the sinks. Let’s first consider the distribution layer, which is to say the problem of connecting the sinks of a cluster. This operation is broken down in two tasks. First, find all the paths connecting sinks, than chose the smallest recovering graph, i.e. the smallest aqueduct satisfying the specifics. \hfill 
-To find the path connecting the sinks an optimal approach is used on the topography graph, in our case the Dijstrak algorithm. The length of those path and the traversed nodes are saved as attributes of edges of the aqueduct graph. Please pay attention to the fact that edges on the aqueduct graph are paths on the topography graph. This operation creates a complete graph for each cluster. Note that the set of those graph is a partition of the aqueduct graph. \hfill 
-The second stage consists in eliminating the redundant edges: to do this we run the Kruskal algorithm and calculate the minimum spanning tree. For more information read section \ref {Routing_thecnical}. An other approach, favoured in classical aqueducts design would be to calculate a partially connected graph where certain nodes are connected to exactly one other node whereas others are connected to two or more other nodes. This makes possible to have some redundancy without the expense and complexity required for a connection between every node in the network. At this first stage of the project this part is left for further investigation.
-Considering now the adduction system a very similar approach can be used: the clusters should be interlinked and connected to a source. Each distribution network, as is a tree, has a root node. We can initialise the adduction graph with all the cluster's roots nodes and the water sources. Finally this graph is connected with the technique previously used.
+We now can design the water systems connecting the sinks. Let’s first consider the distribution layer,
+which is to say the problem of connecting the sinks of a cluster. This operation is broken down in two 
+tasks. First, find all the paths connecting sinks, than chose the smallest recovering graph, i.e. the 
+smallest aqueduct satisfying the specifics. \hfill 
+To find the path connecting the sinks an optimal approach is used on the topography graph, in our case
+the Dijstrak algorithm. The length of those path and the traversed nodes are saved as attributes of 
+edges of the aqueduct graph. Please pay attention to the fact that edges on the aqueduct graph are 
+paths on the topography graph. This operation creates a complete graph for each cluster. Note that the 
+set of those graph is a partition of the aqueduct graph. \hfill 
+The second stage consists in eliminating the redundant edges: to do this we run the Kruskal algorithm 
+and calculate the minimum spanning tree. For more information read section \ref{Routing_thecnical}. 
+An other approach, favoured in classical aqueducts design would be to calculate a partially connected 
+graph where certain nodes are connected to exactly one other node whereas others are connected to two 
+or more other nodes. This makes possible to have some redundancy without the expense and complexity 
+required for a connection between every node in the network. At this first stage of the project this 
+part is left for further investigation.
+Considering now the adduction system a very similar approach can be used: the clusters should be 
+interlinked and connected to a source. Each distribution network, as is a tree, has a root node. We 
+can initialise the adduction graph with all the cluster's roots nodes and the water sources. Finally 
+this graph is connected with the technique previously used.
 
