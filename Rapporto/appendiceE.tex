@@ -7,26 +7,18 @@ the more complex ones.
 
 \section{Simple 3D routing}
 
-
-
-
-
-
-
-
-
-
-
-
-
-In this example a simple 3D routing is computed and rendered. Calling the command vesuvio_example() 
+In this example a simple 3D routing is computed and rendered. Calling the command \verb|vesuvio_example()|
 in the python shell will execute the following instructions 
 
-\code{	router = Router(topo_file="vtk/Vesuvio")
-    		router.route_vesuvio(32729, 31991)
-    		router.write2vtk(router.acqueduct)
-		render_vtk("vtk/Vesuvio")
-	}    
+\begin{lstlisting}
+
+	router = Router(topo_file="vtk/Vesuvio")
+    router.route_vesuvio(32729, 31991)
+    router.write2vtk(router.acqueduct)
+	render_vtk("vtk/Vesuvio")
+		
+\end{lstlisting}
+    
 
 The topography of the Vesuvio and surrounding areas is loaded from a vtk file into a networkx graph 
 data structure of the router python class. The shortest path is computed using the Dijstrak algorithm 
@@ -37,8 +29,10 @@ between two points. This path is then exported as a vtk file. Finally the two vt
 \section{Travel Salesman Problem}
 \section{Minimum Spanning Tree}
 
+
+
 \section{Automatic design}
-Executing the command paesi_example() will reproduce the case studied in \ref{Routing}. The following 
+Executing the command \verb|paesi_example()| will reproduce the case studied in \ref{Routing}. The following 
 instructions are executed. A shape file representing the buildings position \include{paesi_buildings} 
 are loaded. Then clusters and paths are computed as above. The result is exported as shape file, 
 named "aqueduct".
