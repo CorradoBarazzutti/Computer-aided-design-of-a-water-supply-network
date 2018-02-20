@@ -576,11 +576,9 @@ class Router(object):
             adduction.add_node(node)
         self.complete_graph(adduction)
         adduction = self.mesh_graph(adduction, weight='dist')
-<<<<<<< HEAD:router3.py
+        
         print(len(adduction.edges()))
-=======
         nx.draw_networkx(adduction)
->>>>>>> 4028d5473b4083f7f8a3114d8d71573e9efe8aa5:Rapporto/router3.py
         # coord = {elem[0]: [elem[0][0], elem[0][1]] for elem in adduction.nodes(data=True)}
         # nx.draw_networkx(adduction, pos=coord, label=False)
         self.write2shp(adduction, "adduction_network")
