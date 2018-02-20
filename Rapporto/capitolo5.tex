@@ -52,6 +52,63 @@ average of the coordinates that also have the metadata associated. The edges are
 described in the topology file plus the edges connecting the building to the nearest node
 of the network in order to obtain a connected graph.
 
+\section {Hopfield neural network}
+\label{Hnn}
+
+We will now explain what Hopfield Neural Networks are, with particular attention to the TSP application,
+although the definition we will give is general.
+It is a recurrent ANN, as opposed to feed forward NN, which means neurons interconnections forms a 
+directed cycle, so neurons are both input and output. 
+Hopfield nets are sets n2 nodes where X [1, n] and k  [1, n] and the state is characterized by the 
+binary activation values y = (yXj) of the nodes.
+A TSP problem with n cities can be modeled as an Hopfield net of dimension n2, where yXj is 1 if the 
+city X is in the k-position of the tour.
+\bigbreak
+The input sk(t+1) of the neuron k is:
+
+
+\begin{equation*}
+s_k\left(t+1\right)=\ \sum_{j\neq k}{y_i\left(t\right)w_{jk}}+\theta_k
+\end{equation*}
+\bigbreak
+where wjk is the weight of the connection between j and k and   is the bias
+The forward function is applied to the node input to obtain the new activation value at time t+1:
+\begin{equation*}
+y_k\left(t\right)=sgn(s_k(t-1))
+\end{equation*}
+The energy function is as follow so that the optimal solution will minimize it:
+\begin{center}
+    \begin{aligned}
+        E = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\frac{B}{2}\sum_{j}\sum_{X}\sum_{X\neq Y}{y_{Xj} y_{Yj}+} \frac{C}{2}(\sum_{X}{\sum_{j}{y_{Xj}-n})}^2 \\
+            +\frac{D}{2} \sum_{X}\sum_{Y\neqX}\sum_{j}
+           {d_{XY}y_{Xj}(y_{Y,j+1}+y_{Y,j-1})\ }\qquad 
+    \end{aligned}
+\end{center}
+\bigbreak
+The first two terms are null if and only if the there is a maximum of one active neuron for each
+row and column respectively. The third term is null if and only if there are n active neurons.
+The last term takes in account the distance of the path, that should be minimized as well.
+\bigbreak
+The Hebbian rule to update the weights is deduced from the energy function:
+\begin{equation*}
+    w_{Xj,Yk}=\ -A\delta_{XY}\left(1-\delta_{jK}\right)-B\delta_{jk}\left(1-\delta_{XY}\right)-C-Dd_{XY}(\delta_{k,j+1}+\delta_{k,j-1})
+\end{equation*}
+
+\bigbreak
+where  kj = 1 if j = k and zero otherwise. 
+As in the energy function the first term inhibits connection within each row, the second within 
+columns, the third is the global inhibition and the last term takes into account the distance 
+between the cities.
+
+\bigbreak
+Under the hypothesis \begin{aligned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned} the method can be proved
+to have stable points. At each iteration the net updates his parameters according to the 
+Hebbian rule and the evolution of the state can be proved to be  monotonically nonincreasing
+with respect of the energy function.
+Performing then a gradient descent, after a certain number of repetition the state converge to a 
+stable point that is a minima of the energy function.
+
+
 \section{Clustering} 
 \label{Clustering_thecnical}
 
@@ -61,5 +118,35 @@ In this section we will explain the different routing techniques used.
 Dijstrak
 \include{shortest_path}
 
-TSP
+Dijkstra's algorithm is an algorithm for finding the shortest paths between two nodes in the graph.
+Here is the pseudo-code
+
+function Dijkstra(Graph, source):
+ 2
+ 3      create vertex set Q
+ 4
+ 5      for each vertex v in Graph:             // Initialization
+ 6          dist[v] ← INFINITY                  // Unknown distance from source to v
+ 7          prev[v] ← UNDEFINED                 // Previous node in optimal path from source
+ 8          add v to Q                          // All nodes initially in Q (unvisited nodes)
+ 9
+10      dist[source] ← 0                        // Distance from source to source
+11      
+12      while Q is not empty:
+13          u ← vertex in Q with min dist[u]    // Node with the least distance
+14                                                      // will be selected first
+15          remove u from Q 
+16          
+17          for each neighbor v of u:           // where v is still in Q.
+18              alt ← dist[u] + length(u, v)
+19              if alt < dist[v]:               // A shorter path to v has been found
+20                  dist[v] ← alt 
+21                  prev[v] ← u 
+22
+23      return dist[], prev[]
+
+
+\section{Travelling salesman problem}
 \include{TSP}
+
+

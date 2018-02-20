@@ -1,12 +1,12 @@
-﻿
+
 \chapter{Approach}
 \label{capitolo3}
 \thispagestyle{empty}
 
+In this chapter we would like to show the approach we followed in the solution of the problem. 
+We will give brief explanations of the techniques we investigated and justify the reasons why finally chose to use some of them an not others.
 
 \section{Root architecture}
-
-
 
 \parindent Biologically inspired models can provide interesting insights. Organisms that have gone
 through several rounds of evolutionary selection seem to be able to deliver efficient and
@@ -85,10 +85,9 @@ Physarum’s behavior. The principle of the model is that tube thickness depends
 internal flow of nutrients. Thus a high rate tends thickens a tube and a low rate leads
 to its decay. As shown by Prof. Arsons’ paper "Bio-inspired fluid extraction model for
 reservoir rocks", slime mold growth can also be used to study the flow in a porous medium.
-The use of Root Architecture Models was abandoned in order to investigate the use of Machine Learning,
- more specifically, Artificial Neural Networks.
+The use of Root Architecture Models was abandoned in order to investigate the use of artificial intelligence techniques
 
-\section{Artificial neural networks}
+\section{Artificial intelligence}
 \bigbreak
 The growth of network usage and their increasing complexity, in particular for communication 
 technologies application, drives towards the improvement of routing technique. One track of this 
@@ -111,8 +110,9 @@ pressure, etc. and to cooperatively pass their data through the network to other
  of those networks is particularly challenging because of the dynamic environmental conditions. 
 J. Barbancho and al. (2007) wrote a review about the use of artificial intelligence techniques for 
 WSNs for path discovery and other purposes. The study shows the potential of Artificial Neural Networks. 
-\bigbreak
-Artificial Neural Networks learn to do tasks by considering examples, generally without task-specific 
+
+\subsection{Artificial Neural Networks}
+ANNs learn to do tasks by considering examples, generally without task-specific 
 programming. An ANN is based on a collection of connected units called artificial neurons. Each 
 connection (synapse) between neurons can transmit a signal to another neuron. The receiving 
 (postsynaptic) neuron can process the signal(s) and then signal downstream neurons connected to it.
@@ -135,7 +135,7 @@ terms of speed and adaptability.
 \bigbreak
 This excursus gives an idea of the incredibly various applications of ANN in routing problems.
 We would like now to focus on the use of Hopfield Neural Network, which is the most classical solution 
-for routing problems with ANN's.
+for routing problems with ANN's. To finish we will explain the conclusions we came to regarding neural networks.
 \bigbreak
 Hopfield (1984) proposed the use of his algorithm to give heuristic solutions to the travel salesman 
 problem.
@@ -150,72 +150,21 @@ is minimal, where dXY is the distance between city X and Y.
 \bigbreak
 E. Wacholder and al. (1989) developed a more efficient implementation of the Hopfield NN for the travel
 sales-man problem. The algorithm was successfully tested on many problems with up to 30 cities and five
-salesmen, while a non-optimized brute-force approach would take billions of billions of years to 
-return. In all test cases, the algorithm always converged to valid solutions.
+salesmen. For comparison a non-optimized brute-force approach would take billions of billions of years to 
+return but optimal algorithms with record breaking performance can solve problems with more than 3000 cities.
 \bigbreak
-Mustafa K. Mehmet Ali and Faouzi Kamoun (1993) considered modeling shortest path problem with Hopfield 
+Mustafa K. Mehmet Ali and Faouzi Kamoun (1993) considered modelling shortest path problem with Hopfield 
 Neural Network for the first time. The researchers asserted that HNN can find shortest path effectively
 and sometimes it would be better to use such a network instead of classic algorithms such as Dijkstra.
-\bigbreak
-We will now explain what Hopfield Neural Networks are, with particular attention to the TSP application,
-although the definition we will give is general.
-It is a recurrent ANN, as opposed to feed forward NN, which means neurons interconnections forms a 
-directed cycle, so neurons are both input and output. 
-Hopfield nets are sets n2 nodes where X [1, n] and k  [1, n] and the state is characterized by the 
-binary activation values y = (yXj) of the nodes.
-A TSP problem with n cities can be modeled as an Hopfield net of dimension n2, where yXj is 1 if the 
-city X is in the k-position of the tour.
-\bigbreak
-The input sk(t+1) of the neuron k is:
-
-
-\begin{equation*}
-s_k\left(t+1\right)=\ \sum_{j\neq k}{y_i\left(t\right)w_{jk}}+\theta_k
-\end{equation*}
-\bigbreak
-where wjk is the weight of the connection between j and k and   is the bias
-The forward function is applied to the node input to obtain the new activation value at time t+1:
-\begin{equation*}
-y_k\left(t\right)=sgn(s_k(t-1))
-\end{equation*}
-The energy function is as follow so that the optimal solution will minimize it:
-\begin{center}
-    \begin{aligned}
-        E = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\frac{B}{2}\sum_{j}\sum_{X}\sum_{X\neq Y}{y_{Xj} y_{Yj}+} \frac{C}{2}(\sum_{X}{\sum_{j}{y_{Xj}-n})}^2 \\
-            +\frac{D}{2} \sum_{X}\sum_{Y\neqX}\sum_{j}
-           {d_{XY}y_{Xj}(y_{Y,j+1}+y_{Y,j-1})\ }\qquad 
-    \end{aligned}
-\end{center}
-\bigbreak
-The first two terms are null if and only if the there is a maximum of one active neuron for each
-row and column respectively. The third term is null if and only if there are n active neurons.
-The last term takes in account the distance of the path, that should be minimized as well.
-\bigbreak
-The Hebbian rule to update the weights is deduced from the energy function:
-\begin{equation*}
-    w_{Xj,Yk}=\ -A\delta_{XY}\left(1-\delta_{jK}\right)-B\delta_{jk}\left(1-\delta_{XY}\right)-C-Dd_{XY}(\delta_{k,j+1}+\delta_{k,j-1})
-\end{equation*}
-
-
+Please find in section \ref{Hnn} a thecnical explanation on how the Hopfield Neural Networks works, with particular attention to the TSP application
 
 \bigbreak
-where  kj = 1 if j = k and zero otherwise. 
-As in the energy function the first term inhibits connection within each row, the second within 
-columns, the third is the global inhibition and the last term takes into account the distance 
-between the cities.
-
-
-\bigbreak
-Under the hypothesis \begin{aligned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned} the method can be proved
-to have stable points. At each iteration the net updates his parameters according to the 
-Hebbian rule and the evolution of the state can be proved to be  monotonically nonincreasing
-with respect of the energy function.
-Performing then a gradient descent, after a certain number of repetition the state converge to a 
-stable point that is a minima of the energy function.
-\bigbreak
-Artificial Neural Networks are not the best suited tool to solve routing problems. First of all,
-creating an ANN is a difficult task. Therefore, another method is worth considering. In addition, 
+After a wide research in the field of Artificial Neural Networks and besides all the encouraging proofs we collected we concluded that are not the best suited tool to solve routing problems. ANN alone are less efficient in solving routing problems than optimal approaches.  In addition, 
 it is not possible to know whether the ANN will deliver a solution that will converge and whether 
 this solution is optimal. Thus ANNs as a poorly efficient way to solve the problem. Nonetheless, 
 machine learning can still be useful. Indeed, the interpretation of geographical information files 
 can be done through clustering algorithms.
+
+\subsection{Clustering}
+
+
