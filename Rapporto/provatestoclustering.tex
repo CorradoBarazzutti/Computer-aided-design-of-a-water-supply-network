@@ -1,0 +1,36 @@
+
+%intro
+Cluster analysis or clustering is the task of grouping a set of objects in such a way that objects 
+in the same group (called a cluster) are more similar (in some sense) to each other than to those in 
+other groups (clusters). It is a main task of exploratory data mining, and a common technique for 
+statistical data analysis, used in many fields
+
+%
+Cluster analysis itself is not one specific algorithm, but the general task to be solved. It can be 
+achieved by various algorithms that differ significantly in their notion of what constitutes a cluster 
+and how to efficiently find them. Popular notions of clusters include groups with small distances 
+between cluster members, dense areas of the data space, intervals or particular statistical 
+distributions.
+
+%
+Clustering algorithms can be categorized based on their cluster model, as listed above. 
+
+%
+There is no objectively \"correct\" clustering algorithm, but as it was noted, "clustering is in the
+eye of the beholder."[4] The most appropriate clustering algorithm for a particular problem often 
+needs to be chosen experimentally, unless there is a mathematical reason to prefer one cluster model 
+over another. It should be noted that an algorithm that is designed for one kind of model will 
+generally fail on a data set that contains a radically different kind of model.[4] For example, 
+k-means cannot find non-convex clusters.[4]
+
+%
+In centroid-based clustering, clusters are represented by a central vector, which may not necessarily
+ be a member of the data set. When the number of clusters is fixed to k, k-means clustering gives a 
+ formal definition as an optimization problem: find the k cluster centers and assign the objects to the
+  nearest cluster center, such that the squared distances from the cluster are minimized.
+%
+A particularly well known approximate method is Lloyd's algorithm,[8] often just referred to as 
+\"k-means algorithm" (although another algorithm introduced this name). It does however only find a 
+local optimum, and is commonly run multiple times with different random initializations.
+%
+Most k-means-type algorithms require the number of clusters - k - to be specified in advance, which is considered to be one of the biggest drawbacks of these algorithms. Furthermore, the algorithms prefer clusters of approximately similar size, as they will always assign an object to the nearest centroid. This often leads to incorrectly cut borders of clusters

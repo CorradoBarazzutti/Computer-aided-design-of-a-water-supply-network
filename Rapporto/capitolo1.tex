@@ -4,41 +4,52 @@
 
 
 
-\noindent L'introduzione deve essere atomica, quindi non deve contenere n\`e sottosezioni n\`e 
-paragrafi n\`e altro. Il titolo, il sommario e l'introduzione devono sembrare delle scatole cinesi, 
-nel senso che lette in quest'ordine devono progressivamente svelare informazioni sul contenuto per 
-incatenare l'attenzione del lettore e indurlo a leggere l'opera fino in fondo. L'introduzione deve 
-essere tripartita, non graficamente ma logicamente:
 
-\section{General context}
-La prima parte contiene una frase che spiega l'area generale dove si svolge il lavoro; una che spiega 
-la sottoarea pi\`u specifica dove si svolge il lavoro e la terza, che dovrebbe cominciare con le 
-seguenti parole \" lo scopo della tesi \`e \dots\" , illustra l'obbiettivo del lavoro. Poi vi devono 
-essere una o due frasi che contengano una breve spiegazione di cosa e come \`e stato fatto, delle 
-attivit\`a sperimentali, dei risultati ottenuti con una valutazione e degli sviluppi futuri. La prima 
-parte deve essere circa una facciata e mezza o due
+\parindent
+Water supply remains one of the major issues in developing countries. Through this
+project we seek to improve the design of water supply networks. Designing water supply
+networks is an optimization problem in which engineers have to find the best balance
+between cost, transport efficiency and resistance to failure.
 
-\section{Motivation and Objectives}
+\section{General Context and Objectives}
+This project is centered on the design of water supply networks. More specifically it focuses on the design of new 
+networks in developing countries with no existing infrastructures.
+The aim is to develop a software able to design a complete network from the map of a given area.
+In order to do so the team examined several techniques that could be suited to solve the problem.
+Among these were Root Architecture and Neural Networks. Eventually, clustering techniques and a Minimum
+Spanning Tree (MST) algorithm were chosen given their simplicity. They enabled to draw a water supply network 
+from geographical data. This data was downloaded from Open Street Maps (OSM) and analysed with QGis.
+With regard to future developments, the project could be improved by focusing on water loss management,
+which is one of the major issues in water supply networks.
 
 \section{Brief description of the approach}
-La seconda parte deve essere una esplosione della prima e deve quindi mostrare in maniera pi\`u esplicita l'area dove si svolge il lavoro, le fonti bibliografiche pi\`u importanti su cui si fonda il lavoro in maniera sintetica (una pagina) evidenziando i lavori in letteratura che presentano attinenza con il lavoro affrontato in modo da mostrare da dove e perch\'e \`e sorta la tematica di studio. Poi si mostrano esplicitamente le realizzazioni, le direttive future di ricerca, quali sono i problemi aperti e quali quelli affrontati e si ripete lo scopo della tesi. Questa parte deve essere piena (ma non grondante come la sezione due) di citazioni bibliografiche e deve essere lunga circa 4 facciate.
+The first step was to gather information on possible design techniques. Biologically-inspired models were
+examined. Prof Chloé Arson from GeorgiaTech 
+provided very interesting information on root growth models and their applications to network design.
+Another path of research were Artificial Neural Networks. The idea was to explore the possibility of using
+this cutting-edge technology to draw a complete water supply network. However, it proved to be rather complex
+to master and not fully suited to the necessities.
+Finally, a more simple technique was retained. It uses a clustering and a Minimum Spanning Tree algorithm.
+The clustering algorithm allows to identify the villages on the map and the MST links them.
+The algorithms were implemented on Python using two libraries: /"scikit-learn/" and /"NetworkX/".
+The geographical data that was used as input of the algorithms was downloaded from Open Street Maps. 
+Maps were processed using 
+QGis, an open-source geographical information system. QGis allowed to select the most important 
+data from the maps
+and save it as a /"shapefile/", a format supported by the NetworkX library.
+
+\section{Report Structure}
+The report is organised as follows.
+\ref{capitolo2} covers the state-of-the-art in water supply network design. It is an overview of the
+current techniques. It also provides information on the current issues in this domain.
+\ref{capitolo3} is a detailed description of the approach. The different techniques studied throughout 
+the project are
+presented and discussed.
+\ref{capitolo4} explains our solution which is based on clustering and MST algorithms.
+\ref{capitolo5} gives an insight into the more technical aspects of the project. Details on the software used
+can be found in this section.
+Finally, \ref{capitolo6} presents the results obtained with the technique described in \ref{capitolo4}.
 
 
-
-\section{Structure of the reporto}
-La terza parte contiene la descrizione della struttura della tesi ed \`e organizzata nel modo seguente.
-``La tesi \`e strutturata nel modo seguente.
-
-Nella sezione due si mostra \dots
-
-Nella sez. tre si illustra \dots
-
-Nella sez. quattro si descrive \dots
-
-Nelle conclusioni si riassumono gli scopi, le valutazioni di questi e le prospettive future \dots
-
-Nell'appendice A si riporta \dots (Dopo ogni sezione o appendice ci vuole un punto).''
-
-I titoli delle sezioni da 2 a M-1 sono indicativi, ma bisogna cercare di mantenere un significato equipollente nel caso si vogliano cambiare. Queste sezioni possono contenere eventuali sottosezioni.
 
 
