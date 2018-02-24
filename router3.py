@@ -2,7 +2,7 @@
 
 import networkx as nx
 import math
-import sys
+import matplotlib.pyplot as plt
 
 # sys.setdefaultencoding('utf8')
 
@@ -572,14 +572,16 @@ class Router(object):
         '''
         adduction = nx.Graph()
         cluster_centers = [(node[0], node[1]) for node in ms.cluster_centers_]
+        print(len(cluster_centers))
         for node in cluster_centers:
             adduction.add_node(node)
         self.complete_graph(adduction)
         adduction = self.mesh_graph(adduction, weight='dist')
-        
-        print(len(adduction.edges()))
 
-        nx.draw_networkx(adduction)
+        coord = {touple : list(touple) for touple in adduction.nodes()}
+        nx.draw_networkx(adduction, pos=coord, with_labels=False)
+        plt.show()
+
         # coord = {elem[0]: [elem[0][0], elem[0][1]] for elem in adduction.nodes(data=True)}
         # nx.draw_networkx(adduction, pos=coord, label=False)
         self.write2shp(adduction, "adduction_network")
