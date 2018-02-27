@@ -1,7 +1,283 @@
 \chapter{State of the art}
 \label{capitolo2}
 \thispagestyle{empty}
+\parindent=0em
 
 
 
-\noindent Nella seconda sezione si riporta lo stato dell'arte del settore, un inquadramento dell'area di ricerca orientato a portare il lettore all'interno della problematica affrontata. Bisogna dimostrare di conoscere le cose fatte fino ad ora in questo campo e il perch\'e si sia reso necessario lo svolgimento di questo lavoro. Questa sezione deve essere grondante di citazioni bibliografiche~\cite{marco02bud}.
+A water supply system has two primary requirements: first, it needs to deliver adequate amounts 
+of water to meet consumer consumption and fire requirements that must be available 24 hours a 
+day, 365 days a year. Second the quality of the water must meet the regulatory requirements to 
+guarantee a human consumption. Nowadays water distribution systems can be divided into four main components: 
+\begin{itemize}
+    \item   Water sources and intake works: the common sources for the untreated or raw water are
+     surface water sources such as rivers, lakes, springs, and man-made reservoirs and groundwater
+      sources such as bores and wells.
+    \item   Treatment works and storage: The intake structures and pumping stations are constructed 
+    to extract water from the water sources. The raw water is transported to the treatment plants
+     for processing through transmission mains and is stored in clear water reservoirs after 
+     treatment. The degree of treatment depends upon the raw water quality and finished water 
+     quality requirements. The clear water reservoir provides a buffer for water demand variation
+      as treatment plants are generally designed for average daily demand.
+    \item   Transmission mains: water is carried over long distances through transmission mains.
+     If the flow of water in a transmission main is maintained by creating a pressure head by 
+     pumping, it is called a pumping main. On the other hand, if the flow in a transmission main 
+     is maintained by gravitational potential available on account of elevation difference, it is 
+     called a gravity main
+    \item   Distribution network: There are no intermediate withdrawals in a water transmission 
+    main. Similar to transmission mains, the flow in water distribution networks is maintained 
+    either by pumping or by gravitational potential. Generally, in a flat terrain, the water 
+    pressure in a large water distribution network is maintained by pumping; however, in steep 
+    terrain, gravitational potential maintains a pressure head in the water distribution system. 
+    A distribution network delivers water to consumers through service connections. Such a 
+    distribution network may have different configurations depending upon the layout of the area.
+    Generally, water distribution networks have a looped and branched configuration of pipelines,
+    but sometimes either looped or branched configurations are also provided depending upon the 
+    general layout plan of the city roads and streets.
+\end{itemize}
+
+The design problem of a looped network is one of the most difficult problems of optimisation, 
+the main objective is to estimate design variables by minimizing total system cost subject to 
+safety and system constraints. The essential parameters are the projection of water demand, peak 
+flow factors, minimum and maximum commercial pipe size, pipe material and reliability 
+consideration. These nonlinear programming problems can only be solved numerically and not 
+mathematically.
+
+section{Water supply networks equations}
+The equations that characterise a water supply networks are the continuity equation and the
+equation of motion in most of the case for a study flow, that come down to the Bernulli's 
+equation.
+\bigbreak
+The continuity equation for steady flow in a circular pipe of diameter D is
+\begin{equation}
+  Q=\frac{\pi}{4}D^{2}V  
+\end{equation}
+V = average velocity of flow
+Q = volumetric rate of flow, called discharge.
+
+
+The equation of motion for steady flow is:
+
+
+\begin{equation}
+  z_{1}+  h_{1}+  \frac{V_{1}^{2}}{2g}=z_{2}+ h_{2}+\frac{V_{2}^{2}}{2g}+  h_{L}  
+\end{equation}
+
+z1 and z2 = elevations of the centerline of the pipe, 
+h1 and h2 = pressure heads,
+V1 and V2 = average velocities at sections 1 and 2, 
+g = gravitational acceleration
+hL = head loss between sections 1 and 2.
+The head loss hL is composed of two parts: hf  is head loss on account of surface resistance
+(also called friction loss), and hm  is head loss due to form resistance, which is the
+head loss on account of change in shape of the pipeline (also called minor loss).
+
+
+\begin{equation}
+   h_{L}= h_{f}+ h_{m} 
+\end{equation}
+
+The term z + h is called the piezometric head; and the line connecting the piezometric
+heads along the pipeline is called the hydraulic gradient line.
+
+
+\begin{figure}
+    
+\end{figure}
+
+The head loss on account of surface resistance is given by the Darcy-Weisbach equation
+
+\begin{equation}
+    h_{f}=\frac{fLV^{2}}{2gD}
+\end{equation}
+
+where L = the pipe length
+f = friction factor.
+The friction factors f = f(Re, ε) is function of the Reynolds number and the roughness projection ε.
+The form-resistance losses are due to bends, elbows, valves, enlargers, reducers. A form loss 
+develops at a pipe junction where many pipelines meet. Similarly, form loss is also created at 
+the junction of pipeline and service connection. All these losses, when added together, may form
+a sizable part of overall head loss.
+Form loss is expressed in the following form:
+
+
+\begin{equation}
+    h_{m}=k_{f}\frac{V^2}{2g}
+\end{equation}
+
+kf  is form-loss coefficient that depend from the nature of the special piece.
+
+section{Water Sources}
+
+Most of the water supply networks use more than one type of water source. The most common water 
+sources are: 
+\bigbreak
+Impounding Reservoir: Reservoirs created by placing dams across rivers, streams, 
+or at the neck of a valley to capture runoff water 
+\bigbreak
+Fresh-Water Lakes: This is generally considered a functionally, inexhaustible supply of water,
+provided the intake lines are below the ice formation level, in order to prevent jamming at the 
+inlet ports of the water supply system.
+\bigbreak
+Wells: Driven or bored wells are excavated to the level of the water table. of well require 
+low-lift or high-lift pumps depending on the depth of the water or the distance of the water 
+from the surface. Larger municipalities may use a series of well fields, and usually pump up to 
+gravity tanks to provide the required flow and pressure to the distribution system.
+
+section{Water system classification}
+There are some basic water system classifications that have been established to provide a basic 
+reference for examining the adequacy and reliability or water systems. 
+\bigbreak
+\textbf{High-level reservoir system}: This classification refers to a water source that is at least 
+30 meter in elevation above the treatment facility in order to provide sufficient head pressure 
+so that nonpumping station is required. (Figure ). This type of system gives the opportunity to 
+develop a very reliable water supply system. If there is sufficient elevation difference between
+the water intake source on the reservoir system and the distribution piping in the community, 
+it is possible to design a water system that does not require one or more pumping stations. 
+The head pressure for supplying water to the treatment plant and from the treatment plant to 
+the distribution system is sufficient to meet both consumer demand and needed fire flows. 
+This is also a very economical system since there is no substantial power requirement to run 
+the water system beyond normal lighting requirements and requirements for establishing the level
+of water quality needed for the community. A gravity flow system that does not require a pump 
+interface is considered the most reliable type of water system, since there is no mechanical 
+component to break down or fail when the power source goes down. For the same reasons, it is the
+most economical type of water supply system to operate but also the less common.
+
+
+\begin{figure}
+    
+\end{figure}
+
+\textbf{Low level reservoir systems}: Low-level dams, usually up to about 6 meters high, are typically 
+built on steam flow that is considered reliable year round. The reservoir basin may be bulldozed 
+to form a small lake that will supply water to communities of populations up to about 25,000. 
+A basic configuration for a low-level dam is depicted in Figure.  Low-level retention dams 
+typically require a pumping station to transport water to the treatment plant and, if the land 
+area is relatively flat, a second pumping station to pump treated water directly to the 
+distribution system or to elevated storage to provide the required pressure and volume to meet 
+instantaneous flow demand. The elevated storage can be designed to minimize the direct pumping 
+requirements.
+
+
+\begin{figure}
+    
+\end{figure}
+
+\textbf{Direct pumping systems}: Figure illustrates how a direct pumping station feeds water to the 
+treatment plant and then a second pumping system transports water to a storage holding area, 
+such as a clear well, to a standpipe storage tank that is maintained full as domestic consumption
+varies throughout a single day. This minimizes the time the pump or pumps actually have to run. 
+The pumps also may be designed and arranged to pump the treated water directly into the 
+distribution system when there is a high demand on the water system. This could occur when 
+there is a major fire in the community.
+
+
+
+\begin{figure}
+    
+\end{figure}
+
+\textbf{Pumping station at well sites and gravity storage}: In this type of supply system, one drilled
+well, or a field of wells, feed water to a ground-level pumping station. This concept is
+presented in Figure 4-5. The quality of the ground water in most of the case is so good that 
+the only treatment necessary is chlorination through an injection method in the pipes that 
+carry the non-potable water. In most cases, any other required water treatment generally is 
+handled in a similar manner. The treated water either flows by gravity to the distribution 
+system or is pumped to one or more elevated storage tanks. Potable water flows by gravity from 
+the storage tank to the distribution system.
+
+
+\begin{figure}
+    
+\end{figure}
+
+section{Method of water distribution}
+
+Water is dispersed throughout the distribution system in a number of different ways, depending 
+on local conditions or on regulations and requirements that influence water system design. 
+The common methods of water distribution to the pipe network are reviewed under the following 
+titles.
+\bigbreak
+\textbf{Pumps and elevated storage}: Through the use of pumps and elevated storage, the excess water pumped
+during periods of low consumption is stored in elevated tanks or reservoirs. During periods of 
+high consumption, the stored water supplements the water that is being pumped. This method allows
+fairly uniform flow rates and pressures throughout the water system. Consequently, this method 
+generally is economical because the pumps may be operated at their rated capacity. Since the 
+stored water supplements the supply used for fires and system breakdowns, this method of operation
+is fairly reliable. However, it is necessary that fire department pumpers be available to boost 
+the pressure from fire hydrant to delivery water through hose streams at the proper nozzle 
+pressure to confine, control, and extinguish developing structural fires and other related fire
+events. A more complete understanding of these concepts is presented under \textbf{distribution storage}
+below.
+
+\textbf{Pumps without storage}: When stationary pumps are used to distribute water, and no storage
+is provided on the distribution system, the pumps force water at the required volume and pressure
+directly into the mains. The outlet for the water is through domestic taps on the system or 
+through fire hydrants. This is the least desirable type of distribution system because a power 
+failure could interrupt the water supply. In addition, as consumption varies, the pressure in the
+water mains is most likely to fluctuate. To conform to varying rates, several pumps are made 
+available to add water output when needed, a procedure requiring constant attention at the water
+plant. Another disadvantage is the fact that the peak power demand of the water plant is likely
+to occur during periods of high electric power consumption, thus increasing power costs to operate
+the water system. However, one advantage of direct pumping is that a large stationary fire pump 
+may be used on demand for structure fires. This pump increases the residual pressure to any 
+desired amount permitted by the construction of the water mains.
+
+section{Water demand rates}
+Three historical or predicted water demand rates are involved in the discussion of water system demand and design flow rate criteria for both consumer consumption and needed fire flow. These are as follows:
+1) Average daily consumption: This is the average of the total amount of water used each day during a 1-year period (usually expressed in million litres per day, MLD)
+2) Maximum daily consumption: This is the maximum total amount of water used during any 24-hour period in a 3-year period. This number should consider and exclude any unusual and excessive identified used of water that would affect the calculation. Such abnormal uses would include a water main break, a large-scale fire, or an abnormal industrial demand. This is often referred to as the MDC rate.
+3) Maximum hourly demand: This is the maximum amount of water used in any single hour, of any day, in a 3-year period. It is normally expressed in litres per day. It is determined in litres per day by multiplying the peak hours by 24. 
+
+section{Distribution System Appurtenances}
+Water systems typically have three classifications of pipe used to transport to demand points 
+throughout a community. These are identified as follows:
+\bigbreak
+
+1) Primary feeders: These are large pipes, usually with diameters ranging from 30 to 120 cm,
+based on the size of the population served. Primary feeders transport water form the water 
+treatment plant to corporation line of the community and/or to major water storage locations
+within the community.
+2) Secondary feeders: These are connected to the primary feeders to transport water along the 
+major streets of the community. Secondary feeders need to be in place to supply all commercial 
+property, public buildings, and private sector buildings that have a needed fire flow over 3500 
+litres. Secondary feeders typically are 20 to 40 cm in diameter. 
+3) Distributor mains: These are used to transport water from the secondary feeders to individual
+streets in the areas of the community that have small businesses like convenience stores and gas 
+stations but, more importantly, along residential streets. The minimum pipe size should be 10 cm
+and, based on the system design, a possible dead- end pipe may need to be 20 or even 25 cm.
+\bigbreak
+The sizes of pipe associated with the three classifications of pipe in a typical water system are
+approximations. The needed pipe size throughout the built-upon areas of a community is based on 
+the hydraulic gradient of the community, consumer consumption profiles through the community, 
+needed fire flow at representative locations throughout the community, and, quite importantly, 
+the two methods for laying and connecting pipe throughout the community. The traditional pipe 
+system design is referred to as a Single-Point Feed System. In this case, water moves from the 
+treatment plant to the community corporation line with a single primary feeder. The primary feed,
+in turn, supplies the secondary feeders along the main streets of the community, and the 
+distributor mains supply the block frontage along the residential streets. In the single- point 
+feed system, the pipe sizes need to meet the maximum daily consumption demand plus the needed 
+fire flow. This results in a larger pipe than is needed under normal daily usage, without any 
+fires. The second major weakness of this type of system is that there may be a lot of dead-end
+mains in the residential areas and at the end of secondary mains. This leads to the stagnation 
+of water which rapidly reduces the quality of water.
+\bigbreak
+The more modern approach to water system design is to loop all the water mains, or cross-tie the 
+mains, so that at any demand point the water is supplied from two directions. This allows the 
+designing engineer to develop a hydraulic model of the system and to determine mathematically 
+the proper size of pipe according to flow paths to meet the consumer and needed fire flow demand 
+points. It is important to note that many older water systems have been updated. By laying a 
+primary feeder around the perimeter of the community to tie in all of the dead-end mains to 
+improve both flow distribution and water pressures through the community.
+
+\begin{figure}
+    
+\end{figure}
+
+
+
+
+
+
+
+
