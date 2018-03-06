@@ -1,6 +1,0 @@
-PWD /Users/giovannicognetti/Desktop/Project_inno/project-P5C006/Rapporto
-INPUT /usr/local/texlive/2017/texmf.cnf
-INPUT /usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf
-INPUT /usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/giovannicognetti/Desktop/Project_inno/project-P5C006/Rapporto/work_flow.tex
-OUTPUT work_flow.log
