@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.1.29)  20 FEB 2018 11:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.20)  24 FEB 2018 19:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -233,6 +233,332 @@ Package caption Info: listings package is loaded.
 Package caption Info: rotating package is loaded.
 Package caption Info: subfigure package is loaded.
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count115
+\Gm@cntv=\count116
+\c@Gm@tempcnt=\count117
+\Gm@bindingoffset=\dimen134
+\Gm@wd@mp=\dimen135
+\Gm@odd@mp=\dimen136
+\Gm@even@mp=\dimen137
+\Gm@layoutwidth=\dimen138
+\Gm@layoutheight=\dimen139
+\Gm@layouthoffset=\dimen140
+\Gm@layoutvoffset=\dimen141
+\Gm@dimlist=\toks25
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks26
+\pgfutil@tempdima=\dimen142
+\pgfutil@tempdimb=\dimen143
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box33
+(/usr/local/texlive/2017/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks29
+))
+\pgf@x=\dimen144
+\pgf@y=\dimen145
+\pgf@xa=\dimen146
+\pgf@ya=\dimen147
+\pgf@xb=\dimen148
+\pgf@yb=\dimen149
+\pgf@xc=\dimen150
+\pgf@yc=\dimen151
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count118
+\c@pgf@countb=\count119
+\c@pgf@countc=\count120
+\c@pgf@countd=\count121
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-dvips.def
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+File: pgfsys-dvips.def 2014/07/09  (rcs-revision 1.25)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def
+File: pgfsys-common-postscript.def 2008/10/01  (rcs-revision 1.22)
+\pgf@objectcount=\count122
+)))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count123
+\pgfsyssoftpath@bigbuffer@items=\count124
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count125
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen152
+\pgfmath@count=\count126
+\pgfmath@box=\box34
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count127
+))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen153
+\pgf@picmaxx=\dimen154
+\pgf@picminy=\dimen155
+\pgf@picmaxy=\dimen156
+\pgf@pathminx=\dimen157
+\pgf@pathmaxx=\dimen158
+\pgf@pathminy=\dimen159
+\pgf@pathmaxy=\dimen160
+\pgf@xx=\dimen161
+\pgf@xy=\dimen162
+\pgf@yx=\dimen163
+\pgf@yy=\dimen164
+\pgf@zx=\dimen165
+\pgf@zy=\dimen166
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen167
+\pgf@path@lasty=\dimen168
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen169
+\pgf@shorten@start@additional=\dimen170
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box35
+\pgf@hbox=\box36
+\pgf@layerbox@main=\box37
+\pgf@picture@serial@count=\count128
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen171
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen172
+\pgf@pt@y=\dimen173
+\pgf@pt@temp=\dimen174
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen175
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen176
+\pgf@sys@shading@range@num=\count129
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box38
+))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box39
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen177
+\pgf@nodesepend=\dimen178
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen179
+\pgffor@skip=\dimen180
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
+))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count130
+\pgfplotmarksize=\dimen181
+)
+\tikz@lastx=\dimen182
+\tikz@lasty=\dimen183
+\tikz@lastxsaved=\dimen184
+\tikz@lastysaved=\dimen185
+\tikzleveldistance=\dimen186
+\tikzsiblingdistance=\dimen187
+\tikz@figbox=\box40
+\tikz@figbox@bg=\box41
+\tikz@tempbox=\box42
+\tikz@tempbox@bg=\box43
+\tikztreelevel=\count131
+\tikznumberofchildren=\count132
+\tikznumberofcurrentchild=\count133
+\tikz@fig@count=\count134
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count135
+\pgfmatrixcurrentcolumn=\count136
+\pgf@matrix@numberofcolumns=\count137
+)
+\tikz@expandcount=\count138
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
 (/usr/local/texlive/2017/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2017/05/19 3.10 The Babel package
 
@@ -241,8 +567,8 @@ Language: english 2017/01/24 v3.3q English support from the babel system
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2017/05/19 3.10 Babel common definitions
-\babel@savecnt=\count115
-\U@D=\dimen134
+\babel@savecnt=\count139
+\U@D=\dimen188
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -250,8 +576,8 @@ File: babel.def 2017/05/19 3.10 Babel common definitions
 ))
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks25
-\inpenc@posthook=\toks26
+\inpenc@prehook=\toks38
+\inpenc@posthook=\toks39
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
@@ -569,435 +895,81 @@ Now handling font encoding U ...
 (./frontespizio.aux) (./dedica.aux) (./abstract.aux) (./Acknowledgements.aux)
 (./capitolo1.aux) (./capitolo2.aux) (./capitolo3.aux) (./capitolo4.aux)
 (./capitolo5.aux) (./capitolo6.aux) (./capitolo7.aux) (./appendiceA.aux)
-(./appendiceB.aux) (./appendiceC.aux))
-\openout1 = `tesi.aux'.
+(./appendiceB.aux) (./appendiceC.aux)
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-\c@lstlisting=\count116
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
-\openout2 = `frontespizio.aux'.
-
- (./frontespizio.tex
-
-./frontespizio.tex:12: LaTeX Error: Cannot determine size of graphic in LogoCS.
-png (no BoundingBox).
+./tesi.aux:23: LaTeX Error: Missing \begin{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.12     \includegraphics[width=3.5cm]{LogoCS.png}
-                                                  
+l.23 c
+      tion}{\numberline {1.2}Brief description of the approach}{5}}
 ? s
 OK, entering \scrollmode...
-File: LogoCS.png Graphic file (type eps)
-<LogoCS.png>
+./tesi.aux:23: Extra }, or forgotten \endgroup.
+l.23 ction}
+           {\numberline {1.2}Brief description of the approach}{5}}
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 41.
-
-[1
-Non-PDF special ignored!
-
-
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-Non-PDF special ignored!]) [2
-
-
-
-]
-\openout2 = `dedica.aux'.
-
- (./dedica.tex) [3
-
-] [4
-
-
-]
-\openout2 = `abstract.aux'.
-
- (./abstract.tex) [1
-
-
-]
-[2
-
-]
-\openout2 = `Acknowledgements.aux'.
-
- (./Acknowledgements.tex) [3
-
-
-
-] [4
-
-]
-\openout2 = `capitolo1.aux'.
-
- (./capitolo1.tex
-Chapter 1.
-
-Overfull \hbox (2.0804pt too wide) in paragraph at lines 7--12
-\OT1/cmr/m/n/10.95 L'introduzione deve es-sere atom-ica, quindi non deve con-te
-nere n^^Re sot-tosezioni
- []
-
-[5
-
-
-
-]) [6]
-\openout2 = `capitolo2.aux'.
-
- (./capitolo2.tex
-Chapter 2.
-
-LaTeX Warning: Citation `marco02bud' on page 7 undefined on input line 7.
-
-) [7
-
-
-
-]
-\openout2 = `capitolo3.aux'.
-
- (./capitolo3.tex
-
-./capitolo3.tex:1: Package inputenc Error: Unicode char ﻿ (U+FEFF)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
+./tesi.aux:23: Extra }, or forgotten \endgroup.
+l.23 ...1.2}Brief description of the approach}{5}}
                                                   
-l.1 ﻿
-       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[8
-
-
-
-]
-Chapter 3.
-./capitolo3.tex:11: Missing number, treated as zero.
-<to be read again> 
-                   B
-l.11 \parindent B
-                 iologically inspired models can provide interesting insight...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./capitolo3.tex:11: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   B
-l.11 \parindent Bi
-                  ologically inspired models can provide interesting insight...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-[9] [10] [11] [12]
-LaTeX Font Info:    Try loading font information for U+msa on input line 146.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 146.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [13]
-
-./capitolo3.tex:184: Package amsmath Error: \begin{aligned} allowed only in mat
-h mode.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.184         E
-                = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./capitolo3.tex:184: Missing $ inserted.
-<inserted text> 
-                $
-l.184         E
-                = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./capitolo3.tex:185: Undefined control sequence.
-l.185 ...        +\frac{D}{2} \sum_{X}\sum_{Y\neqX
-                                                  }\sum_{j}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./capitolo3.tex:187: Missing $ inserted.
-<inserted text> 
-                $
-l.187     \end{aligned}
-                       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-./capitolo3.tex:209: Package amsmath Error: \begin{aligned} allowed only in mat
-h mode.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.209 Under the hypothesis \begin{aligned} w
-                                            _{Xj,Yk}= w_{Yk,Xj} \end{aligned...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./capitolo3.tex:209: Missing $ inserted.
-<inserted text> 
-                $
-l.209 Under the hypothesis \begin{aligned} w
-                                            _{Xj,Yk}= w_{Yk,Xj} \end{aligned...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./capitolo3.tex:209: Missing $ inserted.
-<inserted text> 
-                $
-l.209 ...igned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned}
-                                                   the method can be proved
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-) [14] [15]
-\openout2 = `capitolo4.aux'.
 
- (./capitolo4.tex [16
+LaTeX Warning: Label `capitolo2' multiply defined.
 
 
+LaTeX Warning: Label `capitolo3' multiply defined.
 
-]
-Chapter 4.
 
-./capitolo4.tex:20: LaTeX Error: \include cannot be nested.
+LaTeX Warning: Label `capitolo4' multiply defined.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 \include{work_flow}
-                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+(./work_flow.aux)
 
+LaTeX Warning: Label `Routing' multiply defined.
 
-LaTeX Warning: Reference `work_flow' on page 17 undefined on input line 23.
 
-[17] [18]) [19]
-\openout2 = `capitolo5.aux'.
+LaTeX Warning: Label `capitolo5' multiply defined.
 
- (./capitolo5.tex [20
 
+LaTeX Warning: Label `Geographical_technical' multiply defined.
 
 
-]
-Chapter 5.
-./capitolo5.tex:8: Missing number, treated as zero.
-<to be read again> 
-                   T
-l.8 \parindent T
-                he overall idea is to take maps and automatically trace an a...
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+LaTeX Warning: Label `data_structure_technical' multiply defined.
 
-./capitolo5.tex:8: Illegal unit of measure (pt inserted).
-<to be read again> 
-                   T
-l.8 \parindent Th
-                 e overall idea is to take maps and automatically trace an a...
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
 
-[21]
+LaTeX Warning: Label `Clustering_thecnical' multiply defined.
 
-./capitolo5.tex:62: LaTeX Error: \include cannot be nested.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.62 \include{shortest_path}
-                            
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+LaTeX Warning: Label `Routing_thecnical' multiply defined.
 
+(./shortest_path.aux) (./TSP.aux)
 
-./capitolo5.tex:65: LaTeX Error: \include cannot be nested.
+LaTeX Warning: Label `capitolo6' multiply defined.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.65 \include{TSP}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
-) [22]
-\openout2 = `capitolo6.aux'.
+LaTeX Warning: Label `capitolo7' multiply defined.
 
- (./capitolo6.tex
-Chapter 6.
-) [23
 
+LaTeX Warning: Label `appendiceA' multiply defined.
 
-
-]
-\openout2 = `capitolo7.aux'.
-
- (./capitolo7.tex [24
-
-
-
-]
-Chapter 7.
-) [25] [26
-
-
-]
-No file tesi.bbl.
-\openout2 = `appendiceA.aux'.
-
-(./appendiceA.tex
-Appendix A.
-) [27
-
-
-]
-\openout2 = `appendiceB.aux'.
-
- (./appendiceB.tex
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 13.59999pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[28
-
-
-
-]
-Appendix B.
-) [29]
-\openout2 = `appendiceC.aux'.
-
- (./appendiceC.tex
-
-./appendiceC.tex:1: LaTeX Error: Can be used only in preamble.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 \usepackage
-               {listings}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[30
-
-
-]
-Appendix C.
-
-! Package Listings Error: File `router3(.py)' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: py)
-
-Enter file name: 
-./appendiceC.tex:9: Emergency stop.
-<read *> 
-         
-l.9 \lstinputlisting[language=Python]{router3.py}
-                                                 ^^M
-End of file on the terminal!
-
- 
-Here is how much of TeX's memory you used:
- 5261 strings out of 492995
- 72122 string characters out of 6132704
- 146242 words of memory out of 5000000
- 8683 multiletter control sequences out of 15000+600000
- 11671 words of font info for 43 fonts, out of 8000000 for 9000
- 1142 hyphenation exceptions out of 8191
- 36i,11n,43p,809b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
-./appendiceC.tex:9:  ==> Fatal error occurred, no output PDF file produced!
-ng Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
-)
-Now handling font encoding OMX ...
-... no UTF-8 mapping file for font encoding OMX
-Now handling font encoding U ...
-... no UTF-8 mapping file for font encoding U
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+02C6 (decimal 710)
-   defining Unicode char U+02DC (decimal 732)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2026 (decimal 8230)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2423 (decimal 9251)
-)) (./tesi.aux
-(./work_flow.aux) (./shortest_path.aux) (./TSP.aux) (./shortest_path.aux)
-(./paesi_buildings.aux))
+
+LaTeX Warning: Label `appendiceB' multiply defined.
+
+
+LaTeX Warning: Label `appendiceC' multiply defined.
+
+(./shortest_path.aux) (./paesi_buildings.aux))
 \openout1 = `tesi.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -1052,6 +1024,10 @@ Package caption Info: End \AtBeginDocument code.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
+Overfull \hbox (297.33682pt too wide) in paragraph at lines 23--35
+[]\OT1/cmr/m/n/10.95 ction[]Brief
+ []
+
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count141
@@ -1185,22 +1161,7 @@ Chapter 2.
 
 LaTeX Warning: Citation `marco02bud' on page 7 undefined on input line 7.
 
-) (./capitolo3.tex
-
-./capitolo3.tex:1: Package inputenc Error: Unicode char ﻿ (U+FEFF)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 ﻿
-       
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[7
+) (./capitolo3.tex [7
 
 ] [8
 
@@ -1238,86 +1199,13 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 146.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-./capitolo3.tex:184: Package amsmath Error: \begin{aligned} allowed only in mat
-h mode.
+LaTeX Warning: Reference `Hnn' on page 12 undefined on input line 159.
 
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.184         E
-                = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./capitolo3.tex:184: Missing $ inserted.
-<inserted text> 
-                $
-l.184         E
-                = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-[12]
-./capitolo3.tex:185: Undefined control sequence.
-l.185 ...        +\frac{D}{2} \sum_{X}\sum_{Y\neqX
-                                                  }\sum_{j}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./capitolo3.tex:187: Missing $ inserted.
-<inserted text> 
-                $
-l.187     \end{aligned}
-                       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-./capitolo3.tex:209: Package amsmath Error: \begin{aligned} allowed only in mat
-h mode.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.209 Under the hypothesis \begin{aligned} w
-                                            _{Xj,Yk}= w_{Yk,Xj} \end{aligned...
-
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-./capitolo3.tex:209: Missing $ inserted.
-<inserted text> 
-                $
-l.209 Under the hypothesis \begin{aligned} w
-                                            _{Xj,Yk}= w_{Yk,Xj} \end{aligned...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./capitolo3.tex:209: Missing $ inserted.
-<inserted text> 
-                $
-l.209 ...igned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned}
-                                                   the method can be proved
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-) (./capitolo4.tex [13] [14
+) (./capitolo4.tex [12]
+Chapter 4.
+[13
 
 ]
-Chapter 4.
-[15]
 \openout2 = `work_flow.aux'.
 
  (./work_flow.tex
@@ -1423,7 +1311,7 @@ Overfull \hbox (31.69096pt too wide) in paragraph at lines 72--73
 [][] 
  []
 
-) [16
+) [14
 
 
 Non-PDF special ignored!
@@ -1804,11 +1692,11 @@ Non-PDF special ignored!
 Non-PDF special ignored!
 Non-PDF special ignored!]
 
-LaTeX Warning: Reference `work_flow' on page 17 undefined on input line 23.
+LaTeX Warning: Reference `work_flow' on page 15 undefined on input line 23.
 
-[17
+[15
 
-]) (./capitolo5.tex [18]
+]) (./capitolo5.tex [16]
 Chapter 5.
 ./capitolo5.tex:8: Missing number, treated as zero.
 <to be read again> 
@@ -1831,14 +1719,193 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-[19
+[17
 
-] [20]
+]
+
+./capitolo5.tex:82: Package amsmath Error: \begin{aligned} allowed only in math
+ mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.82         E
+               = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\f...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./capitolo5.tex:82: Missing $ inserted.
+<inserted text> 
+                $
+l.82         E
+               = \frac{A}{2}\sum_{X}\sum_{j}\sum_{k\neq j}{y_{Xj}y_{Xk}+ }\f...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./capitolo5.tex:83: Undefined control sequence.
+l.83             +\frac{D}{2} \sum_{X}\sum_{Y\neqX
+                                                  }\sum_{j}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./capitolo5.tex:85: Missing $ inserted.
+<inserted text> 
+                $
+l.85     \end{aligned}
+                      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[18]
+
+./capitolo5.tex:104: Package amsmath Error: \begin{aligned} allowed only in mat
+h mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.104 Under the hypothesis \begin{aligned} w
+                                            _{Xj,Yk}= w_{Yk,Xj} \end{aligned...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./capitolo5.tex:104: Missing $ inserted.
+<inserted text> 
+                $
+l.104 Under the hypothesis \begin{aligned} w
+                                            _{Xj,Yk}= w_{Yk,Xj} \end{aligned...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./capitolo5.tex:104: Missing $ inserted.
+<inserted text> 
+                $
+l.104 ...igned} w_{Xj,Yk}= w_{Yk,Xj} \end{aligned}
+                                                   the method can be proved
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[19]
 \openout2 = `shortest_path.aux'.
 
 
 No file shortest_path.tex.
-[21
+
+./capitolo5.tex:129: Package inputenc Error: Unicode char ← (U+2190)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129  6          dist[v] ←
+                              INFINITY                  // Unknown distance ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./capitolo5.tex:130: Package inputenc Error: Unicode char ← (U+2190)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.130  7          prev[v] ←
+                              UNDEFINED                 // Previous node in ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./capitolo5.tex:133: Package inputenc Error: Unicode char ← (U+2190)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.133 10      dist[source] ←
+                               0                        // Distance from sou...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./capitolo5.tex:136: Package inputenc Error: Unicode char ← (U+2190)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.136 13          u ←
+                        vertex in Q with min dist[u]    // Node with the lea...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./capitolo5.tex:141: Package inputenc Error: Unicode char ← (U+2190)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.141 18              alt ←
+                              dist[u] + length(u, v)
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./capitolo5.tex:143: Package inputenc Error: Unicode char ← (U+2190)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.143 20                  dist[v] ←
+                                      alt
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./capitolo5.tex:144: Package inputenc Error: Unicode char ← (U+2190)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.144 21                  prev[v] ←
+                                      u
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[20
 
 
 ]
@@ -1846,23 +1913,23 @@ No file shortest_path.tex.
 
 
 No file TSP.tex.
-) (./capitolo6.tex [22
-
-
-
-]
+) (./capitolo6.tex
 Chapter 6.
-) (./capitolo7.tex [23] [24
+) (./capitolo7.tex [21
+
+
+
+] [22
 
 ]
 Chapter 7.
-) [25] [26
+) [23] [24
 
 ]
 No file tesi.bbl.
 (./appendiceA.tex
 Appendix A.
-) (./appendiceB.tex [27
+) (./appendiceB.tex [25
 
 ]
 
@@ -1871,11 +1938,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[28
+[26
 
 ]
 Appendix B.
-) (./appendiceC.tex [29] [30
+) (./appendiceC.tex [27] [28
 
 ]
 Appendix C.
@@ -1915,7 +1982,7 @@ Overfull \hbox (0.78365pt too wide) in paragraph at lines 31--33
 [][][][] 
  []
 
-[31]
+[29]
 Overfull \hbox (0.78365pt too wide) in paragraph at lines 52--53
 [][][][] 
  []
@@ -1928,7 +1995,7 @@ Overfull \hbox (0.78365pt too wide) in paragraph at lines 54--55
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32]
+ [30]
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 116.
 
 
@@ -1940,22 +2007,22 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [33]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
-
-./router3.py:277: Package inputenc Error: Unicode char �\expandafter (U+4F1)
+./router3.py:276: Package inputenc Error: Unicode char �\expandafter (U+4F1)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.277         Principe basé 
+l.276         Principe basé 
                              sur le stockage CSR ou CRS (Compressed Row Stor...
 
 Your command was ignored.
@@ -1963,16 +2030,188 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:277: Package inputenc Error: Keyboard character used is undefined
+./router3.py:276: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.277         Principe basé 
+l.276         Principe basé 
                              sur le stockage CSR ou CRS (Compressed Row Stor...
 
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:278: Package inputenc Error: Unicode char �\expandafter (U+4F3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278         Soient six nœuds 
+                                numérotes de 0 à 5 et quatre  ́el ́ement...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:278: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278         Soient six nœuds 
+                                numérotes de 0 à 5 et quatre  ́el ́ement...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:278: Package inputenc Error: Unicode char �\expandafter (U+4F1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278         Soient six nœuds numérotes 
+                                           de 0 à 5 et quatre  ́el ́ement...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:278: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278         Soient six nœuds numérotes 
+                                           de 0 à 5 et quatre  ́el ́ement...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:278: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5A9)
+
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278 ...    Soient six nœuds numérotes de 0 à 
+                                                  5 et quatre  ́el ́ements...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:278: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278 ...    Soient six nœuds numérotes de 0 à 
+                                                  5 et quatre  ́el ́ements...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:278: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278 ...uds numérotes de 0 à 5 et quatre  ́el 
+                                                  ́ements form ́es par
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:278: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278 ...uds numérotes de 0 à 5 et quatre  ́el 
+                                                  ́ements form ́es par
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:278: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278 ...rotes de 0 à 5 et quatre  ́el ́ements 
+                                                  form ́es par
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:278: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278 ...rotes de 0 à 5 et quatre  ́el ́ements 
+                                                  form ́es par
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:278: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278 ... à 5 et quatre  ́el ́ements form ́es 
+                                                  par
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:278: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278 ... à 5 et quatre  ́el ́ements form ́es 
+                                                  par
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
@@ -1984,180 +2223,38 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.279         Soient six nœuds 
-                                numérotes de 0 à 5 et quatre  ́el ́ement...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:279: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279         Soient six nœuds 
-                                numérotes de 0 à 5 et quatre  ́el ́ement...
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:279: Package inputenc Error: Unicode char �\expandafter (U+4F1)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279         Soient six nœuds numérotes 
-                                           de 0 à 5 et quatre  ́el ́ement...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:279: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279         Soient six nœuds numérotes 
-                                           de 0 à 5 et quatre  ́el ́ement...
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:279: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5A9)
-
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279 ...    Soient six nœuds numérotes de 0 à 
-                                                  5 et quatre  ́el ́ements...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:279: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279 ...    Soient six nœuds numérotes de 0 à 
-                                                  5 et quatre  ́el ́ements...
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:279: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
-
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279 ...uds numérotes de 0 à 5 et quatre  ́el 
-                                                  ́ements form ́es par
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:279: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279 ...uds numérotes de 0 à 5 et quatre  ́el 
-                                                  ́ements form ́es par
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:279: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
-
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279 ...rotes de 0 à 5 et quatre  ́el ́ements 
-                                                  form ́es par
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:279: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279 ...rotes de 0 à 5 et quatre  ́el ́ements 
-                                                  form ́es par
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:279: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
-
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279 ... à 5 et quatre  ́el ́ements form ́es 
-                                                  par
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:279: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.279 ... à 5 et quatre  ́el ́ements form ́es 
-                                                  par
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:280: Package inputenc Error: Unicode char �\expandafter (U+4F3)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.280         les nœuds 
+l.279         les nœuds 
                          (0, 2, 3) pour l' el ement 0, (1, 2, 4) pour l'elem...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:279: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.279         les nœuds 
+                         (0, 2, 3) pour l' el ement 0, (1, 2, 4) pour l'elem...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:280: Package inputenc Error: Unicode char �\expandafter\lst@FillFi
+xed@ (U+A96)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.280         (0, 1, 3, 4) pour l’ 
+                                     ́el ́e- ment 2 et (1, 5) pour l’ ́...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2171,58 +2268,28 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.280         les nœuds 
-                         (0, 2, 3) pour l' el ement 0, (1, 2, 4) pour l'elem...
+l.280         (0, 1, 3, 4) pour l’ 
+                                     ́el ́e- ment 2 et (1, 5) pour l’ ́...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:281: Package inputenc Error: Unicode char �\expandafter\lst@FillFi
-xed@ (U+A96)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.281         (0, 1, 3, 4) pour l’ 
-                                     ́el ́e- ment 2 et (1, 5) pour l’ ́...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:281: Package inputenc Error: Keyboard character used is undefined
+./router3.py:280: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.281         (0, 1, 3, 4) pour l’ 
+l.280         (0, 1, 3, 4) pour l’ 
                                      ́el ́e- ment 2 et (1, 5) pour l’ ́...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:281: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.281         (0, 1, 3, 4) pour l’ 
-                                     ́el ́e- ment 2 et (1, 5) pour l’ ́...
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:281: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+./router3.py:280: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
 
 (inputenc)                not set up for use with LaTeX.
 
@@ -2230,7 +2297,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.281         (0, 1, 3, 4) pour l’ ́el 
+l.280         (0, 1, 3, 4) pour l’ ́el 
                                           ́e- ment 2 et (1, 5) pour l’ ́...
 
 Your command was ignored.
@@ -2238,21 +2305,21 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:281: Package inputenc Error: Keyboard character used is undefined
+./router3.py:280: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.281         (0, 1, 3, 4) pour l’ ́el 
+l.280         (0, 1, 3, 4) pour l’ ́el 
                                           ́e- ment 2 et (1, 5) pour l’ ́...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:281: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+./router3.py:280: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
 
 (inputenc)                not set up for use with LaTeX.
 
@@ -2260,7 +2327,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.281         (0, 1, 3, 4) pour l’ ́el ́e-
+l.280         (0, 1, 3, 4) pour l’ ́el ́e-
                                                ment 2 et (1, 5) pour l’ ́...
 
 Your command was ignored.
@@ -2268,21 +2335,21 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:281: Package inputenc Error: Keyboard character used is undefined
+./router3.py:280: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.281         (0, 1, 3, 4) pour l’ ́el ́e-
+l.280         (0, 1, 3, 4) pour l’ ́el ́e-
                                                ment 2 et (1, 5) pour l’ ́...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:281: Package inputenc Error: Unicode char �\expandafter\lst@FillFi
+./router3.py:280: Package inputenc Error: Unicode char �\expandafter\lst@FillFi
 xed@ (U+A96)
 (inputenc)                not set up for use with LaTeX.
 
@@ -2290,35 +2357,91 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.281 ...’ ́el ́e- ment 2 et (1, 5) pour l’ 
+l.280 ...’ ́el ́e- ment 2 et (1, 5) pour l’ 
                                                   ́el ́ement 3.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:281: Package inputenc Error: Keyboard character used is undefined
+./router3.py:280: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.281 ...’ ́el ́e- ment 2 et (1, 5) pour l’ 
+l.280 ...’ ́el ́e- ment 2 et (1, 5) pour l’ 
                                                   ́el ́ement 3.
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:281: Package inputenc Error: Keyboard character used is undefined
+./router3.py:280: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.281 ...’ ́el ́e- ment 2 et (1, 5) pour l’ 
+l.280 ...’ ́el ́e- ment 2 et (1, 5) pour l’ 
                                                   ́el ́ement 3.
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:280: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.280 ...�el ́e- ment 2 et (1, 5) pour l’ ́el 
+                                                  ́ement 3.
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:280: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.280 ...�el ́e- ment 2 et (1, 5) pour l’ ́el 
+                                                  ́ement 3.
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:280: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.280 ... ment 2 et (1, 5) pour l’ ́el ́ement 
+                                                  3.
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:280: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.280 ... ment 2 et (1, 5) pour l’ ́el ́ement 
+                                                  3.
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
@@ -2331,64 +2454,137 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.281 ...�el ́e- ment 2 et (1, 5) pour l’ ́el 
-                                                  ́ement 3.
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:281: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.281 ...�el ́e- ment 2 et (1, 5) pour l’ ́el 
-                                                  ́ement 3.
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:281: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
-
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.281 ... ment 2 et (1, 5) pour l’ ́el ́ement 
-                                                  3.
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:281: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.281 ... ment 2 et (1, 5) pour l’ ́el ́ement 
-                                                  3.
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:282: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
-
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.282         Deux tableaux sont utilis ́es,
+l.281         Deux tableaux sont utilis ́es,
                                               l’un pour stocker de fa ̧co...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:281: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.281         Deux tableaux sont utilis ́es,
+                                              l’un pour stocker de fa ̧co...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:281: Package inputenc Error: Unicode char �\expandafter\lst@FillFi
+xed@ (U+A96)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.281 ...  Deux tableaux sont utilis ́es, l’un 
+                                                  pour stocker de fa ̧con c...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:281: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.281 ...  Deux tableaux sont utilis ́es, l’un 
+                                                  pour stocker de fa ̧con c...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:281: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.281 ...  Deux tableaux sont utilis ́es, l’un 
+                                                  pour stocker de fa ̧con c...
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:281: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.281 ...is ́es, l’un pour stocker de fa ̧con 
+                                                  contigu ̈e
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:281: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.281 ...is ́es, l’un pour stocker de fa ̧con 
+                                                  contigu ̈e
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:281: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.281 ...��un pour stocker de fa ̧con contigu ̈e
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:281: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.281 ...��un pour stocker de fa ̧con contigu ̈e
+                                                  
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:282: Package inputenc Error: Unicode char �\expandafter (U+4F3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.282         les listes de nœuds 
+                                   qui composent les  ́el ́ements (table 1...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2402,9 +2598,67 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.282         Deux tableaux sont utilis ́es,
-                                              l’un pour stocker de fa ̧co...
+l.282         les listes de nœuds 
+                                   qui composent les  ́el ́ements (table 1...
 
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:282: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.282 ...listes de nœuds qui composent les  ́el 
+                                                  ́ements (table 1), l’autre
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:282: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.282 ...listes de nœuds qui composent les  ́el 
+                                                  ́ements (table 1), l’autre
+
+You need to provide a definition with \DeclareInputText 
+or \DeclareInputMath before using this key.
+
+
+./router3.py:282: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.282 ... nœuds qui composent les  ́el ́ements 
+                                                  (table 1), l’autre
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./router3.py:282: Package inputenc Error: Keyboard character used is undefined
+(inputenc)                in inputencoding `utf8'.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.282 ... nœuds qui composent les  ́el ́ements 
+                                                  (table 1), l’autre
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
@@ -2417,79 +2671,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.282 ...  Deux tableaux sont utilis ́es, l’un 
-                                                  pour stocker de fa ̧con c...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:282: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.282 ...  Deux tableaux sont utilis ́es, l’un 
-                                                  pour stocker de fa ̧con c...
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:282: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.282 ...  Deux tableaux sont utilis ́es, l’un 
-                                                  pour stocker de fa ̧con c...
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:282: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
-
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.282 ...is ́es, l’un pour stocker de fa ̧con 
-                                                  contigu ̈e
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:282: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.282 ...is ́es, l’un pour stocker de fa ̧con 
-                                                  contigu ̈e
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:282: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
-
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.282 ...��un pour stocker de fa ̧con contigu ̈e
+l.282 ...t les  ́el ́ements (table 1), l’autre
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2503,148 +2685,33 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.282 ...��un pour stocker de fa ̧con contigu ̈e
+l.282 ...t les  ́el ́ements (table 1), l’autre
                                                   
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:283: Package inputenc Error: Unicode char �\expandafter (U+4F3)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.283         les listes de nœuds 
-                                   qui composent les  ́el ́ements (table 1...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:283: Package inputenc Error: Keyboard character used is undefined
+./router3.py:282: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.283         les listes de nœuds 
-                                   qui composent les  ́el ́ements (table 1...
-
+l.282 ...t les  ́el ́ements (table 1), l’autre
+                                                  
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:283: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
-
+./router3.py:286: Package inputenc Error: Unicode char �\expandafter (U+4F3)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.283 ...listes de nœuds qui composent les  ́el 
-                                                  ́ements (table 1), l’autre
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:283: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.283 ...listes de nœuds qui composent les  ́el 
-                                                  ́ements (table 1), l’autre
-
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:283: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
-
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.283 ... nœuds qui composent les  ́el ́ements 
-                                                  (table 1), l’autre
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:283: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.283 ... nœuds qui composent les  ́el ́ements 
-                                                  (table 1), l’autre
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:283: Package inputenc Error: Unicode char �\expandafter\lst@FillFi
-xed@ (U+A96)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.283 ...t les  ́el ́ements (table 1), l’autre
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-./router3.py:283: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.283 ...t les  ́el ́ements (table 1), l’autre
-                                                  
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:283: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `utf8'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.283 ...t les  ́el ́ements (table 1), l’autre
-                                                  
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./router3.py:287: Package inputenc Error: Unicode char �\expandafter (U+4F3)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.287         que le premier nœud 
+l.286         que le premier nœud 
                                    de l’ ́el ́ement 2 se trouve en posit...
 
 Your command was ignored.
@@ -2652,21 +2719,21 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:287: Package inputenc Error: Keyboard character used is undefined
+./router3.py:286: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.287         que le premier nœud 
+l.286         que le premier nœud 
                                    de l’ ́el ́ement 2 se trouve en posit...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:287: Package inputenc Error: Unicode char �\expandafter\lst@FillFi
+./router3.py:286: Package inputenc Error: Unicode char �\expandafter\lst@FillFi
 xed@ (U+A96)
 (inputenc)                not set up for use with LaTeX.
 
@@ -2674,7 +2741,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.287         que le premier nœud de l’ 
+l.286         que le premier nœud de l’ 
                                            ́el ́ement 2 se trouve en posit...
 
 Your command was ignored.
@@ -2682,35 +2749,35 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:287: Package inputenc Error: Keyboard character used is undefined
+./router3.py:286: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.287         que le premier nœud de l’ 
+l.286         que le premier nœud de l’ 
                                            ́el ́ement 2 se trouve en posit...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:287: Package inputenc Error: Keyboard character used is undefined
+./router3.py:286: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.287         que le premier nœud de l’ 
+l.286         que le premier nœud de l’ 
                                            ́el ́ement 2 se trouve en posit...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:287: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+./router3.py:286: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
 
 (inputenc)                not set up for use with LaTeX.
 
@@ -2718,7 +2785,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.287         que le premier nœud de l’ ́el 
+l.286         que le premier nœud de l’ ́el 
                                                 ́ement 2 se trouve en posit...
 
 Your command was ignored.
@@ -2726,21 +2793,21 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:287: Package inputenc Error: Keyboard character used is undefined
+./router3.py:286: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.287         que le premier nœud de l’ ́el 
+l.286         que le premier nœud de l’ ́el 
                                                 ́ement 2 se trouve en posit...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:287: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
+./router3.py:286: Package inputenc Error: Unicode char �\lst@FillFixed@ (U+5B2)
 
 (inputenc)                not set up for use with LaTeX.
 
@@ -2748,26 +2815,32 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.287 ...ue le premier nœud de l’ ́el ́ement 
+l.286 ...ue le premier nœud de l’ ́el ́ement 
                                                   2 se trouve en position 6 du
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:287: Package inputenc Error: Keyboard character used is undefined
+./router3.py:286: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.287 ...ue le premier nœud de l’ ́el ́ement 
+l.286 ...ue le premier nœud de l’ ́el ́ement 
                                                   2 se trouve en position 6 du
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [36]
@@ -2789,21 +2862,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [42]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [44]
-
-./router3.py:734: Package inputenc Error: Unicode char �\expandafter (U+4F1)
+./router3.py:736: Package inputenc Error: Unicode char �\expandafter (U+4F1)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.734 ...rs/Conrad/Documents/EC/Course deuxièmme 
+l.736 ...rs/Conrad/Documents/EC/Course deuxièmme 
                                                   année/Project Inno/Projet...
 
 Your command was ignored.
@@ -2811,28 +2878,28 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:734: Package inputenc Error: Keyboard character used is undefined
+./router3.py:736: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.734 ...rs/Conrad/Documents/EC/Course deuxièmme 
+l.736 ...rs/Conrad/Documents/EC/Course deuxièmme 
                                                   année/Project Inno/Projet...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:734: Package inputenc Error: Unicode char �\expandafter (U+4F1)
+./router3.py:736: Package inputenc Error: Unicode char �\expandafter (U+4F1)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.734 ...ad/Documents/EC/Course deuxièmme année/
+l.736 ...ad/Documents/EC/Course deuxièmme année/
                                                   Project Inno/Projet_P5C006...
 
 Your command was ignored.
@@ -2840,28 +2907,28 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:734: Package inputenc Error: Keyboard character used is undefined
+./router3.py:736: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.734 ...ad/Documents/EC/Course deuxièmme année/
+l.736 ...ad/Documents/EC/Course deuxièmme année/
                                                   Project Inno/Projet_P5C006...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:734: Package inputenc Error: Unicode char �\expandafter (U+4F1)
+./router3.py:736: Package inputenc Error: Unicode char �\expandafter (U+4F1)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.734 ...rs/Conrad/Documents/EC/Course deuxièmme 
+l.736 ...rs/Conrad/Documents/EC/Course deuxièmme 
                                                   année/Project Inno/Projet...
 
 Your command was ignored.
@@ -2869,60 +2936,76 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:734: Package inputenc Error: Keyboard character used is undefined
+./router3.py:736: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.734 ...rs/Conrad/Documents/EC/Course deuxièmme 
+l.736 ...rs/Conrad/Documents/EC/Course deuxièmme 
                                                   année/Project Inno/Projet...
 
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./router3.py:734: Package inputenc Error: Unicode char �\expandafter (U+4F1)
+./router3.py:736: Package inputenc Error: Unicode char �\expandafter (U+4F1)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.734 ...ad/Documents/EC/Course deuxièmme année/
+l.736 ...ad/Documents/EC/Course deuxièmme année/
                                                   Project Inno/Projet_P5C006')
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./router3.py:734: Package inputenc Error: Keyboard character used is undefined
+./router3.py:736: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `utf8'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.734 ...ad/Documents/EC/Course deuxièmme année/
+l.736 ...ad/Documents/EC/Course deuxièmme année/
                                                   Project Inno/Projet_P5C006')
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
-)) (./appendiceD.tex [45] [46
+)) (./appendiceD.tex [43] [44
 
 ]
 Appendix D.
-) (./appendiceE.tex [47] [48
+./appendiceD.tex:12: Missing $ inserted.
+<inserted text> 
+                $
+l.12 cd /path/to/folder/folder_
+                               name
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./appendiceD.tex:13: Missing $ inserted.
+<inserted text> 
+                $
+l.13 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+) (./appendiceE.tex [45] [46
 
 ]
 Appendix E.
-[49]
+[47]
 \openout2 = `shortest_path.aux'.
 
 
 No file shortest_path.tex.
-[50
+[48
 
 
 ]
@@ -2930,14 +3013,14 @@ No file shortest_path.tex.
 
 
 No file paesi_buildings.tex.
-) (./appendiceF.tex [51
+) (./appendiceF.tex [49
 
 
-] [52
+] [50
 
 ]
 Appendix F.
-) [53] (./tesi.aux (./work_flow.aux) (./shortest_path.aux) (./TSP.aux)
+) [51] (./tesi.aux (./work_flow.aux) (./shortest_path.aux) (./TSP.aux)
 (./shortest_path.aux) (./paesi_buildings.aux))
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2945,15 +3028,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 19970 strings out of 492995
- 390402 string characters out of 6132704
- 1016544 words of memory out of 5000000
- 23042 multiletter control sequences out of 15000+600000
+ 20011 strings out of 492995
+ 390781 string characters out of 6132704
+ 1022179 words of memory out of 5000000
+ 23056 multiletter control sequences out of 15000+600000
  14029 words of font info for 53 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 55i,13n,69p,564b,1961s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,69p,495b,1961s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -2969,10 +3055,10 @@ e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/20
 17/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
 7/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on tesi.pdf (57 pages, 347480 bytes).
+Output written on tesi.pdf (55 pages, 351483 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
- 173 compressed objects within 2 object streams
+ 244 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
