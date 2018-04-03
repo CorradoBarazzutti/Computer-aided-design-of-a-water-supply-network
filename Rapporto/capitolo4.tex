@@ -52,6 +52,7 @@ the Dijstrak algorithm. The length of those path and the traversed nodes are sav
 edges of the aqueduct graph. Please pay attention to the fact that edges on the aqueduct graph are 
 paths on the topography graph. This operation creates a complete graph for each cluster. Note that the 
 set of those graph is a partition of the aqueduct graph. \hfill 
+
 The second stage consists in eliminating the redundant edges: to do this we run the Kruskal algorithm 
 and calculate the minimum spanning tree. For more information read section \ref{Routing_thecnical}. 
 An other approach, favoured in classical aqueducts design would be to calculate a partially connected 
@@ -64,3 +65,5 @@ interlinked and connected to a source. Each distribution network, as is a tree, 
 can initialise the adduction graph with all the cluster's roots nodes and the water sources. Finally 
 this graph is connected with the technique previously used.
 
+\section{Network solving}
+EPANET is software that models drinking water distribution piping systems.

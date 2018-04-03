@@ -222,6 +222,8 @@ class Router(object):
                      1, 2, 100, 0.1, 0, "1")
             i+=1
         w.save(filename)
+    def write2net():
+    	return 0
 
     def write2vtk(self, G):
 

@@ -150,5 +150,26 @@ function Dijkstra(Graph, source):
 \section{Travelling salesman problem}
 \include{TSP}
 
+\section{EPANET}
+\label{epanet_thecnical}
+
+EPANET is software that models water distribution piping systems. 
+
+\subsection{Modelisation}
+Pipe networks consist of pipes, nodes (junctions), pumps, valves, and storage tanks or reservoirs. EPANET tracks the flow of water in each pipe, the pressure at each node, the height of the water in each tank, the type of chemical concentration throughout the network during a simulation period, the age of the water, and source tracing.
+
+\subsection{EPANET Programmer's Toolkit}
+The EPANET Programmer's Toolkit is a dynamic link library (DLL) of functions that allow developers to customize EPANET to their own needs. The functions can be incorporated into 32-bit Windows applications written in C/C++, Delphi, Pascal, Visual Basic, or any other language that can call functions within a Windows DLL. The toolkit is useful for developing specialized applications, such as optimization or automated calibration models that require running many network analyses. It can simplify adding analysis capabilities to integrated network-modeling environments based on computer-aided design (CAD), geographical information system (GIS), and database packages.
+
+\Subsection{Input File}
+The Input file is a standard EPANET input data file that describes the system being analyzed (see Input File Format). It can either be created external to the application being developed with the Toolkit or by the application itself. It is the first file name supplied to the ENopen function. None of the other Toolkit functions (except ENepanet) can be used until an Input file has been opened with ENopen. The data associated with the Input file remains accessible until the T oolkit system is closed down with the ENclose function.
+
+\Subsection{Solve}
+A typical usage of the Toolkit functions to analyze a distribution system might look as follows:
+1. Use the ENopen function to open the Toolkit system, along with an EPANET Input file.
+2. Use the ENsetxxx series of functions to change selected system characteristics.
+3. Run a full hydraulic simulation using the ENsolveH function (which automatically saves results to a Hydraulics file) or use the ENopenH - ENinitH - ENrunH - ENnextH - ENcloseH series of functions to step through a hydraulic simulation, accessing results along the way with the ENgetxxx series of functions.
+5. Return to Step 2 to run additional analyses or use the ENreport function to write a formatted report to the Report file.
+6. Call the ENclose function to close all files and release system memory.
 
 
