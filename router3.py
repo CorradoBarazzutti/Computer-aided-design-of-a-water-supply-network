@@ -1062,7 +1062,6 @@ class Router(object):
             for cycle in cycles:
                 if key in cycle or key[1] + key[0] in cycle:
                     manual_array[key] = manual_guess[key]
-        print(manual_array.keys())
 
         # convert data format
         loops = []
@@ -1078,14 +1077,12 @@ class Router(object):
                                                 ("J", np.zeros(len(cycle), float)),
                                                 ("hf", np.zeros(len(cycle), float)),
                                                 ("hf/Q", np.zeros(len(cycle), float))]}))
-        print(loops)
         # ---- Hardy Cross ----
         hc_solver = hc.HardyCross(loops)
         hc_solver.sort_edge_names()
         hc_solver.locate_common_loops()
         hc_solver.run_hc()
         datadict = dict([(edge, datadict) for edge, datadict in self.acqueduct.edges.items()])
-        print(loops)
 
         def set_att(dict, edge, key, value):
             if edge in dict:
@@ -1107,7 +1104,6 @@ class Router(object):
             for (section, diameter) in zip(loop['Section'], loop["Q"]):
                 set_att_sign(datadict, (letter2node[section[0]], letter2node[section[1]]), "Q", diameter)
             for (section, diameter) in zip(loop['Section'], loop["hf"]):
-                print(section, diameter)
                 set_att_sign(datadict, (letter2node[section[0]], letter2node[section[1]]), "hf", diameter)
         # set flow attribute
         nx.set_edge_attributes(self.acqueduct, dict([(edge, Q) for edge, Q in zip(self.acqueduct.edges, guesses)]), "Q")
@@ -1115,12 +1111,9 @@ class Router(object):
                                dict([(edge, datadict[edge]["Q"]) for edge in datadict]),
                                "Q")
         # set diameter
-        print(nx.get_edge_attributes(self.acqueduct, "Q"))
         diameters = dict(
             [(edge, hc.diameter_from_available(np.sqrt((4 * np.abs(Q) * 10 ** -3) / (np.pi * 1)) * 10 ** 3))
              for edge, Q in nx.get_edge_attributes(self.acqueduct, "Q").items()])
-        print("diameters: %s" % diameters)
-        print([datadict[edge]["DIAMETER"] for edge in datadict])
         nx.set_edge_attributes(self.acqueduct, diameters, "DIAMETER")
         nx.set_edge_attributes(self.acqueduct,
                                dict([(edge, datadict[edge]["DIAMETER"]) for edge in datadict]),
@@ -1147,15 +1140,6 @@ class Router(object):
                         math.sqrt(abs(datadict["Q"]) * 4 / math.pi) ** 5.33)
                 kirchoff_loops_c += [z3.And(H[edge[1]] - H[edge[0]] >= deltaH * 0.9,
                                             H[edge[1]] - H[edge[0]] <= deltaH * 1.1)]
-
-        for edge, datadict in self.acqueduct.edges.items():
-            if "hf" in datadict:
-                print(node2letter[edge[0]] + node2letter[edge[1]], datadict["hf"])
-            else:
-                print("pass")
-
-        for cond in tank_c + kirchoff_loops_c:
-            print(cond)
         solver_head.add(tank_c + kirchoff_loops_c)
         if solver_head.check() == z3.sat:
             m = solver.model()
@@ -1177,9 +1161,6 @@ class Router(object):
         # water demand in each node
         X = dict([(node, z3.Real("demand_%s" % i))
                   for i, (node, datadict) in enumerate(G.nodes.items())])
-        #
-        H = dict([(node, z3.Real("H_%s" % i))
-                  for i, (node, datadict) in enumerate(G.nodes.items())])
         # water flow in each pipe
         Q = dict([(edge, z3.Real("Q_%s" % i))
                   for i, (edge, datadict) in enumerate(G.edges.items())])
@@ -1199,9 +1180,9 @@ class Router(object):
             if not datadict["Tank"]:
                 boudary_c.append(X[node] == datadict["DEMAND"])
         #
-        def abs(x):
+        def sym_abs(x):
             return z3.If(x >= 0, x, -x)
-        closing_c = [abs(Q[edge]) / 1000 == V[edge] * (D[edge] / 1000 / 2) ** 2 * math.pi
+        closing_c = [sym_abs(Q[edge]) / 1000 == V[edge] * (D[edge] / 1000 / 2) ** 2 * math.pi
                for edge in G.edges]
         #
         speed_c = []
@@ -1218,21 +1199,13 @@ class Router(object):
                 diameter_c += [z3.Or([D[edge] == measure for measure in available_measures])]
             else:
                 diameter_c += [z3.Or([D[edge] == measure for measure in available_measures + [15., 25., 50.]])]
-        #
-        K = 10.29 / 70**2
-        head_c = [H[edge[0]] - H[edge[1]] == datadict["LENGHT"] * K * Q[edge] * abs(Q[edge]) / 1000000 / (D[edge]/1000)**5.33
-                  for edge, datadict in G.edges.items()]
-        tank_head = []
-        for node, datadict in G.nodes.items():
-            if datadict["Tank"] == True:
-                H[node] = datadict["ELEVATION"] + 56
 
         # kirchoff lows
         kirchoff_c = []
         for n1 in G.nodes:
             kirchoff_c.append(z3.Sum([X[n1]] + [Q[(n1, n2)] if (n1, n2) in Q else -Q[(n2, n1)]
                                                 for n2 in G.neighbors(n1)]) == 0)
-        solver.add(boudary_c + closing_c + speed_c + kirchoff_c + diameter_c + head_c + tank_head)
+        solver.add(boudary_c + closing_c + speed_c + kirchoff_c + diameter_c)
         if solver.check() == z3.sat:
             m = solver.model()
             Q = dict([(edge, float(m.evaluate(Q[edge]).numerator_as_long()) / float(m.evaluate(Q[edge]).denominator_as_long()))
@@ -1243,7 +1216,27 @@ class Router(object):
                        for edge in D])
             for key, datadict in [("Q", Q), ("V", V), ("DIAMETER", D)]:
                 nx.set_edge_attributes(G, datadict, key)
+            print("solved")
         else:
             print("failed to solve")
 
+        for node, datadict in G.nodes.items():
+            if datadict["Tank"] == True:
+                start = node
+        H = {start: G.nodes[start]["ELEVATION"] + 56}
+        visited, queue = set(), [start]
+        while queue:
+            node = queue.pop(0)
+            if node not in visited:
+                visited.add(node)
+                queue.extend(set(G.neighbors(node)) - visited)
+                for neighbour in G.neighbors(node):
+                    L = G[node][neighbour]["LENGHT"]
+                    K = 10.29 / 70**2
+                    Q = G[node][neighbour]["Q"]
+                    D = G[node][neighbour]["DIAMETER"]
+                    H[neighbour] = H[node] - (L * K * (Q * abs(Q)) / 1000000 / (D / 1000) ** 5.33)
 
+        nx.set_node_attributes(G, H, "H")
+        for i, (node, datadict) in enumerate(G.nodes.items()):
+            print(i, datadict["H"], datadict["H"] - datadict["ELEVATION"])

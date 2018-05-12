@@ -1,4 +1,5 @@
 from router3 import Router
+from kpi_calculator import kpi_calculator
 
 def render_vtk(file_name):
     import vtk
@@ -98,6 +99,7 @@ def casdetude():
     router.design_aqueduct(0)
 
     router.solve(router.acqueduct)
+    kpi_calculator(router.acqueduct)
 
     router.write2shp(router.acqueduct, "Monterusciello_acqueduct")
     router.write2epanet(router.acqueduct, "Monterusciello_acqueduct")
