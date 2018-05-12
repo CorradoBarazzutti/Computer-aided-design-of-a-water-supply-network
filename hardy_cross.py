@@ -4,7 +4,7 @@ import pandas as pd
 
 class HardyCross(object):
 
-    def __init__(self, loops, guess):
+    def __init__(self, loops):
         self.runs = 100
         self.threshold = 1
         self.loops = loops
@@ -30,7 +30,7 @@ class HardyCross(object):
     def sort_edge_names(self):
         for i, loop in enumerate(self.loops):
             for j, section in enumerate(loop['Section']):
-                loop['Section'][j] = add_string_from_list(*sorted(re.findall('[A-Z]', section)))
+                loop['Section'][j] = add_string_from_list(*sorted(re.findall('[a-z]', section)))
 
     def locate_common_loops(self):
         '''
@@ -39,18 +39,17 @@ class HardyCross(object):
         :return: None
         '''
         for loop in self.loops:
-            self.common_loops.append(np.zeros((loop.shape[0], len(self.loops))))
+            self.common_loops.append(np.zeros((len(loop["Section"]), len(self.loops))))
 
         # the for loops bellow create a sparse matrix were common loops are indicated
-        for i, loop in enumerate(loops_from_input_file):
-            for j in range(len(loops_from_input_file)):
+        for i, loop in enumerate(self.loops):
+            for j in range(len(self.loops)):
                 if i == j:
                     continue
                 else:
                     for k, section1 in enumerate(self.loops[i]['Section']):
                         for l, section2 in enumerate(self.loops[j]['Section']):
                             if section1 == section2:
-                                print('loop {} @location {}, loop {} @location {} '.format(i, k, j, l))
                                 self.common_loops[i][k][j] = 1
 
     def run_hc(self):
@@ -70,17 +69,6 @@ class HardyCross(object):
 
                 self.smallest_flow_rate.append(np.min(np.abs(loop['Q'])))
 
-            largest_delta_qs_flow_rate = np.max(abs(self.delta_Qs))
-            if largest_delta_qs_flow_rate / np.min(self.smallest_flow_rate) * 100 < self.threshold:
-                print('Completed on run {}'.format(run))
-                print('dqmin / Qmin * 100 =  {0:.2f}'.format((largest_delta_qs_flow_rate /
-                                                              np.min(self.smallest_flow_rate)) * 100))
-                for k, l in enumerate(loops_from_input_file):
-                    print('the corrected loops {} are \n {}'.format(k, l))
-                break
-            else:
-                print('Not Done {}'.format(run))
-                pass
         return self.loops, self.delta_Qs
 
     def save_flows_to_file(self):
@@ -122,7 +110,7 @@ def j_loss_10atm(pipe_diameter, flow_rate):
 
 
 def diameter_from_available(theoretical_diameter):
-    available_diameters = [50., 63., 75., 90., 110., 125., 140., 160., 180., 200., 225., 250., 280., 315., 355., 400.]
+    available_diameters = [75., 90., 110., 125., 140., 160., 180., 200., 225., 250., 280., 315., 355., 400.]
     for i, D in enumerate(available_diameters):
         if D < theoretical_diameter:
             pass
@@ -139,9 +127,7 @@ def diameter(flow_rate, velocity_for_diameter=0.8, show=0):
     D: diameter [mm]
     """
     theoretical_diameter = np.sqrt((4 * np.abs(flow_rate) * 10 ** -3) / (np.pi * velocity_for_diameter)) * 10 ** 3
-    if show:
-        print('The Theoretical Diameter is {}'.format(theoretical_diameter))
-    available_diameters = [50., 63., 75., 90., 110., 125., 140., 160., 180., 200., 225., 250., 280., 315., 355., 400.]
+    available_diameters = [75., 90., 110., 125., 140., 160., 180., 200., 225., 250., 280., 315., 355., 400.]
     for i, D in enumerate(available_diameters):
         if D < theoretical_diameter:
             pass

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import string
 
 import networkx as nx
 import math
@@ -8,8 +9,7 @@ import matplotlib.pyplot as plt
 # from FlowNetworkOnEdge import *
 from scipy.optimize import root
 import hardy_cross as hc
-
-# sys.setdefaultencoding('utf8')
+import pandas as pd
 
 """
 Created on Mon Dec  4 22:57:30 2017
@@ -27,7 +27,9 @@ class Router(object):
     CLASS_NAME = "Router"
     CLASS_AUTHOR = "Marcello Vaccarino"
 
-    # Attributes
+    # ----------------------------------------------------------------------------
+    # -- CLASS ATTRIBUTES
+    # ----------------------------------------------------------------------------
     graph = nx.Graph()
     sinksource_graph = nx.Graph()
     acqueduct_1level = nx.Graph()
@@ -59,7 +61,7 @@ class Router(object):
             self.read_adjacency(adjacency_metrix)
 
     # ----------------------------------------------------------------------------
-    # -- CLASS ATTRIBUTES
+    # -- CLASS METHODS
     # ----------------------------------------------------------------------------
     def avg(self, node_list):
         x = 0
@@ -236,6 +238,34 @@ class Router(object):
                     node2 = (float(coordinates[j][0]), float(coordinates[j][1]))
                     self.graph.add_edge(node1, node2, weight=float(edge))
 
+    def read_epanet(self, filename):
+        with open(filename) as fin:
+            lines = fin.readlines()
+        lines = [line.rstrip('\n') for line in lines]
+        lines = [line.split(" ") for line in lines]
+
+        adjacency_metrix = []
+        coordinates = []
+        for i, line in enumerate(lines):
+            if line == ['']:
+                pass
+            if line == ["[ADJACENCY_MATRIX]"]:
+                nodes_number = len(lines[i + 1])
+                for adj_line in lines[i + 1:i + nodes_number + 1]:
+                    adjacency_metrix.append(adj_line)
+            if line == ["[COORDINATES]"]:
+                j = 1
+                while len(lines[i + j]) == 2:
+                    coordinates.append(lines[i + j])
+                    j += 1
+
+        for i, line in enumerate(adjacency_metrix):
+            for j, edge in enumerate(line):
+                if float(edge) > 0:
+                    node1 = (float(coordinates[i][0]), float(coordinates[i][1]))
+                    node2 = (float(coordinates[j][0]), float(coordinates[j][1]))
+                    self.graph.add_edge(node1, node2, weight=float(edge))
+
     def write2shp(self, G, filename):
         try:
             import shapefile
@@ -246,7 +276,7 @@ class Router(object):
 
         w.fields = [("DeletionFlag", "C", 1, 0), ["DC_ID", "N", 9, 0],
                     ["LENGHT", "N", 18, 5], ["NODE1", "N", 9, 1], ["NODE2", "N", 9, 0],
-                    ["DIAMETRE", "N", 18, 5], ["ROUGHNESS", "N", 18, 5], ["MINORLOSS", "N", 18, 5],
+                    ["DIAMETER", "N", 18, 5], ["ROUGHNESS", "N", 18, 5], ["MINORLOSS", "N", 18, 5],
                     ["STATUS", "C", 1, 0]]
 
         i = 0
@@ -284,11 +314,11 @@ class Router(object):
             node, datadict = node
             if datadict["Tank"] == True:
                 fo.write(str(ID) + " " +
-                        str(round(datadict["ELEVATION"], 2)) + " " +
-                        str(round(datadict["ELEVATION"] + 5, 2)) + " " +
-                        str(round(datadict["ELEVATION"] + 80, 2)) + " " +
-                        str(round(datadict["ELEVATION"] + 100, 2)) + " " +
-                        str(round(50, 2)) + " " + "\n")
+                         str(round(datadict["ELEVATION"], 2)) + " " +
+                         str(round(datadict["ELEVATION"] + 5, 2)) + " " +
+                         str(round(datadict["ELEVATION"] + 4, 2)) + " " +
+                         str(round(datadict["ELEVATION"] + 30, 2)) + " " +
+                         str(round(50, 2)) + " " + "\n")
 
         fo.write("\n")
 
@@ -305,7 +335,7 @@ class Router(object):
             edge, datadict = edge
             fo.write(str(ID) + " " + str(datadict["NODE1"])
                      + " " + str(datadict["NODE2"]) + " " + str(round(datadict["LENGHT"], 2))
-                     + " " + str(datadict["DIAMETRE"]) + " " + str(datadict["ROUGHNESS"]) + "\n")
+                     + " " + str(datadict["DIAMETER"]) + " " + str(datadict["ROUGHNESS"]) + "\n")
         fo.write("\n")
 
         fo.write("[PUMPS]\n")
@@ -314,8 +344,7 @@ class Router(object):
 
         fo.write("[PATTERNS]\n")
         fo.write(";ID   Multipliers\n")
-        mult_array = [x for x in range(0, 24)]
-        fo.write("Pat1 " + str(mult_array) + "\n")
+        fo.write("Pat1 " + "1" + "\n")
 
         fo.write("[CURVES]\n")
         fo.write(";ID  X-Value  Y-Value\n")
@@ -374,8 +403,6 @@ class Router(object):
                     n2 = i
             line.append([n1, n2])
 
-        print(points)
-        print(line)
         vtk = pyvtk.VtkData(pyvtk.UnstructuredGrid(points, line=line))
         vtk.tofile(filename, 'ascii')
 
@@ -705,7 +732,7 @@ class Router(object):
         return (labels, cluster_centers)
 
     def print_atr(self, G):
-        print("atrributes")
+        print("attributes")
         for node, attributes in G.nodes.items():
             print(attributes)
         print("\n")
@@ -727,6 +754,7 @@ class Router(object):
 
         self.acqueduct.add_edges_from(adduction.edges())
         nx.set_node_attributes(self.acqueduct, -1, "CLUSTER")
+        nx.set_node_attributes(self.acqueduct, False, "Tank")
         nx.set_edge_attributes(self.acqueduct, 1, "LEVEL")
 
         # --- DISTRIBUTION ---
@@ -752,6 +780,14 @@ class Router(object):
 
         # add label info to the graph
         nx.set_node_attributes(self.acqueduct, labels, 'CLUSTER')
+
+        # add tank info to the graph
+        namedict = nx.get_node_attributes(self.graph, "name")
+        tankdict = dict([(node, True if namedict[node] == "tank" else False) for node in namedict])
+        nx.set_node_attributes(self.acqueduct, tankdict, 'Tank')
+        initial_level = 80
+        nx.set_node_attributes(self.acqueduct, dict([(node, initial_level)
+                                                     for node in tankdict if tankdict[node]]), "Linit")
 
         # add level
         for dist_graph in distribution:
@@ -779,8 +815,8 @@ class Router(object):
         building_type = nx.get_node_attributes(self.graph, "building")
         for ID, node in enumerate(self.acqueduct.nodes.items()):
             node, datadict = node
-            building2demand = {"appartment": 0.1736}
-            default = 50
+            building2demand = {"appartment": 0.11}
+            default = 0.11
             demand = building2demand.get(building_type.get(node, ''), default)
             nx.set_node_attributes(self.acqueduct, {node: demand}, "DEMAND")
 
@@ -794,10 +830,11 @@ class Router(object):
             datadict["LENGHT"] = self.distance(node1, node2) * CONVERSION
             datadict["NODE1"] = IDdict[node1]
             datadict["NODE2"] = IDdict[node2]
-            datadict["DIAMETRE"] = 500 if "LEVEL" in self.acqueduct[node1][node2] else 100
-            datadict["ROUGHNESS"] = 120 if datadict["DIAMETRE"] <= 200 else 130
+            datadict["DIAMETER"] = 500 if "LEVEL" in self.acqueduct[node1][node2] else 100
+            datadict["ROUGHNESS"] = 120 if datadict["DIAMETER"] <= 200 else 130
             datadict["MINORLOSS"] = 0
             datadict["STATUS"] = 1
+            datadict["LEVEL"] = 1 if edge in adduction.edges else 2
             for key in datadict:
                 nx.set_edge_attributes(self.acqueduct, {edge: datadict[key]}, key)
 
@@ -805,18 +842,12 @@ class Router(object):
             adduction = self.acqueduct.copy()
             distribution = [node for node, _ in self.acqueduct.nodes.items() if not node in cluster_centers]
             adduction.remove_nodes_from(distribution)
-            print(len(labels.keys()))
-            print(len(adduction.nodes))
-            print(len(self.acqueduct.nodes))
-            print(len(cluster_centers))
             for cluster, center in enumerate(cluster_centers):
                 self.acqueduct.nodes[center]["DEMAND"] = 0
-                print(cluster)
                 for node in labels:
                     if labels[node] == cluster:
                         adduction.nodes[center]["DEMAND"] += self.acqueduct.nodes[node]["DEMAND"]
             self.acqueduct = adduction
-        self.print_atr(self.acqueduct)
 
     def louvain_clustering(self, G, weight=None):
         # Automatic Partitioning of Water Distribution Networks Using Multiscale Community Detection and Multiobjective...
@@ -960,202 +991,259 @@ class Router(object):
             w.save('path')
 
     def hardy_cross(self):
-        loops = nx.cycle_basis(self.acqueduct)
-        guess = []
-        hc_solver = hc.HardyCross(loops, guess)
+        alphabet = list(string.ascii_lowercase)
+        node2letter = {key: value for (key, value) in zip(self.acqueduct.nodes, alphabet)}
+        letter2node = {key: value for (key, value) in zip(alphabet, self.acqueduct.nodes)}
+        cycles = [[node2letter[node] for node in cycle] for cycle in nx.cycle_basis(self.acqueduct)]
+
+        def pairwise(it):
+            return [it[i] + it[i + 1] for i in range(len(it) - 1)] + [it[len(it) - 1] + it[0]]
+
+        cycles = [pairwise(cycle) for cycle in cycles]
+
+        # node data dictionaries
+        datadicts = {node2letter[node[0]] + node2letter[node[1]]: datadict
+                     for (node, datadict) in self.acqueduct.edges.items()}
+
+        def get_att(dict, key):
+            if key in dict:
+                return dict[key]
+            else:
+                return dict[key[1] + key[0]]
+
+        '''---- Initial guess ---
+        kirchoff low on nodes to find flow on edges'''
+        import z3
+        solver = z3.Solver()
+        X = dict([(node, z3.Real("x_%s" % i)) for i, (node, datadict) in enumerate(self.acqueduct.nodes.items())])
+        Y = dict([(edge, z3.Real("y_%s" % i)) for i, (edge, datadict) in enumerate(self.acqueduct.edges.items())])
+        # boundary conditions
+        boudary_c = []
+        for node, datadict in self.acqueduct.nodes.items():
+            if not datadict["Tank"]:
+                boudary_c.append(X[node] == datadict["DEMAND"])
+        # boudary_c = [X[node] == datadict["DEMAND"] for node, datadict in self.acqueduct.nodes.items()]
+        # kirchoff lows
+        edges = set([node2letter[edge[0]] + node2letter[edge[1]] for edge in self.acqueduct.edges])
+
+        def is_edge(e):
+            return e in edges
+
+        def is_antiedge(e):
+            return e[1] + e[0] in edges
+
+        def get_data(dict, edge):
+            if is_edge(edge):
+                return dict[edge]
+            elif is_antiedge(edge):
+                return -dict[edge[1] + edge[0]]
+
+        kirchoff_c = [z3.Sum([X[n1]] + [Y[(n1, n2)] if (n1, n2) in Y else -Y[(n2, n1)]
+                                        for n2 in self.acqueduct.neighbors(n1)]) == 0
+                      for n1 in self.acqueduct.nodes]
+        solver.add(boudary_c + kirchoff_c)
+        if solver.check() == z3.sat:
+            m = solver.model()
+            guesses = [float(m.evaluate(Y[edge]).numerator_as_long()) / float(m.evaluate(Y[edge]).denominator_as_long())
+                       for edge in Y]
+        else:
+            print("failed to solve")
+        manual_guess = {'eg': ((+ 47.19 - 3.629999999999999) / 2 - 6.600000000000006),
+                        'ad': (+ 47.19 - 3.629999999999999) / 2 - 12.429999999999987 - 9.570000000000002,
+                        'ce': (47.19 - 3.629999999999999) / 2,
+                        'dg': (
+                                          + 47.19 - 3.629999999999999) / 2 - 12.429999999999987 - 9.570000000000002 - 3.2999999999999994,
+                        'cf': - 47.19,
+                        'gh': 7.480000000000008,
+                        'ab': 9.570000000000002,
+                        'ac': (- 47.19 + 3.629999999999999) / 2}
+        manual_array = {}
+        for key in manual_guess:
+            for cycle in cycles:
+                if key in cycle or key[1] + key[0] in cycle:
+                    manual_array[key] = manual_guess[key]
+        print(manual_array.keys())
+
+        # convert data format
+        loops = []
+        for cycle in cycles:
+            loops.append(pd.DataFrame(data={key: value
+                                            for (key, value) in [
+                                                # ("Section", np.array(cycle)),
+                                                ("Section", np.array(list(manual_array.keys()))),
+                                                ("L", np.array([get_att(datadicts, edge)["LENGHT"] for edge in cycle])),
+                                                # ("Q", np.array([get_data(dict(zip(edges, guesses)),edge) for edge in cycle])),
+                                                ("Q", np.array(list(manual_array.values()))),
+                                                ("D", np.zeros(len(cycle), float)),
+                                                ("J", np.zeros(len(cycle), float)),
+                                                ("hf", np.zeros(len(cycle), float)),
+                                                ("hf/Q", np.zeros(len(cycle), float))]}))
+        print(loops)
+        # ---- Hardy Cross ----
+        hc_solver = hc.HardyCross(loops)
         hc_solver.sort_edge_names()
         hc_solver.locate_common_loops()
         hc_solver.run_hc()
+        datadict = dict([(edge, datadict) for edge, datadict in self.acqueduct.edges.items()])
+        print(loops)
+
+        def set_att(dict, edge, key, value):
+            if edge in dict:
+                dict[edge][key] = value
+                return True
+            elif (edge[1], edge[0]) in dict:
+                dict[(edge[1], edge[0])] = value
+
+        def set_att_sign(dict, edge, key, value):
+            if edge in dict:
+                dict[edge][key] = value
+                return True
+            elif (edge[1], edge[0]) in dict:
+                dict[(edge[1], edge[0])] = - value
+
+        for loop in hc_solver.loops:
+            for (section, diameter) in zip(loop['Section'], loop["D"]):
+                set_att(datadict, (letter2node[section[0]], letter2node[section[1]]), "DIAMETER", diameter)
+            for (section, diameter) in zip(loop['Section'], loop["Q"]):
+                set_att_sign(datadict, (letter2node[section[0]], letter2node[section[1]]), "Q", diameter)
+            for (section, diameter) in zip(loop['Section'], loop["hf"]):
+                print(section, diameter)
+                set_att_sign(datadict, (letter2node[section[0]], letter2node[section[1]]), "hf", diameter)
+        # set flow attribute
+        nx.set_edge_attributes(self.acqueduct, dict([(edge, Q) for edge, Q in zip(self.acqueduct.edges, guesses)]), "Q")
+        nx.set_edge_attributes(self.acqueduct,
+                               dict([(edge, datadict[edge]["Q"]) for edge in datadict]),
+                               "Q")
+        # set diameter
+        print(nx.get_edge_attributes(self.acqueduct, "Q"))
+        diameters = dict(
+            [(edge, hc.diameter_from_available(np.sqrt((4 * np.abs(Q) * 10 ** -3) / (np.pi * 1)) * 10 ** 3))
+             for edge, Q in nx.get_edge_attributes(self.acqueduct, "Q").items()])
+        print("diameters: %s" % diameters)
+        print([datadict[edge]["DIAMETER"] for edge in datadict])
+        nx.set_edge_attributes(self.acqueduct, diameters, "DIAMETER")
+        nx.set_edge_attributes(self.acqueduct,
+                               dict([(edge, datadict[edge]["DIAMETER"]) for edge in datadict]),
+                               "DIAMETER")
+
+        '''---- Kirchoff lows on loops ----
+        in order to find heads and pressure in each node'''
+        solver_head = z3.Solver()
+        H = dict([(node, z3.Real("h_%s" % node2letter[node])) for i, (node, datadict) in
+                  enumerate(self.acqueduct.nodes.items())])
+        # boundary condition
+        tank_c = []
+        for node, datadict in self.acqueduct.nodes.items():
+            if datadict["Tank"] == True:
+                tank_c.append(H[node] == datadict["ELEVATION"] + datadict["Linit"])
+
+        kirchoff_loops_c = []
+        for edge, datadict in self.acqueduct.edges.items():
+            if "hf" in datadict:
+                kirchoff_loops_c += [z3.And(H[edge[1]] - H[edge[0]] >= datadict["hf"] * 0.9,
+                                            H[edge[1]] - H[edge[0]] <= datadict["hf"] * 1.1)]
+            else:
+                deltaH = datadict["LENGHT"] * (datadict["Q"] * abs(datadict["Q"])) / (
+                        math.sqrt(abs(datadict["Q"]) * 4 / math.pi) ** 5.33)
+                kirchoff_loops_c += [z3.And(H[edge[1]] - H[edge[0]] >= deltaH * 0.9,
+                                            H[edge[1]] - H[edge[0]] <= deltaH * 1.1)]
+
+        for edge, datadict in self.acqueduct.edges.items():
+            if "hf" in datadict:
+                print(node2letter[edge[0]] + node2letter[edge[1]], datadict["hf"])
+            else:
+                print("pass")
+
+        for cond in tank_c + kirchoff_loops_c:
+            print(cond)
+        solver_head.add(tank_c + kirchoff_loops_c)
+        if solver_head.check() == z3.sat:
+            m = solver.model()
+            head = [float(m.evaluate(H[node]).numerator_as_long()) / float(m.evaluate(H[node]).denominator_as_long())
+                    for node in H]
+        else:
+            print("failed to solve")
+
+    def solve(self, G):
+
+        import z3
+        # add a solver
+        solver = z3.Solver()
+
+        # +-----------------------+
+        # | variables declaration |
+        # +-----------------------+
+
+        # water demand in each node
+        X = dict([(node, z3.Real("demand_%s" % i))
+                  for i, (node, datadict) in enumerate(G.nodes.items())])
+        #
+        H = dict([(node, z3.Real("H_%s" % i))
+                  for i, (node, datadict) in enumerate(G.nodes.items())])
+        # water flow in each pipe
+        Q = dict([(edge, z3.Real("Q_%s" % i))
+                  for i, (edge, datadict) in enumerate(G.edges.items())])
+        # speed
+        V = dict([(edge, z3.Real("V_%s" % i))
+                  for i, (edge, datadict) in enumerate(G.edges.items())])
+        # pipes diameter
+        D = dict([(edge, z3.Real("D_%s" % i))
+                  for i, (edge, datadict) in enumerate(G.edges.items())])
+
+        # +---------------------+
+        # | boundary conditions |
+        # +---------------------+
+
+        boudary_c = []
+        for node, datadict in G.nodes.items():
+            if not datadict["Tank"]:
+                boudary_c.append(X[node] == datadict["DEMAND"])
+        #
+        def abs(x):
+            return z3.If(x >= 0, x, -x)
+        closing_c = [abs(Q[edge]) / 1000 == V[edge] * (D[edge] / 1000 / 2) ** 2 * math.pi
+               for edge in G.edges]
+        #
+        speed_c = []
+        for edge, datadict in G.edges.items():
+            if datadict["LEVEL"] == 1:
+                speed_c.append(z3.And(V[edge] >= 0.5, V[edge] <= 1.))
+            else:
+                speed_c.append(z3.And(V[edge] >= 0.3, V[edge] <= 1.5))
+        #
+        diameter_c = []
+        available_measures = [75., 90., 110., 125., 140., 160., 180., 200., 225., 250., 280., 315., 355., 400.]
+        for edge, datadict in G.edges.items():
+            if datadict["LEVEL"] == 1:
+                diameter_c += [z3.Or([D[edge] == measure for measure in available_measures])]
+            else:
+                diameter_c += [z3.Or([D[edge] == measure for measure in available_measures + [15., 25., 50.]])]
+        #
+        K = 10.29 / 70**2
+        head_c = [H[edge[0]] - H[edge[1]] == datadict["LENGHT"] * K * Q[edge] * abs(Q[edge]) / 1000000 / (D[edge]/1000)**5.33
+                  for edge, datadict in G.edges.items()]
+        tank_head = []
+        for node, datadict in G.nodes.items():
+            if datadict["Tank"] == True:
+                H[node] = datadict["ELEVATION"] + 56
+
+        # kirchoff lows
+        kirchoff_c = []
+        for n1 in G.nodes:
+            kirchoff_c.append(z3.Sum([X[n1]] + [Q[(n1, n2)] if (n1, n2) in Q else -Q[(n2, n1)]
+                                                for n2 in G.neighbors(n1)]) == 0)
+        solver.add(boudary_c + closing_c + speed_c + kirchoff_c + diameter_c + head_c + tank_head)
+        if solver.check() == z3.sat:
+            m = solver.model()
+            Q = dict([(edge, float(m.evaluate(Q[edge]).numerator_as_long()) / float(m.evaluate(Q[edge]).denominator_as_long()))
+                       for edge in Q])
+            V = dict([(edge, float(m.evaluate(V[edge]).numerator_as_long()) / float(m.evaluate(V[edge]).denominator_as_long()))
+                       for edge in V])
+            D = dict([(edge, float(m.evaluate(D[edge]).numerator_as_long()) / float(m.evaluate(D[edge]).denominator_as_long()))
+                       for edge in D])
+            for key, datadict in [("Q", Q), ("V", V), ("DIAMETER", D)]:
+                nx.set_edge_attributes(G, datadict, key)
+        else:
+            print("failed to solve")
 
 
-def render_vtk(file_name):
-    import vtk
-
-    # Read the source file.
-    reader = vtk.vtkUnstructuredGridReader()
-    reader.SetFileName(file_name)
-    reader.Update()  # Needed because of GetScalarRange
-    output = reader.GetOutput()
-    scalar_range = output.GetScalarRange()
-
-    # Create the mapper that corresponds the objects of the vtk.vtk file
-    # into graphics elements
-    mapper = vtk.vtkDataSetMapper()
-    mapper.SetInputData(output)
-    mapper.SetScalarRange(scalar_range)
-
-    # Create the Actor
-    actor = vtk.vtkActor()
-    actor.SetMapper(mapper)
-
-    # Create the Renderer
-    renderer = vtk.vtkRenderer()
-    renderer.AddActor(actor)
-    renderer.SetBackground(1, 1, 1)  # Set background to white
-
-    # Create the RendererWindow
-    renderer_window = vtk.vtkRenderWindow()
-    renderer_window.AddRenderer(renderer)
-
-    # Create the RendererWindowInteractor and display the vtk_file
-    interactor = vtk.vtkRenderWindowInteractor()
-    interactor.SetRenderWindow(renderer_window)
-    interactor.Initialize()
-    interactor.Start()
-
-
-def tsp_example():
-    return 0
-
-
-def clustering_example():
-    return 0
-
-
-def template_clustering(path_sample, eps, minpts, amount_clusters=None, visualize=True, ccore=False):
-    sample = read_sample(path_sample);
-
-    optics_instance = optics(sample, eps, minpts, amount_clusters, ccore);
-    (ticks, _) = timedcall(optics_instance.process);
-
-    print("Sample: ", path_sample, "\t\tExecution time: ", ticks, "\n");
-
-    if (visualize is True):
-        clusters = optics_instance.get_clusters();
-        noise = optics_instance.get_noise();
-
-        visualizer = cluster_visualizer();
-        visualizer.append_clusters(clusters, sample);
-        visualizer.append_cluster(noise, sample, marker='x');
-        visualizer.show();
-
-        ordering = optics_instance.get_ordering();
-        analyser = ordering_analyser(ordering);
-
-        ordering_visualizer.show_ordering_diagram(analyser, amount_clusters);
-
-
-def vesuvio_example():
-    router = Router(topo_file="vtk/Vesuvio")
-    router.route_vesuvio(32729, 31991)
-    # write to vtk
-    router.write2vtk(router.acqueduct)
-    # render_vtk("vtk/Vesuvio")
-
-
-def paesi_example():
-    router = Router(building_file="geographycal_data/paesi_elev/paesi_elev")
-    router.clusters(router.graph)
-    router.write2shp(router.acqueduct, "acqueduct1")
-
-
-def cluster_simple_example():
-    import random;
-
-    from pyclustering.cluster import cluster_visualizer;
-
-    from pyclustering.utils import read_sample, timedcall;
-
-    from pyclustering.samples.definitions import SIMPLE_SAMPLES, FCPS_SAMPLES;
-
-    template_clustering(SIMPLE_SAMPLES.SAMPLE_SIMPLE1, 0.5, 3);
-
-
-def casdetude():
-    file_path = "/Users/conrad/Documents/EC/Course_deuxiemme_annee/Project_Inno/Projet_P5C006/geographycal_data/Monterusciello/MontEdo_buildings"
-    router = Router(building_file=file_path)
-
-    router.design_aqueduct(1)
-
-    router.hardy_cross()
-
-    router.write2shp(router.acqueduct, "Monterusciello_acqueduct")
-    # router.write2epanet(router.acqueduct, "Monterusciello_acqueduct")
-
-
-def adjacency_matrix():
-    file_path = "/Users/conrad/Documents/EC/Course_deuxiemme_annee/Project_Inno/Projet_P5C006/geographycal_data/adjacency_matrix/Howgrp.txt"
-    router = Router(adjacency_metrix=file_path)
-    # router.write2vtk(router.graph, "adjacency_matrix")
-    # nx.draw(router.graph)
-    # plt.show()
-    # adjacency matrix
-    A = nx.adjacency_matrix(router.graph, weight=None).toarray()
-    # ... and its spectrum
-    nx.adjacency_spectrum(router.graph, weight=None)
-    # weighted adjacency 
-    W = nx.adjacency_matrix(router.graph)
-    # D
-    I = np.reshape(np.ones(12), (-1, 1))
-    D = np.matmul(A, I)
-    # combinatorial graph Laplacian L = D - A
-    L = nx.laplacian_matrix(router.graph, weight=None)
-    # ... and his spectrum
-    nx.laplacian_spectrum(router.graph, weight=None)
-    # weighted Laplacian
-    Y = nx.laplacian_matrix(router.graph)
-
-    # Note
-    sumD = np.matmul(I.transpose(), D)
-    sumD = sumD[0][0]
-    sumA = 0
-    for row in np.nditer(A):
-        for e in np.nditer(row):
-            sumA += e
-    # print(sumA == sumD[0][0])
-
-    # Fielder vector
-    fiedler_vector = nx.fiedler_vector(router.graph, weight=None)
-
-    # Matrix Double index Sum
-
-    def D_app(F):
-        return D * F
-
-    def A_app(F):
-        AF = np.zeros(len(F))
-        for i, e_i in enumerate(F):
-            for j, e_j in enumerate(F):
-                if (A[i][j] != 0):
-                    AF[i] += F[j]
-        return AF
-
-
-def automatic_partitioning():
-    def draw_labels(labels_vector):
-        labs = {node: labels_vector[i] for i, node in enumerate(router.graph.nodes())}
-        coord = {touple: list(touple) for touple in router.graph.nodes()}
-        nx.draw_networkx(router.graph, coord, labels=labs)
-        plt.show()
-
-    file_path = "/Users/conrad/Documents/EC/Course_deuxiemme_annee/Project_Inno/Projet_P5C006/geographycal_data" \
-                "/adjacency_matrix/Howgrp.txt"
-    router = Router(adjacency_metrix=file_path)
-    draw_labels(router.louvain_clustering(router.graph, weight='weight'))
-
-def bruna():
-    file_path = "/Users/conrad/Documents/EC/Course_deuxiemme_annee/Project_Inno/Projet_P5C006/geographycal_data" \
-                "/adjacency_matrix/Howgrp.txt"
-    router = Router(adjacency_metrix=file_path)
-    router.write2list("vert2vert")
-
-def net_solving_case():
-    N = FlowNetwork()
-    N.addnodes([('a',{'s' : 1}), ('b',{}), ('c',{})]) # having inflow 1 kg/s
-    N.setJunction('j')
-    N.addcomponents([('a', 'j', {'A':1, 'pin':0,'thetaout': 0}), ('c', 'j',{'A': 1,'thetaout': 180}),
-        ('b','j', {'A':1,'pin':0,'thetaout': 90})])
-    (dict, vec) = N.getunknowns(True)
-    sol = root(N.residue, vec, method='krylov')
-    result = N.getresult()
-    print(result.info(True,True))
-
-# automatic_partitioning()
-casdetude()
-# net_solving_case()
-
-'''
-    coord = {touple : list(touple) for touple in router.acqueduct.nodes()}
-    nx.draw_networkx(router.acqueduct, pos=coord, with_labels=False)
-    plt.show()
-'''
