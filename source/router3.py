@@ -4,12 +4,11 @@ import string
 import networkx as nx
 import math
 import numpy as np
-import matplotlib.pyplot as plt
 
-# from FlowNetworkOnEdge import *
-from scipy.optimize import root
-import hardy_cross as hc
 import pandas as pd
+
+from source.graphIO import graph_reader
+from source.graphIO import display_graph
 
 """
 Created on Mon Dec  4 22:57:30 2017
@@ -41,230 +40,30 @@ class Router(object):
     # ----------------------------------------------------------------------------
     def __init__(self, topo_file=None, building_file=None, adjacency_metrix=None):
 
+        reader = graph_reader(self.graph)
+
         if topo_file != None and building_file != None:
             try:
                 # [TODO] this function does not read building but single points
-                self.read_shp(topo_file, building_file)
+                reader.read_shp(topo_file, building_file)
             except Exception as e:
                 raise e
         elif building_file != None:
             try:
-                self.read_shp_bilding(building_file)
+                reader.read_shp_bilding(building_file)
             except Exception as e:
                 raise e
         elif topo_file != None:
             try:
-                self.read_vtk(topo_file)
+                reader.read_vtk(topo_file)
             except Exception as e:
                 raise e
         elif adjacency_metrix != None:
-            self.read_adjacency(adjacency_metrix)
+            reader.read_adjacency(adjacency_metrix)
 
     # ----------------------------------------------------------------------------
     # -- CLASS METHODS
     # ----------------------------------------------------------------------------
-    def avg(self, node_list):
-        x = 0
-        y = 0
-        for node in node_list:
-            x += node[0]
-            y += node[1]
-        x /= len(node_list)
-        y /= len(node_list)
-        return (x, y)
-
-    def read_shp_bilding(self, file_name):
-
-        try:
-            import shapefile
-        except ImportError:
-            raise ImportError("read_shp requires pyshp")
-
-        sf = shapefile.Reader(file_name)
-        fields = [x[0] for x in sf.fields]
-        for shapeRecs in sf.iterShapeRecords():
-            shape = shapeRecs.shape
-            for cell in self.row_chuncker(shape.points, shape.parts):
-                # pack attributes
-                attributes = dict(zip(fields[1:], shapeRecs.record))
-                center_coord = self.avg(cell)
-                attributes['pos'] = center_coord
-                # add nodes
-                self.graph.add_node(center_coord)
-                for key, value in attributes.items():
-                    self.graph.nodes[center_coord][key] = value
-
-    # chuncker: see commpresed row storage
-    def row_chuncker(self, array, p_array):
-        p_array.append(len(array))
-        return [array[p_array[i]:p_array[i + 1]]
-                for i in range(len(p_array) - 1)]
-
-    def read_shp(self, file_name, point_file=None):
-        """Generates a networkx.DiGraph from shapefiles. Point geometries are
-        translated into nodes, lines into edges. Coordinate tuples are used as
-        keys. Attributes are preserved, line geometries are simplified into
-        start and end coordinates. Accepts a single shapefile or directory of
-        many shapefiles.
-
-        "The Esri Shapefile or simply a shapefile is a popular geospatial
-        vector data format for geographic information systems software."
-
-        Parameters
-        ----------
-        path : file or string
-           File, directory, or filename to read.
-
-        simplify:  bool
-            If ``True``, simplify line geometries to start and end coordinates.
-            If ``False``, and line feature geometry has multiple segments, the
-            non-geometric attributes for that feature will be repeated for each
-            edge comprising that feature.
-
-        Returns
-        -------
-        G : NetworkX graph
-
-        Examples
-        --------
-        >>> G=nx.read_shp('test.shp') # doctest: +SKIP
-
-        References
-        ----------
-        .. [1] http://en.wikipedia.org/wiki/Shapefile
-        """
-        try:
-            import shapefile
-        except ImportError:
-            raise ImportError("read_shp requires pyshp")
-
-        sf = shapefile.Reader(file_name)
-        fields = [x[0] for x in sf.fields]
-
-        for shapeRecs in sf.iterShapeRecords():
-
-            shape = shapeRecs.shape
-            if shape.shapeType == 1:  # point
-                attributes = dict(zip(fields, shapeRecs.record))
-                attributes["pos"] = shape.points[0]
-                self.graph.add_node(shape.points[0], attributes)
-
-            if shape.shapeType == 3:  # polylines
-                attributes1 = dict(zip(fields, shapeRecs.record))
-                attributes2 = dict(zip(fields, shapeRecs.record))
-                for i in range(len(shape.points) - 1):
-                    '''
-                    attributes1["pos"] = shape.points[i]
-                    n1 = self.add_node_unique(shape.points[i], attributes1)
-                    attributes2["pos"] = shape.points[i + 1]
-                    n2 = self.add_node_unique(shape.points[i + 1], attributes2)
-                    attribute = {'dist': self.distance(n1, n2)}
-                    self.graph.add_edge(n1, n2, attribute) '''
-                    attributes1["pos"] = shape.points[i]
-                    n1 = shape.points[i]
-                    self.graph.add_node(n1, attributes1)
-                    attributes2["pos"] = shape.points[i + 1]
-                    n2 = shape.points[i + 1]
-                    self.graph.add_node(n2, attributes2)
-                    attribute = {'dist': self.distance(n1, n2)}
-                    self.graph.add_edge(n1, n2, attribute)
-
-            if shape.shapeType == 5:  # polygraph
-                # chuncker: see commpresed row storage
-                def chuncker(array, p_array):
-                    p_array.append(len(array))
-                    return [array[p_array[i]:p_array[i + 1]]
-                            for i in range(len(p_array) - 1)]
-
-                # given a cell returns the edges (node touple) implicitely defined in it
-                def pairwise(seq):
-                    return [seq[i:i + 2] for i in range(len(seq) - 1)]
-
-                for cell in chuncker(shape.points, shape.parts):
-                    for n1, n2 in pairwise(cell):
-                        attributes1 = dict(zip(fields, shapeRecs.record))
-                        attributes1["pos"] = n1
-                        attributes2 = dict(zip(fields, shapeRecs.record))
-                        attributes2["pos"] = n2
-                        # add nodes of the shape to the graph
-                        n1 = self.add_node_unique(n1, attributes1)
-                        n2 = self.add_node_unique(n2, attributes2)
-                        attribute = {'dist': self.distance(n1, n2)}
-                        # add edge
-                        self.graph.add_edge(n1, n2, attribute)
-
-        if point_file != None:
-            sf = shapefile.Reader(point_file)
-            new_fields = [x[0] for x in sf.fields]
-            nodes2attributes = {node: data \
-                                for node, data in self.graph.nodes(data=1)}
-            for shapeRecs in sf.iterShapeRecords():
-                shape = shapeRecs.shape
-                if shape.shapeType != 1:  # point
-                    raise ValueError("point_file must be of type 1: points")
-                new_attributes = dict(zip(new_fields, shapeRecs.record))
-                nodes = [tuple(point) for point in shape.points]
-                for node in nodes:
-                    nodes2attributes[node].update(new_attributes)
-            for node, data in self.graph.nodes(data=1):
-                data.update(nodes2attributes[node])
-            # nx.set_node_attributes(self.graph, nodes2attributes)
-
-    def read_adjacency(self, filename):
-        with open(filename) as fin:
-            lines = fin.readlines()
-        lines = [line.rstrip('\n') for line in lines]
-        lines = [line.split(" ") for line in lines]
-
-        adjacency_metrix = []
-        coordinates = []
-        for i, line in enumerate(lines):
-            if line == ['']:
-                pass
-            if line == ["[ADJACENCY_MATRIX]"]:
-                nodes_number = len(lines[i + 1])
-                for adj_line in lines[i + 1:i + nodes_number + 1]:
-                    adjacency_metrix.append(adj_line)
-            if line == ["[COORDINATES]"]:
-                j = 1
-                while len(lines[i + j]) == 2:
-                    coordinates.append(lines[i + j])
-                    j += 1
-
-        for i, line in enumerate(adjacency_metrix):
-            for j, edge in enumerate(line):
-                if float(edge) > 0:
-                    node1 = (float(coordinates[i][0]), float(coordinates[i][1]))
-                    node2 = (float(coordinates[j][0]), float(coordinates[j][1]))
-                    self.graph.add_edge(node1, node2, weight=float(edge))
-
-    def read_epanet(self, filename):
-        with open(filename) as fin:
-            lines = fin.readlines()
-        lines = [line.rstrip('\n') for line in lines]
-        lines = [line.split(" ") for line in lines]
-
-        adjacency_metrix = []
-        coordinates = []
-        for i, line in enumerate(lines):
-            if line == ['']:
-                pass
-            if line == ["[ADJACENCY_MATRIX]"]:
-                nodes_number = len(lines[i + 1])
-                for adj_line in lines[i + 1:i + nodes_number + 1]:
-                    adjacency_metrix.append(adj_line)
-            if line == ["[COORDINATES]"]:
-                j = 1
-                while len(lines[i + j]) == 2:
-                    coordinates.append(lines[i + j])
-                    j += 1
-
-        for i, line in enumerate(adjacency_metrix):
-            for j, edge in enumerate(line):
-                if float(edge) > 0:
-                    node1 = (float(coordinates[i][0]), float(coordinates[i][1]))
-                    node2 = (float(coordinates[j][0]), float(coordinates[j][1]))
-                    self.graph.add_edge(node1, node2, weight=float(edge))
 
     def write2shp(self, G, filename):
         try:
@@ -381,7 +180,7 @@ class Router(object):
         fo.close()
 
     def write2list(self, G, file_name):
-        fo = open(filename + ".txt", "w")
+        fo = open(file_name + ".txt", "w")
         for n1 in enumerate:
             pass
         fo.close()
@@ -499,79 +298,6 @@ class Router(object):
             return math.sqrt((xi - xj) * (xi - xj) + (yi - yj) * (yi - yj) +
                              (zi - zj) * (zi - zj))
         return math.sqrt((xi - xj) * (xi - xj) + (yi - yj) * (yi - yj))
-
-    # cartesian norme in 2D
-    def distance2D(self, nodei, nodej):
-        xi = self.graph.nodes(data=True)[nodei][1]['pos'][0]
-        yi = self.graph.nodes(data=True)[nodei][1]['pos'][1]
-        xj = self.graph.nodes(data=True)[nodej][1]['pos'][0]
-        yj = self.graph.nodes(data=True)[nodej][1]['pos'][1]
-        return math.sqrt((xi - xj) * (xi - xj) + (yi - yj) * (yi - yj))
-
-    # cartesian norme in 3D
-    def distance3D(self, nodei, nodej):
-        xi = self.graph.nodes(data=True)[nodei][1]['pos'][0]
-        yi = self.graph.nodes(data=True)[nodei][1]['pos'][1]
-        zi = self.graph.nodes(data=True)[nodei][1]['pos'][2]
-        xj = self.graph.nodes(data=True)[nodej][1]['pos'][0]
-        yj = self.graph.nodes(data=True)[nodej][1]['pos'][1]
-        zj = self.graph.nodes(data=True)[nodej][1]['pos'][2]
-        return math.sqrt((xi - xj) * (xi - xj) + (yi - yj) * (yi - yj) + (zi - zj) * (zi - zj))
-
-    # returns 2D coordinates of the nodes of self.graph
-    def coord2D(self, G):
-        coord2D = {}
-        for key, value in nx.get_node_attributes(G,
-                                                 'pos').iteritems():
-            coord2D[key] = [value[0], value[1]]
-        return coord2D
-
-    # display the mesh using networkx function
-    def display_mesh(self):
-        nodelist = []
-        node_color = []
-        for node in self.graph.nodes(data=1):
-            node_type = node[1]['FID']
-            if not node_type == '':
-                nodelist.append(node[0])
-                node_color.append('r' if node_type == 'sink' else 'b')
-        try:
-            nx.draw_networkx(self.graph, pos=self.coord2D(), nodelist=nodelist,
-                             with_labels=0, node_color=node_color)
-            plt.draw()
-        except:
-            pass
-
-    # display the mesh with a path marked on it
-    def display_path(self, path):
-        nodelist = []
-        node_color = []
-        for node in self.graph.nodes(data=1):
-            node_type = node[1]['FID']
-            if not node_type == '':
-                nodelist.append(node[0])
-                node_color.append('r' if node_type == 'sink' else 'b')
-
-        color = {edge: 'b' for edge in self.graph.edges()}
-
-        # returns an array of pairs, the elements of seq two by two
-        def pairwise(seq):
-            return [seq[i:i + 2] for i in range(len(seq) - 2)]
-
-        # colors the edges
-        for u, v in pairwise(path):
-            if (u, v) in color:
-                color[(u, v)] = 'r'
-            if (v, u) in color:
-                color[(v, u)] = 'r'
-
-        # makes an array of the dictionary, the order is importatant!
-        array = []
-        for edge in self.graph.edges():
-            array += color[edge]
-        nx.draw_networkx(self.graph, pos=self.coord2D(),
-                         nodelist=nodelist, with_labels=0,
-                         node_color=node_color, edge_color=array)
 
     def shortest_path(self, node1, node2):
         """
@@ -781,11 +507,23 @@ class Router(object):
         # add label info to the graph
         nx.set_node_attributes(self.acqueduct, labels, 'CLUSTER')
 
+        # add elevation
+        elevdict = nx.get_node_attributes(self.graph, "mean")
+        nx.set_node_attributes(self.acqueduct, elevdict, "ELEVATION")
+        moy = 0
+        for center in adduction.nodes:
+            for nbr in self.acqueduct.neighbors(center):
+                if "ELEVATION" in self.acqueduct.nodes[nbr]:
+                    moy += self.acqueduct.nodes[nbr]["ELEVATION"]
+            moy = moy / len(list(self.acqueduct.neighbors(center)))
+            self.acqueduct.nodes[center]["ELEVATION"] = moy
+            self.acqueduct.nodes[center]["DEMAND"] = 0
+
         # add tank info to the graph
         namedict = nx.get_node_attributes(self.graph, "name")
         tankdict = dict([(node, True if namedict[node] == "tank" else False) for node in namedict])
         nx.set_node_attributes(self.acqueduct, tankdict, 'Tank')
-        initial_level = 80
+        initial_level = 3
         nx.set_node_attributes(self.acqueduct, dict([(node, initial_level)
                                                      for node in tankdict if tankdict[node]]), "Linit")
 
@@ -793,18 +531,6 @@ class Router(object):
         for dist_graph in distribution:
             leveldict = nx.get_node_attributes(dist_graph, "LEVEL")
             nx.set_node_attributes(self.acqueduct, leveldict, "LEVEL")
-
-        # add elevation
-        elevdict = nx.get_node_attributes(self.graph, "mean")
-        nx.set_node_attributes(self.acqueduct, elevdict, "ELEVATION")
-        moy = 0
-        for center, _ in adduction.nodes.items():
-            for nbr, datadict in self.acqueduct.adj[center].items():
-                if "ELEVATION" in self.acqueduct.nodes[nbr]:
-                    moy += self.acqueduct.nodes[nbr]["ELEVATION"]
-                moy = moy / len(self.acqueduct.adj[center])
-                self.acqueduct.nodes[center]["ELEVATION"] = moy
-                self.acqueduct.nodes[center]["DEMAND"] = 0
 
         # add node id
         for ID, node in enumerate(self.acqueduct.nodes.items()):
@@ -838,6 +564,7 @@ class Router(object):
             for key in datadict:
                 nx.set_edge_attributes(self.acqueduct, {edge: datadict[key]}, key)
 
+        # case we only want the first level network
         if LEVEL == 1:
             adduction = self.acqueduct.copy()
             distribution = [node for node, _ in self.acqueduct.nodes.items() if not node in cluster_centers]
@@ -912,7 +639,7 @@ class Router(object):
         def collapse(G, s):
             # verify data coherence
             if len(G.nodes) != len(s):
-                raise Exeption()
+                raise Exeption("")
             # initialise graph 
             H = nx.Graph()
             # add nodes
@@ -990,6 +717,7 @@ class Router(object):
             w.record('path')
             w.save('path')
 
+    """ 
     def hardy_cross(self):
         alphabet = list(string.ascii_lowercase)
         node2letter = {key: value for (key, value) in zip(self.acqueduct.nodes, alphabet)}
@@ -1147,6 +875,7 @@ class Router(object):
                     for node in H]
         else:
             print("failed to solve")
+    """
 
     def solve(self, G):
 
@@ -1164,7 +893,7 @@ class Router(object):
         # water flow in each pipe
         Q = dict([(edge, z3.Real("Q_%s" % i))
                   for i, (edge, datadict) in enumerate(G.edges.items())])
-        # speed
+        # water speed in each pipe
         V = dict([(edge, z3.Real("V_%s" % i))
                   for i, (edge, datadict) in enumerate(G.edges.items())])
         # pipes diameter
@@ -1175,23 +904,28 @@ class Router(object):
         # | boundary conditions |
         # +---------------------+
 
+        # water demand in each node
         boudary_c = []
         for node, datadict in G.nodes.items():
             if not datadict["Tank"]:
                 boudary_c.append(X[node] == datadict["DEMAND"])
-        #
+
+        # closing equation in each pipe: Q = V * A
         def sym_abs(x):
             return z3.If(x >= 0, x, -x)
+
         closing_c = [sym_abs(Q[edge]) / 1000 == V[edge] * (D[edge] / 1000 / 2) ** 2 * math.pi
                for edge in G.edges]
-        #
+
+        # speed limits
         speed_c = []
         for edge, datadict in G.edges.items():
             if datadict["LEVEL"] == 1:
                 speed_c.append(z3.And(V[edge] >= 0.5, V[edge] <= 1.))
             else:
                 speed_c.append(z3.And(V[edge] >= 0.3, V[edge] <= 1.5))
-        #
+
+        # pipes diameters
         diameter_c = []
         available_measures = [75., 90., 110., 125., 140., 160., 180., 200., 225., 250., 280., 315., 355., 400.]
         for edge, datadict in G.edges.items():
@@ -1200,14 +934,19 @@ class Router(object):
             else:
                 diameter_c += [z3.Or([D[edge] == measure for measure in available_measures + [15., 25., 50.]])]
 
-        # kirchoff lows
+        # kirchoff lows in the nodes
         kirchoff_c = []
         for n1 in G.nodes:
             kirchoff_c.append(z3.Sum([X[n1]] + [Q[(n1, n2)] if (n1, n2) in Q else -Q[(n2, n1)]
                                                 for n2 in G.neighbors(n1)]) == 0)
+        # solve theory
         solver.add(boudary_c + closing_c + speed_c + kirchoff_c + diameter_c)
         if solver.check() == z3.sat:
             m = solver.model()
+            X = dict([(node, float(m.evaluate(X[node]).numerator_as_long()) / float(
+                m.evaluate(X[node]).denominator_as_long()))
+                      for node in X])
+            nx.set_node_attributes(G, X, "Q")
             Q = dict([(edge, float(m.evaluate(Q[edge]).numerator_as_long()) / float(m.evaluate(Q[edge]).denominator_as_long()))
                        for edge in Q])
             V = dict([(edge, float(m.evaluate(V[edge]).numerator_as_long()) / float(m.evaluate(V[edge]).denominator_as_long()))
@@ -1238,5 +977,3 @@ class Router(object):
                     H[neighbour] = H[node] - (L * K * (Q * abs(Q)) / 1000000 / (D / 1000) ** 5.33)
 
         nx.set_node_attributes(G, H, "H")
-        for i, (node, datadict) in enumerate(G.nodes.items()):
-            print(i, datadict["H"], datadict["H"] - datadict["ELEVATION"])

@@ -1,6 +1,8 @@
 
 # Created by https://www.gitignore.io/api/venv,macos,python,virtualenv
 
+.idea/
+
 ### macOS ###
 *.DS_Store
 .AppleDouble

@@ -1,15 +1,15 @@
 [TITLE]
-Monterusciello_acqueduct
+/Users/conrad/Documents/EC/Course_deuxiemme_annee/Project_Inno/Projet_P5C006/Monterusciello_solution/Monterusciello_acqueduct
 
 [JUNCTIONS]
 ;ID Elev Demand
-0 15.15 0.11
-1 17.83 0.11
-2 27.89 0.11
-3 12.83 0.11
-4 23.17 0.11
-6 18.52 0.11
-7 26.56 0.11
+0 39.0 0.11
+1 62.63 0.11
+2 100.92 0.11
+3 62.63 0.11
+4 102.81 0.11
+6 67.29 0.11
+7 60.16 0.11
 8 85.11 0.11
 9 90.55 0.11
 10 76.44 0.11
@@ -438,7 +438,7 @@ Monterusciello_acqueduct
 
 [TANKS]
 ;ID Elev InitLvl MinLvl MaxLvl Diam Volume
-5 51.05 56.05 55.05 81.05 50 
+5 203.73 208.73 207.73 233.73 50 
 
 [COORDINATES]
 ;Node       X-Coord.    Y-Coord

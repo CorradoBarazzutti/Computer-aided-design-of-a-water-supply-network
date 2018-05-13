@@ -1,5 +1,15 @@
+import os
+
 from router3 import Router
-from kpi_calculator import kpi_calculator
+from source.kpi_calculator import kpi_calculator
+
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+
+last_slash = 0
+for i, char in enumerate(PROJECT_PATH):
+    if char == "/":
+        last_slash = i
+PROJECT_PATH = PROJECT_PATH[:last_slash]
 
 def render_vtk(file_name):
     import vtk
@@ -67,7 +77,7 @@ def template_clustering(path_sample, eps, minpts, amount_clusters=None, visualiz
 
 
 def vesuvio_example():
-    router = Router(topo_file="vtk/Vesuvio")
+    router = Router(topo_file=PROJECT_PATH + "vtk/Vesuvio")
     router.route_vesuvio(32729, 31991)
     # write to vtk
     router.write2vtk(router.acqueduct)
@@ -75,25 +85,19 @@ def vesuvio_example():
 
 
 def paesi_example():
-    router = Router(building_file="geographycal_data/paesi_elev/paesi_elev")
+    router = Router(building_file=PROJECT_PATH + "geographycal_data/paesi_elev/paesi_elev")
     router.clusters(router.graph)
     router.write2shp(router.acqueduct, "acqueduct1")
 
 
 def cluster_simple_example():
-    import random;
-
-    from pyclustering.cluster import cluster_visualizer;
-
-    from pyclustering.utils import read_sample, timedcall;
-
     from pyclustering.samples.definitions import SIMPLE_SAMPLES, FCPS_SAMPLES;
 
     template_clustering(SIMPLE_SAMPLES.SAMPLE_SIMPLE1, 0.5, 3);
 
 
 def casdetude():
-    file_path = "/Users/conrad/Documents/EC/Course_deuxiemme_annee/Project_Inno/Projet_P5C006/geographycal_data/Monterusciello/MontEdo_buildings"
+    file_path = PROJECT_PATH + "/geographycal_data/Monterusciello/MontEdo_buildings"
     router = Router(building_file=file_path)
 
     router.design_aqueduct(0)
@@ -101,12 +105,12 @@ def casdetude():
     router.solve(router.acqueduct)
     kpi_calculator(router.acqueduct)
 
-    router.write2shp(router.acqueduct, "Monterusciello_acqueduct")
-    router.write2epanet(router.acqueduct, "Monterusciello_acqueduct")
+    router.write2shp(router.acqueduct, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct")
+    router.write2epanet(router.acqueduct, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct")
 
 
 def adjacency_matrix():
-    file_path = "/Users/conrad/Documents/EC/Course_deuxiemme_annee/Project_Inno/Projet_P5C006/geographycal_data/adjacency_matrix/Howgrp.txt"
+    file_path = PROJECT_PATH + "/geographycal_data/adjacency_matrix/Howgrp.txt"
     router = Router(adjacency_metrix=file_path)
     # router.write2vtk(router.graph, "adjacency_matrix")
     # nx.draw(router.graph)
@@ -159,14 +163,12 @@ def automatic_partitioning():
         nx.draw_networkx(router.graph, coord, labels=labs)
         plt.show()
 
-    file_path = "/Users/conrad/Documents/EC/Course_deuxiemme_annee/Project_Inno/Projet_P5C006/geographycal_data" \
-                "/adjacency_matrix/Howgrp.txt"
+    file_path = PROJECT_PATH + "/geographycal_data/adjacency_matrix/Howgrp.txt"
     router = Router(adjacency_metrix=file_path)
     draw_labels(router.louvain_clustering(router.graph, weight='weight'))
 
 def bruna():
-    file_path = "/Users/conrad/Documents/EC/Course_deuxiemme_annee/Project_Inno/Projet_P5C006/geographycal_data" \
-                "/adjacency_matrix/Howgrp.txt"
+    file_path = PROJECT_PATH + "/geographycal_data/adjacency_matrix/Howgrp.txt"
     router = Router(adjacency_metrix=file_path)
     router.write2list("vert2vert")
 
