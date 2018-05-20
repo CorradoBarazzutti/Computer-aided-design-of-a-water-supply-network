@@ -1,4 +1,4 @@
-﻿aggiungere step - caso di verifica 
+aggiungere step - caso di verifica 
 
 
 démarche
@@ -14,3 +14,4 @@ flow chart avec démarche
 spiegare  resultati (immagine)
 - references
 controllo di background
+

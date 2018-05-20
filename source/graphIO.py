@@ -3,7 +3,9 @@ import matplotlib.pyplot as plt
 import networkx as nx
 
 class graph_reader():
-
+    """
+    This class provides the functions for graph reading from a multitude of formats
+    """
     def __init__(self, graph):
         self.graph = graph
 
@@ -210,25 +212,57 @@ class graph_reader():
                     node2 = (float(coordinates[j][0]), float(coordinates[j][1]))
                     self.graph.add_edge(node1, node2, weight=float(edge))
 
+    def read_epanet(self, file_name):
+        with open(file_name + "_nodes.txt", "r") as f_in:
+            id2node = {id: node for id, (node, _) in enumerate(self.graph.nodes.items())}
+            for line in f_in:
+                line = line.split()
+                if line[0] == "Junc" or line[0] == "Tank":
+                    id = int(float(line[1]))
+                    node = id2node[id]
+                    pressure = line[4]
+                    self.graph.nodes[node]["ELEVATION"] = float(line[2])
+                    self.graph.nodes[node]["H"] = float(line[3])
+                    self.graph.nodes[node]["PRESSURE"] = float(pressure)
+        with open(file_name + "_edges.txt", "r") as f_in:
+            id2edge = {id: edge for id, (edge, _) in enumerate(self.graph.edges.items())}
+            for line in f_in:
+                line = line.split()
+                if line[0] == "Pipe":
+                    id = int(float(line[1]))
+                    edge = id2edge[id]
+                    flow = float(line[4])
+                    print(flow)
+                    self.graph.edges[edge]["Q"] = float(flow)
+                    self.graph.edges[edge]["DIAMETER"] = float(line[3])
+                    self.graph.edges[edge]["V"] = float(line[5])
 
 class graph_writer():
     pass
 
+
 class display_graph():
+    """
+    This class implements some usefull display function to plot the acqueduct a graph
+    """
 
     def __init__(self, graph):
         self.graph = graph
 
-    # cartesian norme in 2D
     def distance2D(self, nodei, nodej):
+        """
+        Computes the cartesian norme in 2D
+        """
         xi = self.graph.nodes(data=True)[nodei][1]['pos'][0]
         yi = self.graph.nodes(data=True)[nodei][1]['pos'][1]
         xj = self.graph.nodes(data=True)[nodej][1]['pos'][0]
         yj = self.graph.nodes(data=True)[nodej][1]['pos'][1]
         return math.sqrt((xi - xj) * (xi - xj) + (yi - yj) * (yi - yj))
 
-    # cartesian norme in 3D
     def distance3D(self, nodei, nodej):
+        """
+        Computes the cartesian norme in 3D
+        """
         xi = self.graph.nodes(data=True)[nodei][1]['pos'][0]
         yi = self.graph.nodes(data=True)[nodei][1]['pos'][1]
         zi = self.graph.nodes(data=True)[nodei][1]['pos'][2]
@@ -237,8 +271,10 @@ class display_graph():
         zj = self.graph.nodes(data=True)[nodej][1]['pos'][2]
         return math.sqrt((xi - xj) * (xi - xj) + (yi - yj) * (yi - yj) + (zi - zj) * (zi - zj))
 
-    # returns 2D coordinates of the nodes of self.graph
     def coord2D(self, G):
+        """
+        Returns 2D coordinates of the nodes of self.graph
+        """
         coord2D = {}
         for key, value in nx.get_node_attributes(G,
                                                  'pos').iteritems():
@@ -261,8 +297,10 @@ class display_graph():
         except:
             pass
 
-    # display the mesh with a path marked on it
     def display_path(self, path):
+        """
+        Display the mesh with a path marked on it
+        """
         nodelist = []
         node_color = []
         for node in self.graph.nodes(data=1):

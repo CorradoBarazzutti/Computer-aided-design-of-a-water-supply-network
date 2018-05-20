@@ -7,8 +7,8 @@ import numpy as np
 
 import pandas as pd
 
-from source.graphIO import graph_reader
-from source.graphIO import display_graph
+from graphIO import graph_reader
+from graphIO import display_graph
 
 """
 Created on Mon Dec  4 22:57:30 2017
@@ -66,6 +66,9 @@ class Router(object):
     # ----------------------------------------------------------------------------
 
     def write2shp(self, G, filename):
+        """
+            Exports a graph to a shapefile to be visualized with qgis
+        """
         try:
             import shapefile
         except ImportError:
@@ -88,7 +91,10 @@ class Router(object):
             i += 1
         w.save(filename)
 
-    def write2epanet(self, G, filename):
+    def write2epanet(self, G, filename, diam=True):
+        """
+        Exports an acqueduct to an inp epanet input file
+        """
         fo = open(filename + ".inp", "w")
 
         fo.write("[TITLE]\n")
@@ -96,11 +102,11 @@ class Router(object):
         fo.write("\n\n")
 
         fo.write("[JUNCTIONS]\n")
-        fo.write(";ID Elev Demand\n")
+        fo.write(";ID Elev Demand Pattern\n")
         for ID, node in enumerate(G.nodes.items()):
             node, datadict = node
             if datadict["Tank"] == False:
-                fo.write(str(ID) + " " + str(round(datadict["ELEVATION"], 2)) + " " + str(datadict["DEMAND"]) + "\n")
+                fo.write(str(ID) + " " + str(round(datadict["ELEVATION"], 2)) + " " + str(datadict["DEMAND"]) + " " + "1" + "\n")
         fo.write("\n")
 
         fo.write("[RESERVOIRS]\n")
@@ -114,9 +120,9 @@ class Router(object):
             if datadict["Tank"] == True:
                 fo.write(str(ID) + " " +
                          str(round(datadict["ELEVATION"], 2)) + " " +
-                         str(round(datadict["ELEVATION"] + 5, 2)) + " " +
-                         str(round(datadict["ELEVATION"] + 4, 2)) + " " +
-                         str(round(datadict["ELEVATION"] + 30, 2)) + " " +
+                         str(round(datadict["Linit"], 2)) + " " +
+                         str(round(datadict["Linit"] - 1, 2)) + " " +
+                         str(round(datadict["Linit"] + 30, 2)) + " " +
                          str(round(50, 2)) + " " + "\n")
 
         fo.write("\n")
@@ -129,12 +135,24 @@ class Router(object):
         fo.write("\n")
 
         fo.write("[PIPES]\n")
-        fo.write(";ID Node1 Node2 Length Diam Roughness\n")
-        for ID, edge in enumerate(G.edges.items()):
-            edge, datadict = edge
-            fo.write(str(ID) + " " + str(datadict["NODE1"])
-                     + " " + str(datadict["NODE2"]) + " " + str(round(datadict["LENGHT"], 2))
-                     + " " + str(datadict["DIAMETER"]) + " " + str(datadict["ROUGHNESS"]) + "\n")
+        if diam == True:
+            fo.write(";ID Node1 Node2 Length Diam Roughness\n")
+            for ID, edge in enumerate(G.edges.items()):
+                edge, datadict = edge
+                fo.write(str(ID) + " " + str(datadict["NODE1"])
+                         + " " + str(datadict["NODE2"]) + " " + str(round(datadict["LENGHT"], 2))
+                         + " " + str(datadict["DIAMETER"]) + " " + str(datadict["ROUGHNESS"])
+                         + " " + str(datadict["LEVEL"]) +  "\n")
+        else:
+            fo.write(";ID Node1 Node2 Length Diameter Roughness MinorLoss Status SIZINGDATA Bulkcoeff. Wallcoeff." +
+                     " Diam.Zone Material IsSizable D.Coeff. Demand Patt Loss Coeff. Loss Patt\n")
+            for ID, edge in enumerate(G.edges.items()):
+                edge, datadict = edge
+                fo.write(str(ID) + " " + str(datadict["NODE1"])
+                         + " " + str(datadict["NODE2"]) + " " + str(round(datadict["LENGHT"], 2))
+                         + " " + "60" + " " + str(datadict["ROUGHNESS"]) + " "+ "0" + " " + "Open" + "\n"
+                         + ";SIZINGDATA " + "\"\"" + " " + "\"\"" + " " + str(datadict["LEVEL"]) + " "
+                         + "FFD##K9" + " " + "Yes" + " " + "1.0" + " " + "\"\"" + " " + "1.0" + " " + "\"\"" + "\n")
         fo.write("\n")
 
         fo.write("[PUMPS]\n")
@@ -179,14 +197,10 @@ class Router(object):
         fo.write("[END]")
         fo.close()
 
-    def write2list(self, G, file_name):
-        fo = open(file_name + ".txt", "w")
-        for n1 in enumerate:
-            pass
-        fo.close()
-
     def write2vtk(self, G, filename):
-
+        """
+        Exports a graph to a vtk file to be visualized with paraview
+        """
         # import sys
         # sys.path = ['..'] + sys.path
         import pyvtk
@@ -207,8 +221,9 @@ class Router(object):
 
     def add_node_unique(self, new_node, new_attributes):
         """
-        grants that the node added is unique with respect to the pos
-        attribute equality relationship
+        Grants that the node added is unique with respect to the pos
+        attribute equality relationship.
+        Deprecated since the node is a coordinates touple
         """
         for node in self.graph.nodes(True):
             if node[1]["pos"] == new_attributes["pos"]:
@@ -217,6 +232,9 @@ class Router(object):
         return new_node
 
     def read_vtk(self, file_name):
+        """
+        Import a graph from a vtk file
+        """
         import numpy as np
         try:
             from mesh import Mesh
@@ -288,6 +306,9 @@ class Router(object):
                     self.graph.add_edge(u, v, weight=distance3D(u, v, datas))
 
     def distance(self, nodei, nodej):
+        """
+        Computes euclidian distance between two nodes
+        """
         xi = nodei[0]
         yi = nodei[1]
         xj = nodej[0]
@@ -302,7 +323,7 @@ class Router(object):
     def shortest_path(self, node1, node2):
         """
         Calculates the shortest path on self.graph.
-        Path is a sequence of traversed nodes
+        Returns the path as a sequence of traversed nodes
         """
         try:
             path = nx.shortest_path(self.graph, source=node1, target=node2,
@@ -313,7 +334,7 @@ class Router(object):
 
     def path_lenght(self, path):
         """
-        given a path on the graph returns the lenght of the path in the
+        Given a path on the graph returns the lenght of the path in the
         unit the coordinats are expressed
         """
         if path is None:
@@ -326,42 +347,20 @@ class Router(object):
             lenght += self.distance(u, v)
         return lenght
 
-    def TSP(self, cities):
-        '''
-        declaring the adjacency matrix
-        T = numpy.empty(shape=(len(cities),len(cities)))
-        for u, i in cities:
-            for v, j in itertools(cities):
-                uv_path = shortest_path(u, v)
-                T[i][j] = path_lenght(shortest_path)
-
-            start = timeit.default_timer() #start timer
-            paths = []
-            for combo in itertools.permutations(range(1,len(T[0]))):
-                lenght = 0
-                prev = 0
-                path = []
-                path += [0]
-                for elem in combo:
-                    lenght += T[prev][elem]
-                    prev = elem
-                    path += [elem]
-                lenght += T[combo[len(combo)-1]][0]
-                path += [0]
-                paths.append((path, lenght))
-            stop = timeit.default_timer() # stop timer
-            time = stop - start
-            return paths, time
-        '''
-
     def is_sourcesink(self, node):
-        '''given a node as in the networkx.Graph.nodes(data=1)
-        returns 1 if the node is a sink or a source, 0 elsewhere'''
+        '''
+        Given a node as in the networkx.Graph.nodes(data=1)
+        returns 1 if the node is a sink or a source, 0 elsewhere
+        '''
         if not node[1]['FID'] == '':
             return 1
         return 0
 
     def compute_source_matrix(self):
+        """
+        Yelds the subgraph having sink and sources as nodes
+        an the shortest path between each one of them as edge
+        """
         for node in self.graph.nodes(data=1):
             if self.is_sourcesink(node):
                 self.sinksource_graph.add_node(node[0], node[1])
@@ -375,17 +374,26 @@ class Router(object):
                                                        {'dist': self.path_lenght(path),
                                                         'path': path})
 
-    def design_minimal_aqueduct(self, G):
-        minimal = nx.minimum_spanning_tree(G, weight='dist')
+    def design_minimal_aqueduct(self, G, weight='dist'):
+        """
+        Computes the skeletonisation of the graph with minimum spanning tree algorithm
+        """
+        minimal = None
+        if weight == 'Q*H':
+            F = G.copy()
+            H = nx.get_node_attributes(F, "H")
+            weight_dict = dict([(edge, datadict["Q"] * abs(H[edge[0]] - H[edge[1]]))
+                for edge, datadict in F.edges.items()])
+            nx.set_edge_attributes(F, weight_dict, "Q*H")
+            minimal = nx.minimum_spanning_tree(F, weight="Q*H")
+        else:
+            minimal = nx.minimum_spanning_tree(G, weight=weight)
         return minimal
 
-    def display_recouvring_graph(self, G):
-        path = []
-        for edge in G.edges(data=True):
-            path += edge[2]['path']
-        self.display_path(path)
-
     def complete_graph(self, G):
+        """
+        Completes in place the given graph
+        """
         for n1 in G.nodes():
             for n2 in G.nodes():
                 if n1 != n2:
@@ -395,7 +403,10 @@ class Router(object):
                     G.edges[n1, n2]['path'] = [n1, n2]
 
     def mesh_graph(self, G, weight):
-        """complexity (len(G.nodes))^3"""
+        """
+        Given a graph, returns a graph with the same nodes connected according the gabriel definition of neighbourhood,
+        complexity is (len(G.nodes))^3
+        """
         distances = nx.get_edge_attributes(G, weight)
 
         # condition to create the gabriel relative neighbour graph
@@ -422,6 +433,9 @@ class Router(object):
         return gabriel_graph
 
     def graphToEdgeMatrix(self, G):
+        """
+        Returns the adjacency matrix of the graph
+        """
         node_dict = {node: index for index, node in enumerate(G)}
 
         # Initialize Edge Matrix
@@ -438,16 +452,16 @@ class Router(object):
 
     def cluster(self, G):
         '''
-        Finds the clusters
+        Finds the clusters in a graph and returns a tuple with labels and nodes centers
         '''
         # imports from a machine learning package skit-learn
         from sklearn.cluster import MeanShift, estimate_bandwidth
-
+        C = 6373044.737 * math.pi / 180
         # creates a array with the 2D coordinats for each node
-        X = [[node[0], node[1]] for node in G.nodes()]
+        X = [[node[0], node[1], 100 * datadict["mean"] / C]
+             for node, datadict in G.nodes.items()]
         # extimates the dimensions of single clusters
-        bandwidth = estimate_bandwidth(X, quantile=0.1,
-                                       random_state=0, n_jobs=1)
+        bandwidth = estimate_bandwidth(X, quantile=0.1, random_state=0, n_jobs=1)
         # find clustes
         ms = MeanShift(bandwidth=bandwidth)
         ms.fit(X)
@@ -455,15 +469,12 @@ class Router(object):
         # labels is an array indicating, for each node, the cluster number
         labels = {node: ms.labels_[i] for i, node in enumerate(G.nodes())}
         cluster_centers = [(node[0], node[1]) for node in ms.cluster_centers_]
-        return (labels, cluster_centers)
-
-    def print_atr(self, G):
-        print("attributes")
-        for node, attributes in G.nodes.items():
-            print(attributes)
-        print("\n")
+        return labels, cluster_centers
 
     def design_aqueduct(self, LEVEL=0):
+        """
+        Performs automatic water network distribution design.
+        """
         # Costante di conversion dall'unità di misura dalla carta a metri
         CONVERSION = 6373044.737 * math.pi / 180
 
@@ -499,6 +510,7 @@ class Router(object):
             # connect nodes in the graph
             self.complete_graph(dist_graph)
             dist_graph = self.mesh_graph(dist_graph, weight='dist')
+
             # mark as distribution
             nx.set_edge_attributes(dist_graph, 2, "LEVEL")
             # add to acqueduct
@@ -510,13 +522,16 @@ class Router(object):
         # add elevation
         elevdict = nx.get_node_attributes(self.graph, "mean")
         nx.set_node_attributes(self.acqueduct, elevdict, "ELEVATION")
-        moy = 0
         for center in adduction.nodes:
+            self.acqueduct.nodes[center]["ELEVATION"] = 0
+        for center in adduction.nodes:
+            min_dist = float("+inf")
+            min_alt = 0
             for nbr in self.acqueduct.neighbors(center):
-                if "ELEVATION" in self.acqueduct.nodes[nbr]:
-                    moy += self.acqueduct.nodes[nbr]["ELEVATION"]
-            moy = moy / len(list(self.acqueduct.neighbors(center)))
-            self.acqueduct.nodes[center]["ELEVATION"] = moy
+                if self.distance(center, nbr) < min_dist:
+                    min_dist = self.distance(center, nbr)
+                    min_alt = self.acqueduct.nodes[nbr]["ELEVATION"]
+            self.acqueduct.nodes[center]["ELEVATION"] = min_alt
             self.acqueduct.nodes[center]["DEMAND"] = 0
 
         # add tank info to the graph
@@ -577,7 +592,11 @@ class Router(object):
             self.acqueduct = adduction
 
     def louvain_clustering(self, G, weight=None):
-        # Automatic Partitioning of Water Distribution Networks Using Multiscale Community Detection and Multiobjective...
+        """
+        Performs Water Distribution Networks partitioning according to the method shown in the article from
+        Qingzhou Zhang; Zheng Yi Wu; Ming Zhao; Jingyao Qi; Yuan Huang; and Hongbin Zhao in the article
+        "Automatic Partitioning of Water Distribution Networks Using Multiscale Community Detection and Multiobjective
+        """
         def GN_modularity(G, s):
             # adjacency matrix
             A = nx.adjacency_matrix(G, weight=weight).toarray()
@@ -694,11 +713,7 @@ class Router(object):
                 Q = nextQ
         return s
 
-    def route_vesuvio(self, n1, n2):
-        try:
-            import shapefile
-        except ImportError:
-            raise ImportError("read_shp requires pyshp")
+    def routing(self, n1, n2):
         # route
         path = self.shortest_path(n1, n2)
 
@@ -878,6 +893,11 @@ class Router(object):
     """
 
     def solve(self, G):
+        """
+        Find the pipes diameter for a given aqueduct topology respecting the following constraints:
+            - pipes velocities between 0.5 and 1 m/s
+            - pipes diameters commercially available
+        """
 
         import z3
         # add a solver
@@ -921,9 +941,9 @@ class Router(object):
         speed_c = []
         for edge, datadict in G.edges.items():
             if datadict["LEVEL"] == 1:
-                speed_c.append(z3.And(V[edge] >= 0.5, V[edge] <= 1.))
+                speed_c.append(z3.And(V[edge] >= 0.1, V[edge] <= 1.))
             else:
-                speed_c.append(z3.And(V[edge] >= 0.3, V[edge] <= 1.5))
+                speed_c.append(z3.And(V[edge] >= 0.01, V[edge] <= 1.5))
 
         # pipes diameters
         diameter_c = []
@@ -939,41 +959,65 @@ class Router(object):
         for n1 in G.nodes:
             kirchoff_c.append(z3.Sum([X[n1]] + [Q[(n1, n2)] if (n1, n2) in Q else -Q[(n2, n1)]
                                                 for n2 in G.neighbors(n1)]) == 0)
-        # solve theory
+        # add conditons
         solver.add(boudary_c + closing_c + speed_c + kirchoff_c + diameter_c)
+
+        def compute_head():
+            """
+            Computes head in meters for each node in the graph. The value is calculated imposing the head in the tank
+            and than subtracting the loss on the pipes
+            """
+            for node, datadict in G.nodes.items():
+                if datadict["Tank"] == True:
+                    start = node
+            H = {start: 164}
+            visited, queue = set(), [start]
+            while queue:
+                node = queue.pop(0)
+                if node not in visited:
+                    visited.add(node)
+                    queue.extend(set(G.neighbors(node)) - visited)
+                    for neighbour in G.neighbors(node):
+                        l = G[node][neighbour]["LENGHT"]
+                        K = 10.67 / 120 ** 1.852
+                        def contain(d, k1, k2):
+                            if k1 in d:
+                                if k2 in d[k1]:
+                                    return True
+                            return False
+                        if (node, neighbour) in dict(G.nodes):
+                            q = G[node][neighbour]["Q"]
+                        else:
+                            q = - G[neighbour][node]["Q"]
+                        d = G[node][neighbour]["DIAMETER"]
+                        H[neighbour] = H[node] - (K * l * math.copysign((abs(q) / 1000) ** 1.852, q) / (d / 1000) ** 4.8704)
+            return H
+
         if solver.check() == z3.sat:
+            print("solved")
             m = solver.model()
+            solver.add(z3.Or([D[edge] != m.evaluate(D[edge]) for edge in G.edges]))
+
             X = dict([(node, float(m.evaluate(X[node]).numerator_as_long()) / float(
                 m.evaluate(X[node]).denominator_as_long()))
                       for node in X])
             nx.set_node_attributes(G, X, "Q")
-            Q = dict([(edge, float(m.evaluate(Q[edge]).numerator_as_long()) / float(m.evaluate(Q[edge]).denominator_as_long()))
+
+            Q = dict([(edge, float(m.evaluate(Q[edge]).numerator_as_long())
+                       / float(m.evaluate(Q[edge]).denominator_as_long()))
                        for edge in Q])
-            V = dict([(edge, float(m.evaluate(V[edge]).numerator_as_long()) / float(m.evaluate(V[edge]).denominator_as_long()))
+            V = dict([(edge, float(m.evaluate(V[edge]).numerator_as_long())
+                       / float(m.evaluate(V[edge]).denominator_as_long()))
                        for edge in V])
-            D = dict([(edge, float(m.evaluate(D[edge]).numerator_as_long()) / float(m.evaluate(D[edge]).denominator_as_long()))
+            D = dict([(edge, float(m.evaluate(D[edge]).numerator_as_long())
+                       / float(m.evaluate(D[edge]).denominator_as_long()))
                        for edge in D])
-            for key, datadict in [("Q", Q), ("V", V), ("DIAMETER", D)]:
+            data = dict([("Q", Q), ("V", V), ("DIAMETER", D)])
+            for key, datadict in data.items():
                 nx.set_edge_attributes(G, datadict, key)
-            print("solved")
+
+            H = compute_head()
+            nx.set_node_attributes(G, H, "H")
+
         else:
-            print("failed to solve")
-
-        for node, datadict in G.nodes.items():
-            if datadict["Tank"] == True:
-                start = node
-        H = {start: G.nodes[start]["ELEVATION"] + 56}
-        visited, queue = set(), [start]
-        while queue:
-            node = queue.pop(0)
-            if node not in visited:
-                visited.add(node)
-                queue.extend(set(G.neighbors(node)) - visited)
-                for neighbour in G.neighbors(node):
-                    L = G[node][neighbour]["LENGHT"]
-                    K = 10.29 / 70**2
-                    Q = G[node][neighbour]["Q"]
-                    D = G[node][neighbour]["DIAMETER"]
-                    H[neighbour] = H[node] - (L * K * (Q * abs(Q)) / 1000000 / (D / 1000) ** 5.33)
-
-        nx.set_node_attributes(G, H, "H")
+            print("no solutions")

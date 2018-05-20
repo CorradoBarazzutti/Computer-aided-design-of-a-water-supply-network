@@ -1,0 +1,123 @@
+\section{graph\+I\+O.\+graph\+\_\+reader Class Reference}
+\label{classgraph_i_o_1_1graph__reader}\index{graph\+I\+O.\+graph\+\_\+reader@{graph\+I\+O.\+graph\+\_\+reader}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \textbf{ graph})
+\item 
+def \textbf{ avg} (self, node\+\_\+list)
+\item 
+def \textbf{ read\+\_\+shp\+\_\+bilding} (self, file\+\_\+name)
+\item 
+def \textbf{ row\+\_\+chuncker} (self, array, p\+\_\+array)
+\item 
+def \textbf{ read\+\_\+shp} (self, file\+\_\+name, point\+\_\+file=None)
+\item 
+def \textbf{ read\+\_\+adjacency} (self, filename)
+\item 
+def \textbf{ read\+\_\+epanet} (self, filename)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ graph}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This class provides the functions for graph reading from a multitude of formats
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classgraph_i_o_1_1graph__reader_a53537ae6fab9301a9559043ccb80f07e}} 
+\index{graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}}
+\subsubsection{\+\_\+\+\_\+init\+\_\+\+\_\+()}
+{\footnotesize\ttfamily def graph\+I\+O.\+graph\+\_\+reader.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{graph }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classgraph_i_o_1_1graph__reader_a8b981c3c0ae92d95bf93013adafbb949}} 
+\index{graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}!avg@{avg}}
+\index{avg@{avg}!graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}}
+\subsubsection{avg()}
+{\footnotesize\ttfamily def graph\+I\+O.\+graph\+\_\+reader.\+avg (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node\+\_\+list }\end{DoxyParamCaption})}
+
+\mbox{\label{classgraph_i_o_1_1graph__reader_a140fd99201863857edad3bc98e26edf0}} 
+\index{graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}!read\+\_\+adjacency@{read\+\_\+adjacency}}
+\index{read\+\_\+adjacency@{read\+\_\+adjacency}!graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}}
+\subsubsection{read\+\_\+adjacency()}
+{\footnotesize\ttfamily def graph\+I\+O.\+graph\+\_\+reader.\+read\+\_\+adjacency (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\label{classgraph_i_o_1_1graph__reader_aed93e74f041adc3d1ca15153eaff7ada}} 
+\index{graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}!read\+\_\+epanet@{read\+\_\+epanet}}
+\index{read\+\_\+epanet@{read\+\_\+epanet}!graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}}
+\subsubsection{read\+\_\+epanet()}
+{\footnotesize\ttfamily def graph\+I\+O.\+graph\+\_\+reader.\+read\+\_\+epanet (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\label{classgraph_i_o_1_1graph__reader_a944d0cebc05facbfe9d68c7aa69f9e84}} 
+\index{graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}!read\+\_\+shp@{read\+\_\+shp}}
+\index{read\+\_\+shp@{read\+\_\+shp}!graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}}
+\subsubsection{read\+\_\+shp()}
+{\footnotesize\ttfamily def graph\+I\+O.\+graph\+\_\+reader.\+read\+\_\+shp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{file\+\_\+name,  }\item[{}]{point\+\_\+file = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generates a networkx.DiGraph from shapefiles. Point geometries are
+translated into nodes, lines into edges. Coordinate tuples are used as
+keys. Attributes are preserved, line geometries are simplified into
+start and end coordinates. Accepts a single shapefile or directory of
+many shapefiles.
+
+"The Esri Shapefile or simply a shapefile is a popular geospatial
+vector data format for geographic information systems software."
+
+Parameters
+----------
+path : file or string
+   File, directory, or filename to read.
+
+simplify:  bool
+    If ``True``, simplify line geometries to start and end coordinates.
+    If ``False``, and line feature geometry has multiple segments, the
+    non-geometric attributes for that feature will be repeated for each
+    edge comprising that feature.
+
+Returns
+-------
+G : NetworkX graph
+
+Examples
+--------
+>>> G=nx.read_shp('test.shp') # doctest: +SKIP
+
+References
+----------
+.. [1] http://en.wikipedia.org/wiki/Shapefile
+\end{DoxyVerb}
+ \mbox{\label{classgraph_i_o_1_1graph__reader_a9a8e5a3d1e940f83fb725615ef87581a}} 
+\index{graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}!read\+\_\+shp\+\_\+bilding@{read\+\_\+shp\+\_\+bilding}}
+\index{read\+\_\+shp\+\_\+bilding@{read\+\_\+shp\+\_\+bilding}!graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}}
+\subsubsection{read\+\_\+shp\+\_\+bilding()}
+{\footnotesize\ttfamily def graph\+I\+O.\+graph\+\_\+reader.\+read\+\_\+shp\+\_\+bilding (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\label{classgraph_i_o_1_1graph__reader_a4e7e90f2750cf23f970622c2109fb815}} 
+\index{graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}!row\+\_\+chuncker@{row\+\_\+chuncker}}
+\index{row\+\_\+chuncker@{row\+\_\+chuncker}!graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}}
+\subsubsection{row\+\_\+chuncker()}
+{\footnotesize\ttfamily def graph\+I\+O.\+graph\+\_\+reader.\+row\+\_\+chuncker (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{array,  }\item[{}]{p\+\_\+array }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classgraph_i_o_1_1graph__reader_a3d6099f589156a7c02fd7cf6430d9500}} 
+\index{graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}!graph@{graph}}
+\index{graph@{graph}!graph\+I\+O\+::graph\+\_\+reader@{graph\+I\+O\+::graph\+\_\+reader}}
+\subsubsection{graph}
+{\footnotesize\ttfamily graph\+I\+O.\+graph\+\_\+reader.\+graph}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/\textbf{ graph\+I\+O.\+py}\end{DoxyCompactItemize}

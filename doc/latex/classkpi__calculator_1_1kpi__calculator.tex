@@ -1,0 +1,151 @@
+\section{kpi\+\_\+calculator.\+kpi\+\_\+calculator Class Reference}
+\label{classkpi__calculator_1_1kpi__calculator}\index{kpi\+\_\+calculator.\+kpi\+\_\+calculator@{kpi\+\_\+calculator.\+kpi\+\_\+calculator}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ \+\_\+\+\_\+init\+\_\+\+\_\+} (self, \textbf{ wdn})
+\item 
+def \textbf{ print\+\_\+kpi} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ available\+\_\+power}
+\item 
+\textbf{ dissipated\+\_\+power}
+\item 
+\textbf{ nodes\+\_\+power}
+\item 
+\textbf{ M\+IN}
+\item 
+\textbf{ M\+AX}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ wdn} = nx.\+Graph()
+\item 
+int \textbf{ available\+\_\+power} = 0
+\item 
+int \textbf{ dissipated\+\_\+power} = 0
+\item 
+list \textbf{ M\+IN} = [$\,$]
+\item 
+list \textbf{ M\+AX} = [$\,$]
+\item 
+list \textbf{ M\+E\+AN} = [$\,$]
+\item 
+list \textbf{ S\+QM} = [$\,$]
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}This class computes performance indicators for a solved water distribuion network.
+Varius types of indicators are available:
+- Energy indicators of the network
+    - available_power
+    - dissipated_power
+- Statistical indicators of nodes head per cluster
+    - min
+    - max
+    - mean
+    - mean square error
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_a66803ce7419ea76b9c26f7e280acec6f}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{\+\_\+\+\_\+init\+\_\+\+\_\+()}
+{\footnotesize\ttfamily def kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{wdn }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_a1662784590b32c7c1866809e7fca6b61}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!print\+\_\+kpi@{print\+\_\+kpi}}
+\index{print\+\_\+kpi@{print\+\_\+kpi}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{print\+\_\+kpi()}
+{\footnotesize\ttfamily def kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+print\+\_\+kpi (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_ad2051fd25f5819976a92b7ba7c32ebae}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!available\+\_\+power@{available\+\_\+power}}
+\index{available\+\_\+power@{available\+\_\+power}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{available\+\_\+power\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+available\+\_\+power = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_a579ab05f33e7e638d4f8bafec0b8d81f}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!available\+\_\+power@{available\+\_\+power}}
+\index{available\+\_\+power@{available\+\_\+power}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{available\+\_\+power\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+available\+\_\+power}
+
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_a10ea71c7cd818a982a3a5b02a6af1c01}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!dissipated\+\_\+power@{dissipated\+\_\+power}}
+\index{dissipated\+\_\+power@{dissipated\+\_\+power}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{dissipated\+\_\+power\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+dissipated\+\_\+power = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_ab4753fbb14bb42b451a0563b0e3b874e}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!dissipated\+\_\+power@{dissipated\+\_\+power}}
+\index{dissipated\+\_\+power@{dissipated\+\_\+power}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{dissipated\+\_\+power\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+dissipated\+\_\+power}
+
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_afd709bd6a7d09ad358530b41bca549b8}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!M\+AX@{M\+AX}}
+\index{M\+AX@{M\+AX}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{M\+AX\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily list kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+M\+AX = [$\,$]\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_af0783131b393f842740b8da244f88c3d}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!M\+AX@{M\+AX}}
+\index{M\+AX@{M\+AX}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{M\+AX\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+M\+AX}
+
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_af4ab5c02b4eca487dbadea201b74d4ea}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!M\+E\+AN@{M\+E\+AN}}
+\index{M\+E\+AN@{M\+E\+AN}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{M\+E\+AN}
+{\footnotesize\ttfamily list kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+M\+E\+AN = [$\,$]\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_a8ee4ae59c3f523247f7f028e67f571df}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!M\+IN@{M\+IN}}
+\index{M\+IN@{M\+IN}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{M\+IN\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily list kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+M\+IN = [$\,$]\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_a7c1c47bf6cf1db2fbde9a029d3ce7cf6}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!M\+IN@{M\+IN}}
+\index{M\+IN@{M\+IN}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{M\+IN\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+M\+IN}
+
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_af39d7b6b02347698aae38d60393a1ae5}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!nodes\+\_\+power@{nodes\+\_\+power}}
+\index{nodes\+\_\+power@{nodes\+\_\+power}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{nodes\+\_\+power}
+{\footnotesize\ttfamily kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+nodes\+\_\+power}
+
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_aa9ca35010865a3967de0326814ec61ec}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!S\+QM@{S\+QM}}
+\index{S\+QM@{S\+QM}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{S\+QM}
+{\footnotesize\ttfamily list kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+S\+QM = [$\,$]\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classkpi__calculator_1_1kpi__calculator_a5b302b617998b33d4caf1056144edcc6}} 
+\index{kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}!wdn@{wdn}}
+\index{wdn@{wdn}!kpi\+\_\+calculator\+::kpi\+\_\+calculator@{kpi\+\_\+calculator\+::kpi\+\_\+calculator}}
+\subsubsection{wdn}
+{\footnotesize\ttfamily kpi\+\_\+calculator.\+kpi\+\_\+calculator.\+wdn = nx.\+Graph()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/\textbf{ kpi\+\_\+calculator.\+py}\end{DoxyCompactItemize}

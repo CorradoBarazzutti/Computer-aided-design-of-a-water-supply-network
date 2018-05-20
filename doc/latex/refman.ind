@@ -1,0 +1,326 @@
+\begin{theindex}
+
+  \item {\+\_\+\+\_\+init\+\_\+\+\_\+}
+    \subitem {graph\+I\+O\+::display\+\_\+graph}, 15
+    \subitem {graph\+I\+O\+::graph\+\_\+reader}, 17
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 20
+    \subitem {kpi\+\_\+calculator\+::kpi\+\_\+calculator}, 24
+    \subitem {router3\+::\+Router}, 27
+
+  \indexspace
+
+  \item {acqueduct}
+    \subitem {router3\+::\+Router}, 32
+  \item {acqueduct\+\_\+1level}
+    \subitem {router3\+::\+Router}, 32
+  \item {acqueduct\+\_\+2level}
+    \subitem {router3\+::\+Router}, 32
+  \item {add\+\_\+node\+\_\+unique}
+    \subitem {router3\+::\+Router}, 27
+  \item {add\+\_\+string\+\_\+from\+\_\+list}
+    \subitem {hardy\+\_\+cross}, 12
+  \item {adjacency\+\_\+matrix}
+    \subitem {client}, 9
+  \item {automatic\+\_\+partitioning}
+    \subitem {client}, 9
+  \item {available\+\_\+power}
+    \subitem {kpi\+\_\+calculator\+::kpi\+\_\+calculator}, 24
+  \item {avg}
+    \subitem {graph\+I\+O\+::graph\+\_\+reader}, 18
+
+  \indexspace
+
+  \item {C\+L\+A\+S\+S\+\_\+\+A\+U\+T\+H\+OR}
+    \subitem {router3\+::\+Router}, 32
+  \item {C\+L\+A\+S\+S\+\_\+\+N\+A\+ME}
+    \subitem {router3\+::\+Router}, 32
+  \item {casdetude}
+    \subitem {client}, 10
+  \item {casdetude\+\_\+dinardo}
+    \subitem {client}, 10
+  \item {client}, 9
+    \subitem {adjacency\+\_\+matrix}, 9
+    \subitem {automatic\+\_\+partitioning}, 9
+    \subitem {casdetude}, 10
+    \subitem {casdetude\+\_\+dinardo}, 10
+    \subitem {last\+\_\+slash}, 11
+    \subitem {P\+R\+O\+J\+E\+C\+T\+\_\+\+P\+A\+TH}, 11
+    \subitem {paesi\+\_\+example}, 10
+    \subitem {render\+\_\+vtk}, 10
+    \subitem {vesuvio\+\_\+example}, 10
+  \item {cluster}
+    \subitem {router3\+::\+Router}, 27
+  \item {common\+\_\+loops}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 22
+  \item {complete\+\_\+graph}
+    \subitem {router3\+::\+Router}, 27
+  \item {compute\+\_\+pipe\+\_\+diameter\+\_\+of\+\_\+each\+\_\+loop}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 21
+  \item {compute\+\_\+source\+\_\+matrix}
+    \subitem {router3\+::\+Router}, 28
+  \item {compute\+\_\+velocities\+\_\+of\+\_\+each\+\_\+loop}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 21
+  \item {coord2D}
+    \subitem {graph\+I\+O\+::display\+\_\+graph}, 16
+
+  \indexspace
+
+  \item {delta\+\_\+\+Qs}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 22
+  \item {design\+\_\+aqueduct}
+    \subitem {router3\+::\+Router}, 28
+  \item {design\+\_\+minimal\+\_\+aqueduct}
+    \subitem {router3\+::\+Router}, 28
+  \item {diameter}
+    \subitem {hardy\+\_\+cross}, 12
+  \item {diameter\+\_\+from\+\_\+available}
+    \subitem {hardy\+\_\+cross}, 12
+  \item {display\+\_\+mesh}
+    \subitem {graph\+I\+O\+::display\+\_\+graph}, 16
+  \item {display\+\_\+path}
+    \subitem {graph\+I\+O\+::display\+\_\+graph}, 16
+  \item {dissipated\+\_\+power}
+    \subitem {kpi\+\_\+calculator\+::kpi\+\_\+calculator}, 24, 25
+  \item {distance}
+    \subitem {router3\+::\+Router}, 28
+  \item {distance2D}
+    \subitem {graph\+I\+O\+::display\+\_\+graph}, 16
+  \item {distance3D}
+    \subitem {graph\+I\+O\+::display\+\_\+graph}, 16
+
+  \indexspace
+
+  \item {flow\+\_\+correction\+\_\+dq}
+    \subitem {hardy\+\_\+cross}, 12
+
+  \indexspace
+
+  \item {graph}
+    \subitem {graph\+I\+O\+::display\+\_\+graph}, 17
+    \subitem {graph\+I\+O\+::graph\+\_\+reader}, 19
+    \subitem {router3\+::\+Router}, 32
+  \item {graph\+I\+O.\+display\+\_\+graph}, 15
+  \item {graph\+I\+O.\+graph\+\_\+reader}, 17
+  \item {graph\+I\+O.\+graph\+\_\+writer}, 20
+  \item {graph\+I\+O\+::display\+\_\+graph}
+    \subitem {\+\_\+\+\_\+init\+\_\+\+\_\+}, 15
+    \subitem {coord2D}, 16
+    \subitem {display\+\_\+mesh}, 16
+    \subitem {display\+\_\+path}, 16
+    \subitem {distance2D}, 16
+    \subitem {distance3D}, 16
+    \subitem {graph}, 17
+  \item {graph\+I\+O\+::graph\+\_\+reader}
+    \subitem {\+\_\+\+\_\+init\+\_\+\+\_\+}, 17
+    \subitem {avg}, 18
+    \subitem {graph}, 19
+    \subitem {read\+\_\+adjacency}, 18
+    \subitem {read\+\_\+epanet}, 18
+    \subitem {read\+\_\+shp}, 18
+    \subitem {read\+\_\+shp\+\_\+bilding}, 19
+    \subitem {row\+\_\+chuncker}, 19
+  \item {graph\+IO}, 11
+  \item {graph\+To\+Edge\+Matrix}
+    \subitem {router3\+::\+Router}, 29
+
+  \indexspace
+
+  \item {hardy\+\_\+cross}, 11
+    \subitem {add\+\_\+string\+\_\+from\+\_\+list}, 12
+    \subitem {diameter}, 12
+    \subitem {diameter\+\_\+from\+\_\+available}, 12
+    \subitem {flow\+\_\+correction\+\_\+dq}, 12
+    \subitem {j\+\_\+loss\+\_\+10atm}, 12
+    \subitem {velocity}, 13
+  \item {hardy\+\_\+cross.\+Hardy\+Cross}, 20
+  \item {hardy\+\_\+cross\+::\+Hardy\+Cross}
+    \subitem {\+\_\+\+\_\+init\+\_\+\+\_\+}, 20
+    \subitem {common\+\_\+loops}, 22
+    \subitem {compute\+\_\+pipe\+\_\+diameter\+\_\+of\+\_\+each\+\_\+loop}, 
+		21
+    \subitem {compute\+\_\+velocities\+\_\+of\+\_\+each\+\_\+loop}, 21
+    \subitem {delta\+\_\+\+Qs}, 22
+    \subitem {locate\+\_\+common\+\_\+loops}, 21
+    \subitem {loops}, 22
+    \subitem {max\+\_\+velocity}, 22
+    \subitem {min\+\_\+velocity}, 22
+    \subitem {new\+\_\+D}, 22
+    \subitem {run\+\_\+hc}, 21
+    \subitem {runs}, 22
+    \subitem {save\+\_\+flows\+\_\+to\+\_\+file}, 21
+    \subitem {smallest\+\_\+flow\+\_\+rate}, 22
+    \subitem {sort\+\_\+edge\+\_\+names}, 21
+    \subitem {threshold}, 23
+    \subitem {velocities}, 23
+
+  \indexspace
+
+  \item {is\+\_\+sourcesink}
+    \subitem {router3\+::\+Router}, 29
+
+  \indexspace
+
+  \item {j\+\_\+loss\+\_\+10atm}
+    \subitem {hardy\+\_\+cross}, 12
+
+  \indexspace
+
+  \item {kpi\+\_\+calculator}, 13
+  \item {kpi\+\_\+calculator.\+kpi\+\_\+calculator}, 23
+  \item {kpi\+\_\+calculator\+::kpi\+\_\+calculator}
+    \subitem {\+\_\+\+\_\+init\+\_\+\+\_\+}, 24
+    \subitem {available\+\_\+power}, 24
+    \subitem {dissipated\+\_\+power}, 24, 25
+    \subitem {M\+AX}, 25
+    \subitem {M\+E\+AN}, 25
+    \subitem {M\+IN}, 25
+    \subitem {nodes\+\_\+power}, 25
+    \subitem {print\+\_\+kpi}, 24
+    \subitem {S\+QM}, 25
+    \subitem {wdn}, 26
+
+  \indexspace
+
+  \item {last\+\_\+slash}
+    \subitem {client}, 11
+  \item {locate\+\_\+common\+\_\+loops}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 21
+  \item {loops}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 22
+  \item {louvain\+\_\+clustering}
+    \subitem {router3\+::\+Router}, 29
+
+  \indexspace
+
+  \item {M\+AX}
+    \subitem {kpi\+\_\+calculator\+::kpi\+\_\+calculator}, 25
+  \item {M\+E\+AN}
+    \subitem {kpi\+\_\+calculator\+::kpi\+\_\+calculator}, 25
+  \item {M\+IN}
+    \subitem {kpi\+\_\+calculator\+::kpi\+\_\+calculator}, 25
+  \item {max\+\_\+velocity}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 22
+  \item {mesh\+\_\+graph}
+    \subitem {router3\+::\+Router}, 29
+  \item {min\+\_\+velocity}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 22
+
+  \indexspace
+
+  \item {new\+\_\+D}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 22
+  \item {nodes\+\_\+power}
+    \subitem {kpi\+\_\+calculator\+::kpi\+\_\+calculator}, 25
+
+  \indexspace
+
+  \item {P\+R\+O\+J\+E\+C\+T\+\_\+\+P\+A\+TH}
+    \subitem {client}, 11
+  \item {paesi\+\_\+example}
+    \subitem {client}, 10
+  \item {path\+\_\+lenght}
+    \subitem {router3\+::\+Router}, 30
+  \item {print\+\_\+kpi}
+    \subitem {kpi\+\_\+calculator\+::kpi\+\_\+calculator}, 24
+
+  \indexspace
+
+  \item {read\+\_\+adjacency}
+    \subitem {graph\+I\+O\+::graph\+\_\+reader}, 18
+  \item {read\+\_\+epanet}
+    \subitem {graph\+I\+O\+::graph\+\_\+reader}, 18
+  \item {read\+\_\+shp}
+    \subitem {graph\+I\+O\+::graph\+\_\+reader}, 18
+  \item {read\+\_\+shp\+\_\+bilding}
+    \subitem {graph\+I\+O\+::graph\+\_\+reader}, 19
+  \item {read\+\_\+vtk}
+    \subitem {router3\+::\+Router}, 30
+  \item {render\+\_\+vtk}
+    \subitem {client}, 10
+  \item {router3}, 13
+  \item {router3.\+Router}, 26
+  \item {router3\+::\+Router}
+    \subitem {\+\_\+\+\_\+init\+\_\+\+\_\+}, 27
+    \subitem {acqueduct}, 32
+    \subitem {acqueduct\+\_\+1level}, 32
+    \subitem {acqueduct\+\_\+2level}, 32
+    \subitem {add\+\_\+node\+\_\+unique}, 27
+    \subitem {C\+L\+A\+S\+S\+\_\+\+A\+U\+T\+H\+OR}, 32
+    \subitem {C\+L\+A\+S\+S\+\_\+\+N\+A\+ME}, 32
+    \subitem {cluster}, 27
+    \subitem {complete\+\_\+graph}, 27
+    \subitem {compute\+\_\+source\+\_\+matrix}, 28
+    \subitem {design\+\_\+aqueduct}, 28
+    \subitem {design\+\_\+minimal\+\_\+aqueduct}, 28
+    \subitem {distance}, 28
+    \subitem {graph}, 32
+    \subitem {graph\+To\+Edge\+Matrix}, 29
+    \subitem {is\+\_\+sourcesink}, 29
+    \subitem {louvain\+\_\+clustering}, 29
+    \subitem {mesh\+\_\+graph}, 29
+    \subitem {path\+\_\+lenght}, 30
+    \subitem {read\+\_\+vtk}, 30
+    \subitem {routing}, 30
+    \subitem {shortest\+\_\+path}, 30
+    \subitem {sinksource\+\_\+graph}, 32
+    \subitem {solve}, 31
+    \subitem {write2epanet}, 31
+    \subitem {write2shp}, 31
+    \subitem {write2vtk}, 31
+  \item {routing}
+    \subitem {router3\+::\+Router}, 30
+  \item {row\+\_\+chuncker}
+    \subitem {graph\+I\+O\+::graph\+\_\+reader}, 19
+  \item {run\+\_\+hc}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 21
+  \item {runs}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 22
+
+  \indexspace
+
+  \item {S\+QM}
+    \subitem {kpi\+\_\+calculator\+::kpi\+\_\+calculator}, 25
+  \item {save\+\_\+flows\+\_\+to\+\_\+file}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 21
+  \item {shortest\+\_\+path}
+    \subitem {router3\+::\+Router}, 30
+  \item {sinksource\+\_\+graph}
+    \subitem {router3\+::\+Router}, 32
+  \item {smallest\+\_\+flow\+\_\+rate}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 22
+  \item {solve}
+    \subitem {router3\+::\+Router}, 31
+  \item {sort\+\_\+edge\+\_\+names}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 21
+  \item {source/client.\+py}, 33
+  \item {source/graph\+I\+O.\+py}, 33
+  \item {source/hardy\+\_\+cross.\+py}, 34
+  \item {source/kpi\+\_\+calculator.\+py}, 34
+  \item {source/router3.\+py}, 34
+
+  \indexspace
+
+  \item {threshold}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 23
+
+  \indexspace
+
+  \item {velocities}
+    \subitem {hardy\+\_\+cross\+::\+Hardy\+Cross}, 23
+  \item {velocity}
+    \subitem {hardy\+\_\+cross}, 13
+  \item {vesuvio\+\_\+example}
+    \subitem {client}, 10
+
+  \indexspace
+
+  \item {wdn}
+    \subitem {kpi\+\_\+calculator\+::kpi\+\_\+calculator}, 26
+  \item {write2epanet}
+    \subitem {router3\+::\+Router}, 31
+  \item {write2shp}
+    \subitem {router3\+::\+Router}, 31
+  \item {write2vtk}
+    \subitem {router3\+::\+Router}, 31
+
+\end{theindex}

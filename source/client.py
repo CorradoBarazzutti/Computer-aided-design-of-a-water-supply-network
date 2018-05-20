@@ -1,7 +1,9 @@
 import os
 
 from router3 import Router
-from source.kpi_calculator import kpi_calculator
+from kpi_calculator import kpi_calculator
+
+from source import graphIO
 
 PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
 
@@ -12,6 +14,9 @@ for i, char in enumerate(PROJECT_PATH):
 PROJECT_PATH = PROJECT_PATH[:last_slash]
 
 def render_vtk(file_name):
+    """
+    Renders a vtk file
+    """
     import vtk
 
     # Read the source file.
@@ -46,70 +51,116 @@ def render_vtk(file_name):
     interactor.Initialize()
     interactor.Start()
 
-
-def tsp_example():
-    return 0
-
-
-def clustering_example():
-    return 0
-
-
-def template_clustering(path_sample, eps, minpts, amount_clusters=None, visualize=True, ccore=False):
-    sample = read_sample(path_sample);
-
-    optics_instance = optics(sample, eps, minpts, amount_clusters, ccore);
-    (ticks, _) = timedcall(optics_instance.process);
-
-    if (visualize is True):
-        clusters = optics_instance.get_clusters();
-        noise = optics_instance.get_noise();
-
-        visualizer = cluster_visualizer();
-        visualizer.append_clusters(clusters, sample);
-        visualizer.append_cluster(noise, sample, marker='x');
-        visualizer.show();
-
-        ordering = optics_instance.get_ordering();
-        analyser = ordering_analyser(ordering);
-
-        ordering_visualizer.show_ordering_diagram(analyser, amount_clusters);
-
-
 def vesuvio_example():
+    """
+    Example where the routing capabilities of the program are shown.
+    A topograpy of the vesuvio area is imported from a vtk file and the shortest path no it is calculated.
+    The result is than exported to vtk so that can be seen in paraview
+    """
     router = Router(topo_file=PROJECT_PATH + "vtk/Vesuvio")
-    router.route_vesuvio(32729, 31991)
+    router.routing(32729, 31991)
     # write to vtk
     router.write2vtk(router.acqueduct)
     # render_vtk("vtk/Vesuvio")
 
-
 def paesi_example():
+    """
+    Example of water distribution network partitioning.
+    The result is exported to a shapefile
+    """
     router = Router(building_file=PROJECT_PATH + "geographycal_data/paesi_elev/paesi_elev")
     router.clusters(router.graph)
     router.write2shp(router.acqueduct, "acqueduct1")
 
-
-def cluster_simple_example():
-    from pyclustering.samples.definitions import SIMPLE_SAMPLES, FCPS_SAMPLES;
-
-    template_clustering(SIMPLE_SAMPLES.SAMPLE_SIMPLE1, 0.5, 3);
-
-
 def casdetude():
+    """
+    Imports the topograpy of the city of Monterusciello and automatically design the water supply network
+    """
+    file_path = PROJECT_PATH + "/geographycal_data/Monterusciello/MontEdo_buildings"
+    router = Router(building_file=file_path)
+
+    router.design_aqueduct(1)
+    router.write2shp(router.acqueduct, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct")
+
+    router.design_aqueduct(0)
+    router.solve(router.acqueduct)
+    router.write2epanet(router.acqueduct, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct")
+
+    # read_epanet = graphIO.graph_reader(router.acqueduct)
+    # read_epanet.read_epanet(PROJECT_PATH + "/geographycal_data/SolvedNet/distruptive")
+    kpi_calculator(router.acqueduct)
+
+
+
+def casdetude_dinardo():
+    """
+    Imports the topograpy of the city of Monterusciello and automatically design the water supply network
+    """
     file_path = PROJECT_PATH + "/geographycal_data/Monterusciello/MontEdo_buildings"
     router = Router(building_file=file_path)
 
     router.design_aqueduct(0)
 
     router.solve(router.acqueduct)
+    minimal = router.design_minimal_aqueduct(router.acqueduct, "Q*H")
+    kpi_calculator(minimal)
+
+    print("N   H   Z   P")
+    for i, (node, datadict) in enumerate(router.acqueduct.nodes.items()):
+        print(i, round(datadict["H"]), round(datadict["ELEVATION"]), round(datadict["H"] - datadict["ELEVATION"]))
+
+
+    router.write2shp(minimal, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct")
+    router.write2epanet(minimal, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct")
+
+
+def casdetude_genetics():
+    """
+    Imports the topograpy of the city of Monterusciello and automatically design the water supply network
+    """
+    file_path = PROJECT_PATH + "/geographycal_data/Monterusciello/MontEdo_buildings"
+    router = Router(building_file=file_path)
+
+    router.design_aqueduct(0)
+
+    router.write2epanet(router.acqueduct, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct",
+                        diam=False)
+
+    read_epanet = graphIO.graph_reader(router.acqueduct)
+    read_epanet.read_epanet(PROJECT_PATH + "/geographycal_data/SolvedNet/MonteSolution")
     kpi_calculator(router.acqueduct)
 
-    router.write2shp(router.acqueduct, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct")
-    router.write2epanet(router.acqueduct, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct")
+    minimal = router.design_minimal_aqueduct(router.acqueduct, "Q*H")
+    router.write2epanet(minimal, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct", diam=False)
+
+
+def casdetude_genetics_sk():
+    """
+    Imports the topograpy of the city of Monterusciello and automatically design the water supply network
+    """
+    file_path = PROJECT_PATH + "/geographycal_data/Monterusciello/MontEdo_buildings"
+    router = Router(building_file=file_path)
+
+    router.design_aqueduct(0)
+
+    router.write2epanet(router.acqueduct, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct",
+                        diam=False)
+
+    read_epanet = graphIO.graph_reader(router.acqueduct)
+    read_epanet.read_epanet(PROJECT_PATH + "/geographycal_data/SolvedNet/MonteSolution")
+
+    minimal = router.design_minimal_aqueduct(router.acqueduct, "Q*H")
+    router.write2epanet(minimal, PROJECT_PATH + "/Monterusciello_solution/Monterusciello_acqueduct", diam=False)
+
+    read_epanet = graphIO.graph_reader(router.acqueduct)
+    read_epanet.read_epanet(PROJECT_PATH + "/geographycal_data/SolvedNet/prova")
+    kpi_calculator(router.acqueduct)
 
 
 def adjacency_matrix():
+    """
+    Imports a graph from an adjacency matrix and performs some spectra operations on it
+    """
     file_path = PROJECT_PATH + "/geographycal_data/adjacency_matrix/Howgrp.txt"
     router = Router(adjacency_metrix=file_path)
     # router.write2vtk(router.graph, "adjacency_matrix")
@@ -155,8 +206,11 @@ def adjacency_matrix():
                     AF[i] += F[j]
         return AF
 
-
 def automatic_partitioning():
+    """
+    Import a graph from an adjacency and runs the luvain comunity partitionig algorithm to find communites.
+    The result is show at screen
+    """
     def draw_labels(labels_vector):
         labs = {node: labels_vector[i] for i, node in enumerate(router.graph.nodes())}
         coord = {touple: list(touple) for touple in router.graph.nodes()}
@@ -166,11 +220,6 @@ def automatic_partitioning():
     file_path = PROJECT_PATH + "/geographycal_data/adjacency_matrix/Howgrp.txt"
     router = Router(adjacency_metrix=file_path)
     draw_labels(router.louvain_clustering(router.graph, weight='weight'))
-
-def bruna():
-    file_path = PROJECT_PATH + "/geographycal_data/adjacency_matrix/Howgrp.txt"
-    router = Router(adjacency_metrix=file_path)
-    router.write2list("vert2vert")
 
 # automatic_partitioning()
 casdetude()

@@ -1,0 +1,291 @@
+\section{router3.\+Router Class Reference}
+\label{classrouter3_1_1_router}\index{router3.\+Router@{router3.\+Router}}
+Inheritance diagram for router3.\+Router\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrouter3_1_1_router}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ \+\_\+\+\_\+init\+\_\+\+\_\+} (self, topo\+\_\+file=None, building\+\_\+file=None, adjacency\+\_\+metrix=None)
+\item 
+def \textbf{ write2shp} (self, G, filename)
+\item 
+def \textbf{ write2epanet} (self, G, filename)
+\item 
+def \textbf{ write2vtk} (self, G, filename)
+\item 
+def \textbf{ add\+\_\+node\+\_\+unique} (self, new\+\_\+node, new\+\_\+attributes)
+\item 
+def \textbf{ read\+\_\+vtk} (self, file\+\_\+name)
+\item 
+def \textbf{ distance} (self, nodei, nodej)
+\item 
+def \textbf{ shortest\+\_\+path} (self, node1, node2)
+\item 
+def \textbf{ path\+\_\+lenght} (self, path)
+\item 
+def \textbf{ is\+\_\+sourcesink} (self, node)
+\item 
+def \textbf{ compute\+\_\+source\+\_\+matrix} (self)
+\item 
+def \textbf{ design\+\_\+minimal\+\_\+aqueduct} (self, G, weight=\textquotesingle{}dist\textquotesingle{})
+\item 
+def \textbf{ complete\+\_\+graph} (self, G)
+\item 
+def \textbf{ mesh\+\_\+graph} (self, G, weight)
+\item 
+def \textbf{ graph\+To\+Edge\+Matrix} (self, G)
+\item 
+def \textbf{ cluster} (self, G)
+\item 
+def \textbf{ design\+\_\+aqueduct} (self, L\+E\+V\+EL=0)
+\item 
+def \textbf{ louvain\+\_\+clustering} (self, G, weight=None)
+\item 
+def \textbf{ routing} (self, n1, n2)
+\item 
+def \textbf{ solve} (self, G)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \textbf{ C\+L\+A\+S\+S\+\_\+\+N\+A\+ME} = \char`\"{}Router\char`\"{}
+\item 
+string \textbf{ C\+L\+A\+S\+S\+\_\+\+A\+U\+T\+H\+OR} = \char`\"{}Marcello Vaccarino\char`\"{}
+\item 
+\textbf{ graph} = nx.\+Graph()
+\item 
+\textbf{ sinksource\+\_\+graph} = nx.\+Graph()
+\item 
+\textbf{ acqueduct\+\_\+1level} = nx.\+Graph()
+\item 
+\textbf{ acqueduct\+\_\+2level} = nx.\+Graph()
+\item 
+\textbf{ acqueduct} = nx.\+Graph()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{classrouter3_1_1_router_a02fed902edbc19bef60aabea15706c8e}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{\+\_\+\+\_\+init\+\_\+\+\_\+()}
+{\footnotesize\ttfamily def router3.\+Router.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{topo\+\_\+file = {\ttfamily None},  }\item[{}]{building\+\_\+file = {\ttfamily None},  }\item[{}]{adjacency\+\_\+metrix = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{classrouter3_1_1_router_a6282a7594531449b472974795d446c96}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!add\+\_\+node\+\_\+unique@{add\+\_\+node\+\_\+unique}}
+\index{add\+\_\+node\+\_\+unique@{add\+\_\+node\+\_\+unique}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{add\+\_\+node\+\_\+unique()}
+{\footnotesize\ttfamily def router3.\+Router.\+add\+\_\+node\+\_\+unique (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{new\+\_\+node,  }\item[{}]{new\+\_\+attributes }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Grants that the node added is unique with respect to the pos
+attribute equality relationship.
+Deprecated since the node is a coordinates touple
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_aa4e0d0dcd580c0ac9d04a7a7c21eb4ad}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!cluster@{cluster}}
+\index{cluster@{cluster}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{cluster()}
+{\footnotesize\ttfamily def router3.\+Router.\+cluster (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Finds the clusters in a graph and returns a tuple with labels and nodes centers
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_a9da692cd46b118ca01f0591472470c05}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!complete\+\_\+graph@{complete\+\_\+graph}}
+\index{complete\+\_\+graph@{complete\+\_\+graph}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{complete\+\_\+graph()}
+{\footnotesize\ttfamily def router3.\+Router.\+complete\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Completes in place the given graph
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_ae092bc8d0866872bc5af263bd4700c5e}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!compute\+\_\+source\+\_\+matrix@{compute\+\_\+source\+\_\+matrix}}
+\index{compute\+\_\+source\+\_\+matrix@{compute\+\_\+source\+\_\+matrix}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{compute\+\_\+source\+\_\+matrix()}
+{\footnotesize\ttfamily def router3.\+Router.\+compute\+\_\+source\+\_\+matrix (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Yelds the subgraph having sink and sources as nodes
+an the shortest path between each one of them as edge
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_a56fa1121d7c716890c9352945ba9a760}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!design\+\_\+aqueduct@{design\+\_\+aqueduct}}
+\index{design\+\_\+aqueduct@{design\+\_\+aqueduct}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{design\+\_\+aqueduct()}
+{\footnotesize\ttfamily def router3.\+Router.\+design\+\_\+aqueduct (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{L\+E\+V\+EL = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Performs automatic water network distribution design.
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_a79af880915c6cb8e7527129a1bd5140d}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!design\+\_\+minimal\+\_\+aqueduct@{design\+\_\+minimal\+\_\+aqueduct}}
+\index{design\+\_\+minimal\+\_\+aqueduct@{design\+\_\+minimal\+\_\+aqueduct}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{design\+\_\+minimal\+\_\+aqueduct()}
+{\footnotesize\ttfamily def router3.\+Router.\+design\+\_\+minimal\+\_\+aqueduct (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G,  }\item[{}]{weight = {\ttfamily \textquotesingle{}dist\textquotesingle{}} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Computes the skeletonisation of the graph with minimum spanning tree algorithm
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_aa010905a9b4102ed39a19a10e995c836}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!distance@{distance}}
+\index{distance@{distance}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{distance()}
+{\footnotesize\ttfamily def router3.\+Router.\+distance (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{nodei,  }\item[{}]{nodej }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Computes euclidian distance between two nodes
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_a3f3849851bec7f50d3ed0a6e27f65443}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!graph\+To\+Edge\+Matrix@{graph\+To\+Edge\+Matrix}}
+\index{graph\+To\+Edge\+Matrix@{graph\+To\+Edge\+Matrix}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{graph\+To\+Edge\+Matrix()}
+{\footnotesize\ttfamily def router3.\+Router.\+graph\+To\+Edge\+Matrix (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the adjacency matrix of the graph
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_aa28f9c687b0cdb85af036926c26f507e}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!is\+\_\+sourcesink@{is\+\_\+sourcesink}}
+\index{is\+\_\+sourcesink@{is\+\_\+sourcesink}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{is\+\_\+sourcesink()}
+{\footnotesize\ttfamily def router3.\+Router.\+is\+\_\+sourcesink (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a node as in the networkx.Graph.nodes(data=1)
+returns 1 if the node is a sink or a source, 0 elsewhere
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_a062f81829cd3758466ad982241f8669a}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!louvain\+\_\+clustering@{louvain\+\_\+clustering}}
+\index{louvain\+\_\+clustering@{louvain\+\_\+clustering}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{louvain\+\_\+clustering()}
+{\footnotesize\ttfamily def router3.\+Router.\+louvain\+\_\+clustering (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G,  }\item[{}]{weight = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Performs Water Distribution Networks partitioning according to the method shown in the article from
+Qingzhou Zhang; Zheng Yi Wu; Ming Zhao; Jingyao Qi; Yuan Huang; and Hongbin Zhao in the article
+"Automatic Partitioning of Water Distribution Networks Using Multiscale Community Detection and Multiobjective
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_a2ac52ea48745d1681a1e985c9b937721}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!mesh\+\_\+graph@{mesh\+\_\+graph}}
+\index{mesh\+\_\+graph@{mesh\+\_\+graph}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{mesh\+\_\+graph()}
+{\footnotesize\ttfamily def router3.\+Router.\+mesh\+\_\+graph (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G,  }\item[{}]{weight }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a graph, returns a graph with the same nodes connected according the gabriel definition of neighbourhood,
+complexity is (len(G.nodes))^3
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_af31bb0b2718b6c7d9fe83a4861a9881f}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!path\+\_\+lenght@{path\+\_\+lenght}}
+\index{path\+\_\+lenght@{path\+\_\+lenght}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{path\+\_\+lenght()}
+{\footnotesize\ttfamily def router3.\+Router.\+path\+\_\+lenght (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Given a path on the graph returns the lenght of the path in the
+unit the coordinats are expressed
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_a975c34908a773e7fab09afb357d95122}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!read\+\_\+vtk@{read\+\_\+vtk}}
+\index{read\+\_\+vtk@{read\+\_\+vtk}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{read\+\_\+vtk()}
+{\footnotesize\ttfamily def router3.\+Router.\+read\+\_\+vtk (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Import a graph from a vtk file
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_a71bcbcadbe60bb5d0d16d53eda79eed3}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!routing@{routing}}
+\index{routing@{routing}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{routing()}
+{\footnotesize\ttfamily def router3.\+Router.\+routing (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{n1,  }\item[{}]{n2 }\end{DoxyParamCaption})}
+
+\mbox{\label{classrouter3_1_1_router_ad9fac67fcd5dae55730df492c3be2999}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!shortest\+\_\+path@{shortest\+\_\+path}}
+\index{shortest\+\_\+path@{shortest\+\_\+path}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{shortest\+\_\+path()}
+{\footnotesize\ttfamily def router3.\+Router.\+shortest\+\_\+path (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node1,  }\item[{}]{node2 }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Calculates the shortest path on self.graph.
+Returns the path as a sequence of traversed nodes
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_afbed1a1bb0576d1b5c2ba46ebb5db514}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!solve@{solve}}
+\index{solve@{solve}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{solve()}
+{\footnotesize\ttfamily def router3.\+Router.\+solve (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Find the pipes diameter for a given aqueduct topology respecting the following constraints:
+    - pipes velocities between 0.5 and 1 m/s
+    - pipes diameters commercially available
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_a41d6b0857c06debb02ceff527dc6b639}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!write2epanet@{write2epanet}}
+\index{write2epanet@{write2epanet}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{write2epanet()}
+{\footnotesize\ttfamily def router3.\+Router.\+write2epanet (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Exports an acqueduct to an inp epanet input file
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_a82eb0c81dc0177dec690e5112de0589a}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!write2shp@{write2shp}}
+\index{write2shp@{write2shp}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{write2shp()}
+{\footnotesize\ttfamily def router3.\+Router.\+write2shp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}    Exports a graph to a shapefile to be visualized with qgis
+\end{DoxyVerb}
+ \mbox{\label{classrouter3_1_1_router_ae9da9d0c9d9650c2855aedd37d42ecb7}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!write2vtk@{write2vtk}}
+\index{write2vtk@{write2vtk}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{write2vtk()}
+{\footnotesize\ttfamily def router3.\+Router.\+write2vtk (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{G,  }\item[{}]{filename }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Exports a graph to a vtk file to be visualized with paraview
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\label{classrouter3_1_1_router_a57f18d229834552c3168a893ca5b41be}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!acqueduct@{acqueduct}}
+\index{acqueduct@{acqueduct}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{acqueduct}
+{\footnotesize\ttfamily router3.\+Router.\+acqueduct = nx.\+Graph()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classrouter3_1_1_router_a6f82428bd02123b5c3bb875bbf3740ea}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!acqueduct\+\_\+1level@{acqueduct\+\_\+1level}}
+\index{acqueduct\+\_\+1level@{acqueduct\+\_\+1level}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{acqueduct\+\_\+1level}
+{\footnotesize\ttfamily router3.\+Router.\+acqueduct\+\_\+1level = nx.\+Graph()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classrouter3_1_1_router_a636e17671fd05aa18ff1b60c7f5cd4bb}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!acqueduct\+\_\+2level@{acqueduct\+\_\+2level}}
+\index{acqueduct\+\_\+2level@{acqueduct\+\_\+2level}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{acqueduct\+\_\+2level}
+{\footnotesize\ttfamily router3.\+Router.\+acqueduct\+\_\+2level = nx.\+Graph()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classrouter3_1_1_router_a2d4d2abf8d1fffe42daf45e44a594a9d}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!C\+L\+A\+S\+S\+\_\+\+A\+U\+T\+H\+OR@{C\+L\+A\+S\+S\+\_\+\+A\+U\+T\+H\+OR}}
+\index{C\+L\+A\+S\+S\+\_\+\+A\+U\+T\+H\+OR@{C\+L\+A\+S\+S\+\_\+\+A\+U\+T\+H\+OR}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{C\+L\+A\+S\+S\+\_\+\+A\+U\+T\+H\+OR}
+{\footnotesize\ttfamily string router3.\+Router.\+C\+L\+A\+S\+S\+\_\+\+A\+U\+T\+H\+OR = \char`\"{}Marcello Vaccarino\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classrouter3_1_1_router_afb0b39a2126610e1f936b5dc3b1fcda2}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!C\+L\+A\+S\+S\+\_\+\+N\+A\+ME@{C\+L\+A\+S\+S\+\_\+\+N\+A\+ME}}
+\index{C\+L\+A\+S\+S\+\_\+\+N\+A\+ME@{C\+L\+A\+S\+S\+\_\+\+N\+A\+ME}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{C\+L\+A\+S\+S\+\_\+\+N\+A\+ME}
+{\footnotesize\ttfamily string router3.\+Router.\+C\+L\+A\+S\+S\+\_\+\+N\+A\+ME = \char`\"{}Router\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classrouter3_1_1_router_a15e4b664994bd0840db3979ae4408bc6}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!graph@{graph}}
+\index{graph@{graph}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{graph}
+{\footnotesize\ttfamily router3.\+Router.\+graph = nx.\+Graph()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\label{classrouter3_1_1_router_a47501237c7094a9375f03c16927818de}} 
+\index{router3\+::\+Router@{router3\+::\+Router}!sinksource\+\_\+graph@{sinksource\+\_\+graph}}
+\index{sinksource\+\_\+graph@{sinksource\+\_\+graph}!router3\+::\+Router@{router3\+::\+Router}}
+\subsubsection{sinksource\+\_\+graph}
+{\footnotesize\ttfamily router3.\+Router.\+sinksource\+\_\+graph = nx.\+Graph()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+source/\textbf{ router3.\+py}\end{DoxyCompactItemize}

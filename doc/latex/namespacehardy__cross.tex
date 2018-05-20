@@ -1,0 +1,76 @@
+\section{hardy\+\_\+cross Namespace Reference}
+\label{namespacehardy__cross}\index{hardy\+\_\+cross@{hardy\+\_\+cross}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Hardy\+Cross}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \textbf{ add\+\_\+string\+\_\+from\+\_\+list} (string\+\_\+list)
+\item 
+def \textbf{ flow\+\_\+correction\+\_\+dq} (df\+\_\+hf, df\+\_\+hf\+\_\+q)
+\item 
+def \textbf{ j\+\_\+loss\+\_\+10atm} (pipe\+\_\+diameter, flow\+\_\+rate)
+\item 
+def \textbf{ diameter\+\_\+from\+\_\+available} (theoretical\+\_\+diameter)
+\item 
+def \textbf{ diameter} (flow\+\_\+rate, velocity\+\_\+for\+\_\+diameter=0.\+8, show=0)
+\item 
+def \textbf{ velocity} (flow\+\_\+rate, pipe\+\_\+diameter)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{namespacehardy__cross_af67df6b942deb06c74e8609dc5c32143}} 
+\index{hardy\+\_\+cross@{hardy\+\_\+cross}!add\+\_\+string\+\_\+from\+\_\+list@{add\+\_\+string\+\_\+from\+\_\+list}}
+\index{add\+\_\+string\+\_\+from\+\_\+list@{add\+\_\+string\+\_\+from\+\_\+list}!hardy\+\_\+cross@{hardy\+\_\+cross}}
+\subsubsection{add\+\_\+string\+\_\+from\+\_\+list()}
+{\footnotesize\ttfamily def hardy\+\_\+cross.\+add\+\_\+string\+\_\+from\+\_\+list (\begin{DoxyParamCaption}\item[{}]{string\+\_\+list }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:rtype : str
+\end{DoxyVerb}
+ \mbox{\label{namespacehardy__cross_a5b3a76084af3f0bb912856c7c3a297d0}} 
+\index{hardy\+\_\+cross@{hardy\+\_\+cross}!diameter@{diameter}}
+\index{diameter@{diameter}!hardy\+\_\+cross@{hardy\+\_\+cross}}
+\subsubsection{diameter()}
+{\footnotesize\ttfamily def hardy\+\_\+cross.\+diameter (\begin{DoxyParamCaption}\item[{}]{flow\+\_\+rate,  }\item[{}]{velocity\+\_\+for\+\_\+diameter = {\ttfamily 0.8},  }\item[{}]{show = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Q: flow rate [l/s]
+velocity_for_diameter: flow velocity m/s
+D: diameter [mm]
+\end{DoxyVerb}
+ \mbox{\label{namespacehardy__cross_a554c5e38cee0615fabc782ad512e19e2}} 
+\index{hardy\+\_\+cross@{hardy\+\_\+cross}!diameter\+\_\+from\+\_\+available@{diameter\+\_\+from\+\_\+available}}
+\index{diameter\+\_\+from\+\_\+available@{diameter\+\_\+from\+\_\+available}!hardy\+\_\+cross@{hardy\+\_\+cross}}
+\subsubsection{diameter\+\_\+from\+\_\+available()}
+{\footnotesize\ttfamily def hardy\+\_\+cross.\+diameter\+\_\+from\+\_\+available (\begin{DoxyParamCaption}\item[{}]{theoretical\+\_\+diameter }\end{DoxyParamCaption})}
+
+\mbox{\label{namespacehardy__cross_a62062bfea7848e6ebc3a6dd92f252e50}} 
+\index{hardy\+\_\+cross@{hardy\+\_\+cross}!flow\+\_\+correction\+\_\+dq@{flow\+\_\+correction\+\_\+dq}}
+\index{flow\+\_\+correction\+\_\+dq@{flow\+\_\+correction\+\_\+dq}!hardy\+\_\+cross@{hardy\+\_\+cross}}
+\subsubsection{flow\+\_\+correction\+\_\+dq()}
+{\footnotesize\ttfamily def hardy\+\_\+cross.\+flow\+\_\+correction\+\_\+dq (\begin{DoxyParamCaption}\item[{}]{df\+\_\+hf,  }\item[{}]{df\+\_\+hf\+\_\+q }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:type df_hf_q: float
+:type df_hf: float
+\end{DoxyVerb}
+ \mbox{\label{namespacehardy__cross_aecaab5e3707cd3259ad7d21ff2fccbdd}} 
+\index{hardy\+\_\+cross@{hardy\+\_\+cross}!j\+\_\+loss\+\_\+10atm@{j\+\_\+loss\+\_\+10atm}}
+\index{j\+\_\+loss\+\_\+10atm@{j\+\_\+loss\+\_\+10atm}!hardy\+\_\+cross@{hardy\+\_\+cross}}
+\subsubsection{j\+\_\+loss\+\_\+10atm()}
+{\footnotesize\ttfamily def hardy\+\_\+cross.\+j\+\_\+loss\+\_\+10atm (\begin{DoxyParamCaption}\item[{}]{pipe\+\_\+diameter,  }\item[{}]{flow\+\_\+rate }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param pipe_diameter: float
+:param flow_rate: float
+d: diameter [mm]
+q: flow rate [l/s]
+j: losses [m]
+\end{DoxyVerb}
+ \mbox{\label{namespacehardy__cross_a10c727ef7f7495f725c8d31d97d70ade}} 
+\index{hardy\+\_\+cross@{hardy\+\_\+cross}!velocity@{velocity}}
+\index{velocity@{velocity}!hardy\+\_\+cross@{hardy\+\_\+cross}}
+\subsubsection{velocity()}
+{\footnotesize\ttfamily def hardy\+\_\+cross.\+velocity (\begin{DoxyParamCaption}\item[{}]{flow\+\_\+rate,  }\item[{}]{pipe\+\_\+diameter }\end{DoxyParamCaption})}
+
